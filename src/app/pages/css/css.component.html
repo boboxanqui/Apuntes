@@ -1,0 +1,724 @@
+
+<div id="definicion">
+    <h2 class="page-title">CSS</h2>
+    <p>
+        <em>Cascading Style Sheets</em> Estilos de cascada que permiten definir como se va a mostrar todo el contenido de una página HTML. <br>
+        Para añadir comentarios en documento .css hay que hacerlo entre /* ... */ <br>
+    </p>
+    <p>
+        Referencia de todos los estilos CSS en <a class="link"href="https://www.w3schools.com/cssref/default.asp" target="_blank">W3schools</a> y consejos y trucos básicos en <a class="link"href="https://css-tricks.com/">CSS-tricks</a>
+    </p>
+    <p>Video tutorial básico de Fazt <a class="link"href="https://www.youtube.com/embed/W6GTDfrWjXs"><i class="fa-brands fa-youtube"></i></a></p>
+
+    <!-- <iframe width="1904" height="768" src="https://www.youtube.com/embed/W6GTDfrWjXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Video YT</iframe> -->
+
+    <h2 class="title-2" id="principios">Princípios</h2>
+    <h3 class="title-3">Como incorporar código CSS</h3>
+    <ul>
+        <li> <b>Inline</b> - Permite añadir estilos CSS dentro de una etiqueta HTML con el atributo <i>style="PRPIEDAD: VALOR, PROPIEDAD2: VALOR2..."</i> </li>
+        <li><b> Internal</b>- Se añade la etiqueta <i>&lt;style&gt;...&lt;/style&gt;</i> en la sección head del documento HTML con los estilos a aplicar dentro.</li> 
+        <li><b>External</b> - Se añade la etiqueta y atributos <i>&lt;link rel="stylesheet" href="NOMBRE_ARCHIVO.css"&gt; </i> donde se linca el documneto CSS que va a aplicar estilo a dicho HTML.</li>
+    </ul>
+    <h3 class="title-3">Selector CSS</h3>
+    <img class="h-center img-fluid" src="../assets/img/CSSsyntax.png" alt="Selector CSS">
+    <p>
+        El selector hace referencia a la parte especifica del texto HTML a la que quieres aplicar un estilo concreto. Se pueden usar diferentes terminos como selectores:
+    </p>
+    <ul>
+        <li> <b>Etiqueta HTML</b>  - Se pone como selector una etiqueta utilizada en nuestro código HTML, se aplicara el estilo a todas las etiquetas con este nombre. </li>
+        <li><b>#id</b> - Se escribe # seguido del nombre del atributo <i>id="NOMBRE"</i> en la etiqueta que hemos identificado en HTML, solo afecta a una sola etiqueta.</li>
+        <li><b>.class</b> - Se escribe . seguido de el nombre del atributo <i>class="NOMBRE"</i> en las etiquetas que hemos identificado en HTML, puede utilizarse en multiples etiquetas.</li>
+        <li><b> * </b> - Hace referencia a todos los elementos del texto HTML, útil para dar mismo formato a todo el contenido (tipografia, espaciado, margenes, etc.)</li>
+        <li><b>[atributo]</b> - Se refiere a todas las etiquetas que tengas este atributo, incluso podemos escribirlo con un valor exacto [atributo=valor]</li>
+        <li><b>:estado</b> - Selecciona elementos a estilizar segun el estado en que se encuentren, se suelen combinar con los selectores anteriores para acotar mejor la selección. Los estados mas habituales suponiendo que van seguidos del elemento X: </li>
+        <ul>
+            <li>:active (aplica cuando el elemento X esta activo, útil para links cuando son clicados).</li>
+            <li>:checked (cada elemento checkeado de los inputs de X).</li>
+            <li>:disabled (cada input deshabilitado de X).</li>
+            <li>:enabled (cada input habilitado de X).</li>
+            <li>:empty (cada elemento sin hijos dentro de X).</li>
+            <li>:first-child (cada X primer elemento dentro de otra etiqueta).</li>
+            <li>:first-child (cada elemento X que es el primer hijo de cualquier padre).</li>
+            <li>:focus (input de X que tiene el focus).</li>
+            <li>:hover (aplica cuando el mouse esta encima del elemento X).</li>
+            <li>:invalid (input de X con un valor incorrecto).</li>
+            <li>:last-child (cada último elemento X de cualquier padre).</li>
+            <li>:link (cada link sin visitar de X).</li>
+            <li>:optional (cada input de X que no es required).</li>
+            <li>:required (cada input de X que es required).</li>
+            <li>:valid (cada input de X con un valor correcto).</li>
+            <li>:visited (cuando se ha visitado ese elemento, útil para links ya abiertos).</li><br>
+
+            <p><ins>Pseudo selectores con variables</ins></p>
+            <li>:nth-child(n) (cada elemento X en la posición N del cualquier padre, donde N puede ser un número o even/odd).</li>
+            <li>:nth-last-child(n) (cada elemento X en la posición N de cualquier padre empezando a contar por el final, donde N puede ser un número o even/odd).</li>
+        </ul><br>
+        <li><b>::elementos</b> - Pseudo elementos que pueden ser creados o seleccionados a partir de otros:</li>
+        <ul>
+            <li>::after (inserta algo despues de cada elemento X).</li>
+            <li>::before (inserta algo antes de cada elemento X).</li>
+            <li>::first-letter (La primera letra de cada elemento X).</li>
+            <li>::first-line (la primera linea de cada elemento X).</li>
+            <li>::seleciton (la parte que el usuario selecciona).</li>
+        </ul>
+    </ul>
+    <p>
+        Todos estos elementos (excepto *) son combinables entre ellos, tanto para seleccionar mas de un elemento y aplicar mismo estilo separandolos por comas ",", por ejemplo: h1, h2, h3 (aplica lo mismo para todos) o para acotar la selección con mas de un selector sin comas, por ejemplo: p .caption (todos los paragrafos con class="caption"), .class1 .class2 (elementos con 2 clases), div p (paragrafos dentro de divs), div>p (paragrafos con parentesco directo de div, solo padre no abuelo), div + p (primer p dentro de div) a:hover (links con mouse encima), etc. <br>
+        Si aplicamos estilo a un elemento sin especificar que es solo ese elemente y este tiene dentro otro elemento, este último recibirá el mismo estilo hererado hasta que le indiquemos lo contrario. <br>
+        Todos los navegadores aplican un estilo por defecto a HTML incluyendo tipografia, margin, padding, tamañanos, etc. Puede ser conveniente utilizar * para desactivarlo o aplicar el estilo que mas nos convenga a toda la página. <br>
+    </p>
+
+    <p>
+        Puede ser que los navegadores necesiten un prefijo para saber interpretar el código CSS, sobretodo las últimas propiedades incorporadas como CSS3. Hoy en dia la mayoria pueden trabajar sin estos prefijos pero nos podemos encontrar el caso en que se necesiten. También se debe incorporar cada propiedad con su prefijo para que el mismo código sea legible en todos los navegadores.  
+    </p>
+    <img class="h-center img-fluid" src="../assets/img/vendorprefix.png" alt="browser-prefix">
+</div>
+<div >
+    <h2 class="title-2" id="unidades-de-medida">Unidades de medida</h2>
+    <p>Para definir el valor de una propiedad CSS permite la escritura de varias unidades de medida para distintos valores: </p>
+    <dl>
+        <p id="caja">Holi.
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit alias laudantium in? Rem, eaque et! Pariatur vitae ratione unde adipisci? Nostrum, reprehenderit molestiae non rerum et temporibus molestias quia itaque.</span>
+        </p>
+        <dt><b>Unidades métricas</b> </dt>
+        <dd>Permite definir una distancia entre dos puntos para personalizar el largo, ancho, borde, espacio o cualquier otra propìedad con valor númerico. Distinguimos las siguientes unidades mas habituales:</dd><br>
+    
+        <dt>Unidades absolutas, números independientes que expresan un valor exacto:</dt>
+        <ul class="contentlist">
+            <li><i>cm </i>- Centimetros</li>
+            <li><i>mm </i>- Milímetros</li>
+            <li><i>in </i>- Pulgadas (1in = 96px = 2.54cm)</li>
+            <li><i>px </i>- Pixeles (puede variar la perspectiva segun la resolución o dispositivo donde se visualice)</li>
+            <li><i>pt </i>- Puntos (medida habitual de texto.)</li>
+            <li><i>ch </i>- Characteres, medida en caracteres, muy útil para medir largos de linea (width) por ejemplo.</li>
+        </ul>
+        <dt>Unidades relativas, van en función de otras unidades, por lo que pueden variar el valor segun la referencia:</dt>
+        <ul class="contentlist">
+            <li><i>em </i>- Depende de la medida del font-size del elemento padre, 1 em = font-size x1</li>
+            <li><i>rem </i>- Depende de la medida del font-size básica de la pagina (relativo al tamaño de fuente raíz del html.), 1 rem = font-size x1 </li>
+            <li><i>% </i>- Depende de la medida donde se encuentre la caja, si no tiene parentesco ira en función de la medida máxima de la página/navegador </li>
+            <li><i>vh </i>- ViewPort Height, hace referencia a la altura de la parte visible del navegador, acepta del 0 al 100 como si se tratará de %.</li>
+            <li><i>vw </i>- ViewPort Widht, ancho visible del navegador donde 1vw equivale a 1%.</li>
+            <li><i>calc() </i>- Permite hacer calculos con los valores dentro de los parentesis para determinar el valor resultante.</li>
+            <li><i>min(...) </i>- Permite establecer un minimo para medidas cambiantes como anchos, largos, etc. Se aceptan varios valores y se elegira siempre el menor. Ej. <code>min( 20%, 100px, 4rem )</code></li>
+            <li><i>max(...) </i>- Permite establecer un máximo para medidas cambiantes. Acepta mas de un valor eligiendo el que sea siempre mas grande. Ej. <code>max( 80%, 500px, 50vw ). </code></li>
+            <li><i>auto </i>- Igual que % depende de su parentesco, en este caso reparte el mismo valor si hay mas de una propiedad o equivale al valor más céntrico (útil cuando asignamos un mismo valor a multiples propiedades/lados). </li>
+
+            *min() y max() permiten mas de un valor entre parentesis. Ejemplo <i>width: min(500px 70%);</i>  escogerá siempre la mínima medida en función del ancho navegador, si 500px es menor que 70% entonces escogerá 500px como medida mínima. Lo mismo para max() pero escogiendo la medida mas grande.
+        </ul>
+        <dt><b>Colores</b></dt>
+        <dd>Siguiendo varios estandares, hay distintas maneras de expresar el valor del color que queremos asignar:</dd>
+        <ul class="contentlist">
+            <li><i>Hexadecimal </i>- #RRGGBB asigna dos unidades de valor del 0 a la F para cada color básico.</li>
+            <li><i>Hexadecimal con transparencia </i>- #RRGGBBAA asigna dos unidades de valor del 0 a la F para cada color básico y los dos últimos para el canal alpha.</li>
+            <li><i>RGB </i>- rgb (R,G,B) asigna un valor del 0 al 255 para cada color básico, también se puede escribir con %.</li>
+            <li><i>RGBA </i>- rgba (R,G,B,A) asigna un valor del 0 al 255 para cada color básico, y por último la transparencia con un valor del 0.0 (100% transparente) al 1.0 (100% opaco).</li>
+            <li><i>HSL </i>- hsl(HUE, SATURATION, LIGHTNESS) teniendo en cuenta la rueda de color, asigna un grado de 0 al 359 para la tonalidad, y un porcentage para la saturación y brillo(0% es negro y 100% es blanco).</li>
+            <li><i>HSLA </i>- hsla(HUE, SATURATION, LIGHTNESS, ALPHA) igual que HSL pero añadiendo transparencia con valores del 0.0 al 1.0.</li>
+            <li><i>Predefinidos </i>- colores ya predefinido por CSS que se definen con su nombre, hay 140 disponibles (red, green, lightgrey, darkblue, etc.).</li>
+            <li><i>linear-gradient(DIRECCIÓN, COLOR1 STOP, COLOR2 STOP, COLOR3 STOP...) </i> - permite crear degradados lineares, por defecto la dirección va de top a bottom a no ser que le indiquemos lo contrario con bottom/right/left o Xdeg. El valor de STOP se indica en números px o % y definde donde acaba dicho color, dos colores con el mismo valor crearan un cambio abrupto sin degradado. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
+            <li><i>radial-gradient(X Y, SHAPE, COLOR1 STOP, COLOR2 STIOP, COLOR3 STOP,...) </i> - permite crear degradados radiales, debe indicarse la posicion X Y del centro con px o %, la forma puede ser circle o ellipse y los colores con la métrica de finalización. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
+        </ul>
+    </dl>
+</div>
+
+<!--PROPIEDADES Y VALORES-->
+
+<div id="formato-texto">
+    <h2 class="title-2" id="estilos-texto">Estilos para texto</h2>
+    <dl>
+        <dt> <b>font-family: </b><i>Arial, Roboto, Serif, Sans Serif;</i> </dt>
+        <dd></dd>
+        <dd>Aplica tipografia al selector, suele indicarse varias fuentes por si el navegador no puede aplicar alguna, también se suelen añadirse fuentes familiares al final que incluen un grupo de tipografias parecidas para dar mas opciones al navegador. En caso de no poder aplicar ninguna, cada navegador tiene su propia tipografia por defecto. También se pueden incluir las fuentes con la url y etiqueta &lt;link...&gt; en el meta o la regla @font-face importando el archivo.</dd>
+
+        <dt><b>font-size: </b><i>12px</i></dt>
+        <dd>Tamaño del texto, puede ser definido en medidas (small, medium, large), en pixeles, cm, %, in, rem (en función del estandar), em, etc.  </dd>
+        
+        <dt><b>font-weight: </b><i>lighter</i></dt>
+        <dd>Anchura de la letra, puede definirse en medidas (lighter, normal, bold) o en centenas del 0 al 1000 donde 400=normal. </dd>
+
+        <dt><b>font-style: </b><i>italic</i></dt>
+        <dd>Permite modificar el texto con letras en formato italic, normal o oblicuas</dd>
+
+        <dt><b>font-variant: </b><i>small-caps</i></dt>
+        <dd>Permite modificar el texto a todo mayusculas pequeñas (small-caps) o normal que esta por defecto.</dd>
+
+        <dt><b>font: </b><i>STYLE VARIANT WEIGHT SIZE FAMILY</i></dt>
+        <dd>Abreviatura de varios estilos "font" en una unica linea, también se pueden aplicar estilos predefinidos como: caption, icon, menu, message-box, status-bar, etc. </dd>
+
+        <dt><b>color: </b><i>lightblue</i></dt>
+        <dd>Pinta el texto del color indicado con nombres (red, blue, grey), valor hexadecimal (#000FFF) o valor rgb(255,100,100).</dd>
+
+        <dt><b>text-align: </b><i>center</i></dt>
+        <dd>Centra el texto a la parte que le indiquemos, admite valores como: left, right, center, start, end y justify. </dd>
+
+        <dt><b>line-height: </b> <i>100px</i></dt>
+        <dd>Alinea el texto en medio de la medida indicada segun el height del contenido de la caja inline (no tiene en cuenta padding ni margin).</dd>
+
+        <dt><b>text-decoration: </b><i>underline</i></dt>
+        <dd>Permite añadir una derocación al texto, acepta valores como: blink, overline, underline, line-through</dd>
+
+        <dt><b>text-indent: </b>10px</dt>
+        <dd>Permite añadir sangria al comienzo de la primera linea de texto, acepta valores numericos en px, cm, pt, em, %.</dd>
+
+        <dt><b>text-shadow: </b><i>X Y BLUR COLOR</i></dt>
+        <dd>Dibuja una sombra con los 4 valores indicados, 3 primeros numericos para eje de X, Y y desenfoque y el último valor para el color de la sombra <span id="shadow">SHADOW</span></dd>
+
+        <dt><b>text-transform: </b><i>uppercase;</i> </dt>
+        <dd>Permite transformar texto en mayusculas con varios valores: </dd>
+        <ul class="contentlist">
+            <li>capitalize (primera letra de cada palabra mayuscula)</li>
+            <li>uppercase (todas las letras mayusculas).</li>
+            <li>lowercase (todas las letras minusculas).</li>
+        </ul>
+
+        <dt><b>text-overflow: </b><i>ellipsis</i></dt>
+        <dd>Indica el comportamiento del texto que sobresale. Puede ser <i>clip, ellispsis o string.</i></dd>
+
+        <dt><b>column-count: </b><i> 2;</i></dt>
+        <dd>Separa el texto en el numero de columnas indicadas.</dd>
+
+        <dt><b>column-gap: </b> <i>1.5rem;</i></dt>
+        <dd>Especifica el espacio entre columnas.</dd>
+
+        <p>*Hay mas propiedades para columnas disponibles. Ej. <i>column-width, column-rules, column-fill, column-span, etc.</i></p>
+        
+
+        <dt><b>letter-spacing: </b><i>2px;</i> </dt>
+        <dd>Permite modificar el espaciado entre carácteres incluso con valores negativos, afecta a la legibilidad, acepta numeros en px, pt, cm, mm, etc. o normal</dd>
+
+        <dt><b>word-sapcing: </b><i>5px;</i> </dt>
+        <dd>Modifica espacio entre palabras con valores númericos en px, pt, cm, mm, etc.</dd>
+
+        <dt><b>white-space: </b><i>pre-wrap</i></dt>
+        <dd>Permite interpretar los espacios en blanco y los saltos de linea de otra manera:</dd>
+        <ul class="contentlist">
+            <li>nowrap (ignora multiples espacios en blanco y realiza saltos de linea en break). </li>
+            <li>pre (conserva todos los espacios en blanco y preserva los del navegador).</li>
+            <li>pre-line (ignora multiples espacios en blanco). </li>
+            <li>pre-wrap (preserva espacios del navegador y muestra todos los espacios en blanco).</li>
+        </ul>
+
+        <dt><b>word-wrap: </b><i>break-word;</i></dt>
+        <dd>Permite a las palabras largas que no caben por el margen derecho separarse para continuar en la siguiente linea. Acepta valores: normal (por defecto) o break-word (separación habilitada).</dd>
+
+        <dt><b>@font-face {{ '{' }}</b> <i>font-family: NOMBRE; src: url(NOMBRE_ARCHIVO.ttf);</i><b>{{ '}' }}</b></dt>
+        <dd>Permite importar fuentes tipográficas externas. Debemos tener el archivo .ttf/.otf/.woff/.woff2 en la carpeta, le asignamos un nombre de <i>font-family: ... ;</i> que despues podemos utilizar al asignar una tipográfica con esta misma propiedad. Por último indicamos la ruta y/o nombre del archivo con <i>src: url(...);</i></dd>
+    </dl>
+</div>
+
+<!--PROPIEDADES DE LAS CAJAS-->
+<div id="cajas-css">
+    <h2 class="title-2" id="propiedades-cajas">Propiedades de cajas</h2>
+
+    <p>
+        Cada elemento de HTML esta representado como una caja en la pàgina, gracias a CSS podemos modificar todas las partes y posicionamiento de estas cajas. Distinguimos 4 partes diferentes de la caja: margin, border, padding y content. Cada una de ellas se puede alternar por los cuatro lados o por cada lado por separado refiriendose a top, right, bottom y left.
+    </p>
+    <img class="h-center img-fluid" id="cssbox"src="../assets/img/CSSboxmodel.png" alt="cssbox">
+    <dl>
+        <dt><b>width: </b><i>100px</i> </dt>
+        <dd>Ancho de la caja, afectando unicamente al content, acepta valores en px, %, cm, in, etc. Se puede añadir el prefijo <i>max-</i> para indicar la anchura máxima permitda y el prefijo <i>min-</i> para la medida mínima. </dd>
+
+        <dt><b>height: </b><i>50%</i> </dt>
+        <dd>Alto de la caja, afectando unicamente al content, acepta valores en px, %, cm, in, etc. Se puede añadir el prefijo <i>max-</i> para indicar la altura máxima permitda y el prefijo <i>min-</i> para la medida mínima.</dd>
+
+        <dt><b>padding: </b><i>1cm</i> </dt>
+        <dd>Espacio que separa el content del border, acepta valores en px, %, cm, in, etc. Podemos poner un unico valor que sera igual para los 4 lados, dos valores que definiran primero top y bottom y despues left y right, o cuatro valores individuales para top, right, bottom y left respectivamente. </dd>
+
+        <dt><b>border: </b><i>WIDTH STYLE COLOR</i></dt>
+        <dd>perimetro de la caja el cual se puede hacer visible y colorear, por defecto no hay, para que se vea hay que indicar la anchura(px, %, cm, in, etc.), el estilo (solid, dashed, dotted, double, etc.) y el color (rgb, hsl, hex o nombre). </dd>
+
+        <dt><b>margin: </b><i></i></dt>
+        <dd>Espacio de margen que hay despues del border y que separa del resto de cajas, acepta valores en px, %, cm, in, etc. Podemos poner un unico valor que sera igual para los 4 lados, dos valores que definiran primero top y bottom y despues left y right, o cuatro valores individuales para top, right, bottom y left respectivamente.</dd>
+
+        <p>
+            *Estas 3 ultimas propiedades podemos modificarlas aplicando solo sobre un lado, tan solo con añadir "-" y el lado que nos interese (top, rigth, bottom, left). Incluso border podemos podemos actuar con una de las 3 propiedades y un lado, ejemplo: <i>border-width-bottom</i>.
+        </p>
+
+        <dt><b>border-radius</b><i>TOP-LEFT TOP-RIGHT BOTTOM-RIGHT BOTTOM-LEFT;</i></dt>
+        <dd>Permite redondear las esquinas del borde dibujado con valores en px o %. Se puede indicar un único valor para todas las esquinas o 4 distintos con el orden del ejemplo. Permite crear circulos si width mide igual que height e indicamos la mitad de border-radius.</dd>
+
+        <dt><b>background-color: </b><i>lightblue;</i> </dt>
+        <dd>Modifica el color del fondo de la caja, afectando al content y padding.</dd>
+
+        <dt><b>background-image: </b><i>url(NOMBRE_ARCHIVO.jpg);</i> </dt>
+        <dd>Establece una imagen como fondo de la caja, puede aceptar mas de una imagen y se mostraran en orden. También acepta valores como: <i>linear-gradient(), radial-gradient(), repeating-linear-gradient(), repeating-radial-gradient().</i></dd>
+
+        <dt><b>background-repeat: </b><i>repeat (X,Y);</i> </dt>
+        <dd>En caso de tener una imagen de fondo podemos repetirla tantas veces como queramos en cada eje, también acepta valores como: <i>repeat-x(X), repeat-y(Y).</i></dd>
+
+        <dt><b>background-position: </b><i>left center;</i> </dt>
+        <dd>Indica donde debe empezar la imagen de fondo, se puede poner con nombre de los lados o <i>X% Y%, Xpos Ypos.</i></dd>
+
+        <dt><b>background-size: </b><i>cover;</i> </dt>
+        <dd>Indica las medidas que debe tener el fondo establecido, cover hace que cubra todo el content y padding. También acepta valores númericos indicados para X e Y de cada eje (%, px, pt, cm, etc.) o <i>contain</i> que hace que la imagen sea completamente visible independientemente de las medidas de la caja.</dd>
+
+        <dt><b>background-clip: </b><i>content-box</i></dt>
+        <dd>Define hasta donde debe ocupar el color o imagen del background de la caja. Acepta los siguientes valores: border-box (incluyendo border), padding-box (incluyendo padding) o content-box (solo content).</dd>
+
+        <dt><b>background: </b><i>COLOR IMAGE POSITION / SIZE REPEAT CLIP ATTACHMENT;</i> </dt>
+        <dd>Permite establecer varios valores en una misma propiedad, no hace falta definirlos todos. Si se indica la propiedad <i>size</i> de debe añadir el slash "/" para separarlo de position.</dd>
+
+        <dt><b>box-sizing: </b><i>border-box;</i></dt>
+        <dd>Indica como se calculan el width y height de las cajas del elemento seleccionado. Muy útil para definir mismo metodo para todo. Acepta valores: content-box (por defecto, width y height solo definen el content) o border-box (witdh y height incluyen content, padding y border).</dd>
+
+        <dt><b>box-shadow: </b><i>X Y BLUR DESPLAZAMIENTO COLOR</i></dt>
+        <dd>Permite añadir sombra a la caja del elemento seleccionado, X e Y siempre son valores obligatorios. Por defecto el resto de valores son 0 y negro. También permite crear sombras interiores insertando el valor <i>inset</i> antes del resto de valores. Podemos crear multiples sombras separandolas por comas.</dd>
+        
+        <dt><b>outline: </b><i>WIDTH STYLE COLOR</i></dt>
+        <dd>Contorno que se dibuja despues del borde del elemento, puede sobreponerse a elementos contiguos.</dd>
+
+        <dt><b>opacity: </b><i>0.5;</i></dt>
+        <dd>Aplica transparencia a toda la caja seleccionada, permite valores del 0.0 a 1.0 o también %, donde va de transparente a opaco. </dd>
+    </dl>
+</div>
+
+<!-- LISTAS -->
+<div id="listas">
+    <h2 class="title-2" id="propiedades-listas">Propiedades de las listas</h2>
+    <dl>
+        <dt><b>list-style-type: </b><i>none;</i> </dt>
+        <dd>Modifica el marcador de las listas, hay marcadores diferentes para ul (disc, circle, square) y para ol (georgian, katakakana, lower-alpha, upper-roman, etc.)</dd>
+    
+        <dt><b>list-style-position: </b><i>outside;</i> </dt>
+        <dd>Indica donde se situan los marcadores de la lista en referencia a su caja, puede ser outside o inside.</dd>
+    
+        <dt><b>list-style-image: </b><i>url(NOMBRE_ARCHIVO.jpg);</i> </dt>
+        <dd>Modifica los marcadores por una imagen, puede ser jpg, png, gif, etc.</dd>
+    
+        <dt><b>list-style: </b><i>TYPE POSITION IMAGE;</i> </dt>
+        <dd>Permite añadir las 3 propiedades anteriores en una sola .</dd>
+    </dl>
+</div>  
+
+<!-- TABLAS -->
+<div id="tablas">
+    <h2 class="title-2" id="propiedades-tablas">Propiedades de las tablas</h2>
+    <dl>
+        <dt><b>border-collapse: </b><i>separate;</i> </dt>
+        <dd>Indica si los bordes que separan las celdas y el borde exterior de la tabla se juntan o no, puede ser: separate (por defecto) o collapse (junto).</dd>
+    
+        <dt><b>border-spacing: </b><i>10px;</i> </dt>
+        <dd>Si <i>border-collapse: separate;</i> se puede indicar la separación métrica de los bordes con un solo numero para todos los lados o dos números para espacio horizontal y vertical respectivamente.</dd>
+    
+        <dt><b>caption-side </b><i>bottom;</i> </dt>
+        <dd>Define donde debe aparecer la descriptión (etiqueta caption) de la tabla, puede ser bottom o top.</dd>
+    
+        <dt><b>empty-cells: </b><i>hide;</i> </dt>
+        <dd>Indica si los bordes de las celdas vacias deben mostrarse o no, puede ser show (por defecto) o hide.</dd>
+    
+        <dt><b>table-layout: </b><i>fixed;</i> </dt>
+        <dd>Indica el metodo para medir la anchura de las columnas y la tabla, en valor auto (por defecto) se mide en función al contenido, en modo fixed se mide en función de la anchura de la tabla o columna o por el ancho de la primera fila.</dd>
+    
+        <dt><b>list-style: </b><i>TYPE POSITION IMAGE;</i> </dt>
+        <dd>Permite añadir las 3 propiedades anteriores en una sola .</dd>
+    </dl>
+</div>
+
+<!-- DISPLAY & POSITION -->
+<div id="distribucion">
+    <h2 class="title-2" id="posicionamiento-disposicion">Posicionamiento y disposición</h2>
+    <p>
+        Cada elemento de HTML esta representado como si fuera una caja con contenido, algunas tiene comportamiento por defecto <i>block</i> y ocupan todo el ancho de la página obligando al siguiente elemento posicionarse debajo, otras tiene por defecto <i>inline</i> ocupando solo el volumen del contenido y deja espacio a su derecha para el siguiente elemento. Con esta propiedad podemos modificar el comportamiento de las cajas.
+    </p>
+    <dl>
+        <dt><b>display: </b><i>inline;</i> </dt>
+        <dd>Propiedad que modifica el comportamiento de la caja respecto al resto, admite distintos valores:</dd>
+        <ul class="contentlist">
+            <li>none - oculta el elemento pero </li>
+            <li>block - empieza en una nueva linea y ocupa todo el ancho de la pagina impidiendo otro elemento a su derecha, permite modificar propiedades de la caja (widht, height, margin...)</li>
+            <li>inline - ocupa el minimo volumen de su contenido y permite posicionar los siguientes elementos a su derecha, si un elemento inline no termina por el margen derecho continuara en la siguiente linea. No permite modificar propiedades de la caja, ya que se calcula por su contenido únicamente.</li>
+            <li>inline-block - se comporta igual que inline per si permite modificar propiedades de la caja.</li>
+            <li>flex - <i class="fas fa-caret-square-down"></i></li>
+            <li>grid - <i class="fas fa-caret-square-down"></i></li>
+        </ul>
+    
+        <dt><b>position: </b><i>fixed;</i> </dt>
+        <dd>Define el posicionamiento de la caja en la página de distintas maneras:</dd>
+        <ul class="contentlist">
+            <li>static (por defecto) - posición en orden segun su diplay.</li>
+            <li>absolute - se posiciona respeto al previo elemento no-static. Permite valores top, right, bottom, left.</li>
+            <li>fixed - posición fija en el navegador sin verse afectado por el scroll. Permite valores top, right, bottom, left.</li>
+            <li>relative - posición static pero permite valores top, right, bottom, left. Con estas propiedades se modificará su posición respeto a la original (puede superponerse a otros elementos).</li>
+            <li>sticky - posición static hasta baja el scroll y se comporta como fixed. Conserva su posición hasta que el scroll choca con las medidas top, right, bottom o left indicadas y queda en posición fixed dentro del espacio de su contenedor. Si se aplica a un elemento repetido en la página, solo se arrastrará el último elemento </li>
+        </ul>
+        <p>
+            *Las propiedades top, right, bottom y left deben escribirse despues de <i>position:...;</i> y modifican la posicion original indicada dejando el espacio definido en el lado de la propiedad.
+        </p>
+    
+        <dt><b>float: </b><i>left;</i> </dt>
+        <dd>Posiciona los elementos hacia un lado permitiendo que los siguientes elementos ocupen el espacio del otro lado libre (parecido a <i>display: inline;</i>). Se pueden encadenar varios elementos con esta propiedad y ocuparan todo el ancho de la misma linea hasta no caber mas. Permite valores: left, right y none (por defecto). Muy útil para imagenes donde queremos mostrar texto a su lado. </dd>
+    
+        <dt><b>clear: </b><i>both;</i></dt>
+        <dd>En combinación con la propiedad anterior <i>float:...</i> indica donde no debe mostarse mas elementos, dejando ese lado despejado. Permite valores: right, left o both.</dd>
+    
+        <dt><b>visibility: </b><i>hidden;</i> </dt>
+        <dd>Permite esconder el contenido, pero seguirá ocupando el mismo espacio por lo que se verá un espacio en blanco, puede ser visible (por defecto) o hidden.</dd>
+    
+        <dt><b>overflow: </b><i>scroll;</i></dt>
+        <dd>Indica el comportamiento cuando una caja es mas grande que su contenedor (suele ocurrir si no se indica width i height). Acepta los siguientes valores:</dd>
+        <ul class="contentlist">
+            <li>visible - el contenedor crece hasta que cabe todo el contenido del elemento interior.</li>
+            <li>hidden - se muestra únicamente el contenido visible, el resto queda escondido.</li>
+            <li>scroll - se habilita una barra de scroll para poder visualizar todo el contenido.</li>
+            <li>auto - en caso de que el contenido no quepa, se habilita una scroll-bar.</li>
+        </ul>
+    
+        <dt><b>z-index: </b><i>-1;</i></dt>
+        <dd>Determina el comportamiento con elementos superpuestos, solo afecta a elementos con <i>position: absolute/relative/fixed/sticky</i>. y elementos flex. Admite valores númericos (sin unidad de medida), el numero mas alto ira por delante del mas pequeño, por defecto tiene valor 0 todos los elementos y los ultimos elementos escritos superponen a los anteriores si no se indica lo contrario.</dd>
+    </dl>
+    <div class="h3">
+        <h2 class="title-2" id="flexbox">Flexbox</h2>
+        <p>
+            Guia completa de Flexbox en <a class="link"href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS-TRICKS</a>
+        </p>
+        <p>
+            Modo de distribución de elementos donde se muestran segun un eje principal y uno secundario. No existe top, center, right or left. Se debe evitar medidas de margen, ya que Flex se encarga de ello. En la mayoria de situaciones tendremos un contenedor donde se distrubuyen los distintos elementos a mostrar, utilizaremos unas propiedades distintas para los elementos padres (contenedores) y para los elementos hijos (contenidos). Al contenedor padre le indicaremos la propiedad <i>display: flex;</i> para definir este tipo de distribución.
+        </p>
+        <div class="column-2">
+            <div>
+                <h3 class="title-3">
+                    Propiedades para contenedores: 
+                </h3>
+                <dl>
+                    <dt><b>flex-direction: </b><i>column;</i></dt>
+                    <dd>Determina como se van a distribuir los hijos y como se van a ir mostrando. Valores aceptados: column (acumula elementos en columna de arriba a abajo), row (por defecto, acumula elementos en la misma fila de izquierda a derecha), column-reverse (de abajo a arriba) y row-reverse (de derecha a izquierda).</dd>
+                
+                    <dt><b>flex-wrap: </b><i>wrap;</i></dt>
+                    <dd>Define como se deben comportar los elementos cuando no caben en la misma linea, con <i>no-wrao</i> (por defecto) los elementos cambian su tamaño para encajar en la misma linea, con <i>wrap</i> los elementos conservan siempre su tamaña y hace salto de linea cuando se requiere. Por último <i>wrap-reverse</i> conserva tamaña y hace salto de linea en sentido contrario. </dd> 
+                
+                    <dt><b>flex-flow: </b><i>FLEX-DIRECTION FLEX-WRAP;</i></dt>
+                    <dd>Permite indicar las dos propiedades anteriores en una misma. (Ej. flex-flow: cloumn wrap;)</dd>
+                
+                    <dt><b>justify-content: </b><i>space-around;</i></dt>
+                    <dd>Define el metodo en que se van a alinear los elementos contenidos. Acepta los siguientes valores: <br> <img src="../assets/img/justify-content.svg" alt="Flex justify-content" class="flexbox-img h-center img-fluid"></dd>
+                
+                    <dt><b>align-items: </b><i>stretch;</i></dt>
+                    <dd>Alinea los elementos hijos en el eje contrario dentro del espacio disponible en el contenedor padre. Acepta los siguientes valores: <br> <img src="../assets/img/align-items.svg" alt="Flex align-items" class="flexbox-img h-center img-fluid"></dd>
+                
+                    <dt><b>align-content: </b><i>space-around;</i></dt>
+                    <dd>Define como se distribuye el conjunto de elementos dentro del contenedor, muy útil cuanto tenemos saltos de linea. Acepta los siguiente valores: <br> <img src="../assets/img/align-content.svg" alt="Flex align-content" class="flexbox-img h-center img-fluid"></dd>
+                
+                    <dt><b>gap: </b><i>10px;</i></dt>
+                    <dd>Define el espacio entre los elementos en ambos ejes, no tiene en cuenta espacio entre elemento y borde del contenedor. Indica el espacio minimo que tiene que haber, si otra propiedad como justify-content: space between; deja mas espacio no se tiene en cuenta el gap. También existe la variedad para indicar gap en un solo eje: <i>column-gap</i> i <i>row-gap.</i></dd>
+                </dl>
+            </div>
+            <div>
+                <h3 class="title-3">
+                    Propiedades para los contenidos:
+                </h3>
+                <dl>
+                    <dt><b>order: </b><i>5;</i></dt>
+                    <dd>Define que orden van a tener los elementos en el eje principal y secundario. Se puede indicar individualmente un valor númerico a cada elemento y estos se ordenaran de menor a mayor. Acepta valores negativos.</dd>
+                    <img src="../assets/img/flex-order.svg" alt="flexbox items order property" class="flexbox-img h-center img-fluid">
+                
+                    <dt><b>flex-grow: </b><i>4;</i></dt>
+                    <dd>Reparte el espacio disponible entre los hijos que tengan esta propiedad. El valor númerico indica las proporciones a ocupar, si dos elementos tienen el mismo valor se repartiran el espacio sobrante a partes iguales, si uno tiene un valor mayor, se suman todas las cantidades y se asignan las proporciones de los elementos segun su valor. No acpeta números negativos.</dd>
+                    <img src="../assets/img/flex-grow.svg" alt="flexbox items grow property" class="flexbox-img h-center img-fluid">
+                
+                    <dt><b>flex-shrink: </b><i> 2;</i></dt>
+                    <dd>Al contrario que flex-grow, define la capacidad para encogerse.</dd>
+                
+                    <dt><b>flex-basis: </b><i>2rem;</i> </dt>
+                    <dd>Define el tamaño original de un elemento en el eje principal, es preferible determinar el tamaño de un elemento hijo con esta propiedad que con width o height. Acepta valores númericos, content (tamaño se ajusta al contenido) o auto (se ajusta por propiedad width o height o al contenido si no tiene width o height). </dd>
+                
+                    <dt><b>flex: </b><i>FLEX-GROW FLEX-SHRINK FLEX-BASIS;</i></dt>
+                    <dd>Define las 3 propiedades anteriores en una misma propiedad. Se puede resumir en valores como: none (0 0 auto, No es flexible), auto (1 1 auto, si es flexible) o number (number 0 0, ideal para aplicar proporción y mantener flexibilidad) </dd>
+                
+                    <dt><b>align-self: </b>center;</dt>
+                    <dd>Permite alinear en el eje secundario un solo elemento diferente al resto. Acepta valores como: auto | flex-start | flex-end | center | baseline | stretch</dd>
+                    <img src="../assets/img/flex-grow.svg" alt="flexbox items grow property" class="flexbox-img h-center img-fluid">
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="title-2" id="grid">Grid</h2>
+        <p>
+            Guia completa en: <a class="link"href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS-tricks</a> y comparativa con Flexbox <a class="link"href="http://slides.com/juanandresnunez/css-grid-lo-que-debes-saber" target="_blank">aquí</a>
+        </p>
+        <p>
+            Distribución de los elementos en forma de cuadricula o rejilla, a diferencia de flexbox, tendremos dos ejes principales donde posicionar los elementos y 2 dimensiones. No sustituye a flex, sino que lo complementa. Al igual que flexbox se diferencia entre el container (padre) y los elementos contenidos (items hijos), también diferenciamos las lineas que separan los elementos y los bordes del container (Grid line) que pueden ser horizontal o verticales. Grid Track es una columna o fila donde tenemos todos los Grid cell (item hijo). Por otro lado, también podemos definir un Grid area que es un conjunto de grid cells en filas y columnas contiguas. <br>
+            Para empezar a crear un grid debemos indicar <i>display: grid;</i> al elemento container y configurar las siguientes propiedades diferentes para container e items:
+        </p>
+        <div class="column-2">
+            <div>
+                <h3 class="title-3">
+                    Propiedades para container:
+                </h3>
+                <dl>
+                    <dt><b>grid-template-columns: </b><i>repeat (5, 1fr)</i></dt>
+                    <dd>Define el numero de colummnas y el ancho de cada una. Se puede indicar de varias maneras: 
+                        <ul>
+                            <li>Xpx Xpx Xpx... - crea tantas columnas como valores y le da el ancho indicado respectivamente, acepta valores como px, fr (fracción), %, auto (se adapta al contenido).</li>
+                            <li>repeat(X, 1fr) - crea X columnas con el ancho indicado, puede ser 1fr o Xpx. Acepta mas de un valor y lo repite constantemente. X puede ser un numero o "auto-fill" (llena tantas columnas como quepan en su tamaño minimo y puede dejar celdas vacias) o "auto-fit" (llena el espacio con tantos items haya sin dejar vacios).</li>
+                            <li>minmax(10px, 1fr) 3fr - crea las columnas indicadas en el último valor pero con un min. y un max. limitados entre parentesis. También acepta valores "min-content" o "max-content" que limitan el tamaño al contenido del item.</li>
+                            <li>[column1] 1fr - asigna un nombre a la linea [NOMBRE] y un valor. El nombre se puede usar posteriormente para. En la última columna no hace falta poner valor de anchura. </li>
+                        </ul>
+                        <p>
+                            *Se pueden combinar las diferentes formas de indicar los valores. Ej. <i>repeat(auto-fit, [col-big] minmax(100px, 1fr) [col-md] minmax(50px, 1fr) [col-small] minmax(min-content, 1fr));</i>
+                        </p>
+                    </dd>
+                
+                    <dt><b>grid-template-rows: </b><i>50px 1fr auto 10%;</i></dt>
+                    <dd>Define el numero de filas que va a tener nuestro grid, acepta los mismos valores que la propiedad anterior.</dd>
+                
+                    <dt><b>grid-template-areas: </b><br><i>"header header header"<br>"item1 item1 aside"<br>"item2 item3 aside"<br>"footer footer footer"</i></dt>
+                    <dd>Crea el grid posicionando cada Grid-area en el sitio indicado. Es necesario definir el nombre de cada elemento con <i>grid-area</i> . Este metodo crea de forma sencilla una cuadricula al gusto. Podemos utilizar "." para definir una celda vacia.</dd>
+                
+                    <p>
+                        *Si por alguna razón tenemos mas elementos que celdas configuradas, por defecto se ajustaran al tamaño de su contenido siguiendo la cuadricula. También podemos configurar las propiedades <b>grid-auto-columns</b> y <b>grid-auto-rows</b> que definiran como deben de ser las celdas extra en caso de tener mas items de los que quepan. Acepta los mismos valores que grid-template-columns. También podemos definir el comportamiento de los elementos extra con <b>grid-auto-flow</b> donde admite valores <i>row</i> (por defecto, los elemntos extra se añadiran creando mas filas) o <i>column</i> (los items extra se añadiran creando nuevas columnas). A parte de row/column podemos añadir <i>dense</i> que impide que queden celdas vacias rellenando con los siguientes elementos, por defecto si no se indica puede que queden celdas vacias segun la configuración del grid. <br>
+                        Se diferencia entre configuración grip "Explicit" que se refiere a los elementos tenidos en cuenta en al configuración y a "Implicit" que son los items extra que no hemos tenido en cuenta.
+                    </p>
+                
+                    <dt><b>grid-template: </b>GRID-TEMPLATE-AREAS GRID-TEMPLATE-ROWS GRID-TEMPLATE-COLUMNS</dt>
+                    <dd>propiedad donde se pueden indicar las 3 anteriores en la misma. </dd>
+                
+                    <dt><b>column-gap: </b><i>10px;</i></dt>
+                    <dd>Indica la sepración entre los elementos por columnas, no tiene en cuenta la distancia al borde del container.</dd>
+                
+                    <dt><b>row-gap: </b><i>15px; </i></dt>
+                    <dd>Defina la separación entre filas sin tener en cuenta la distancia al borde del container.</dd>
+                
+                    <dt><b>gap: </b><i>10px; </i></dt>
+                    <dd>Define el espacio entre todos los elementos, con un solo valor damos la misma distancia para row-gap y column-gap a la vez. Si ponemos dos valores seguidos, el primero indica row-gap y el segundo column-gap.</dd>
+                
+                    <dt><b>justify-itmes: </b><i>center; </i></dt>
+                    <dd>Alinea los items en el eje horizontal. Acepta los siguientes valores:
+                        <ul>
+                            <li><i>start </i>- Alinea todos los items al lado izquierdo de celda.</li>
+                            <li><i>end </i>- Alinea los items al lado derecho de su celda.</li>
+                            <li><i>center </i>- Centra los items dentro de su celda.</li>
+                            <li><i>stretch </i>- Rellena todo espacio disponible de todas las celdas de izquierda a derecha.</li>
+                        </ul>
+                    </dd>
+                
+                    <dt><b>align-items: </b> stretch;</dt>
+                    <dd>Justifica los items en el eje vertical dentro de su espacio disponible en cada celda. Acepta los siguientes valores:
+                        <ul>
+                            <li><b>start </b>- Alinea los items al lado superior de su celda.</li>
+                            <li><b>end </b>- Alinea los items al lado inferior de su celda.</li>
+                            <li><b>center </b>- Alinea los items al centro del eje vertical dentro de su celda.</li>
+                            <li><b>stretch </b>- Rellena todo el espacio vertical de cada celda.</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <h3 class="title-3">
+                    Propiedades para items:
+                </h3>   
+                <dl>
+                    <dt><b>grid-column-start: </b><i>column1; </i></dt>
+                    <dd>Asigna la linea de columna donde debe empezar ese elemento. Acepta los siguientes valores: 
+                        <ul>
+                            <li><i>NOMBRE </i>- el nombre asignado en la propiedad grid-template-column del elemento contenedor.</li>
+                            <li><i>X </i> - numero de la linea, empezando des de 0 en el borde izquierdo.</li>
+                            <li><i>span X </i>- se expandirá tantas celdas como marque el valor X.</li>
+                            <li><i>span NOMBRE </i>- se expandirá hasta llegar a la linia con dicho NOMBRE.</li>
+                            <li><i>auto </i> - se coloca automaticamente segun lo definido por otros elementos o el contenedor.</li>
+                        </ul>
+                    </dd>
+                
+                    <dt><b>grid-row-start: </b><i>span 2;</i></dt>
+                    <dd>Indica en que linea de fila debe empezar dicho elemento. Acepta los valores anteriores.</dd>
+                
+                    <dt><b>grid-column-end: </b><i>3;</i></dt>
+                    <dd>Define el numero de linea de columna donde finaliza este elemento. Acepta los mimos valores anteriores.</dd>
+                
+                    <dt><b>grid-row-end: </b><i>auto;</i></dt>
+                    <dd>Indica en que linea de fila debe terminar dicho elemento. Acepta los valores anteriores.</dd>
+                
+                    <dt><b>grid-column: </b><i>GRID-COLUMN-START / GRID-COLUMN-END;</i></dt>
+                    <dd>Define la linea de la columna donde empieza y donde termina en una misma propiedad, separadonlo por "/".</dd>
+                
+                    <dt><b>grid-row: </b><i>GRID-ROW-START / GRID-ROW-END;</i></dt>
+                    <dd>Indica en que linea de fila debe empezar y en cual debe terminar.</dd>
+                
+                    <dt><b>grid-area: </b><i>NOMBRE ROW-START COLUMN-START ROW-END COLUMN-END</i></dt>
+                    <dd>Define el nombre para este item, dicho nombre es util para la propiedad <i>grid-template-area</i> del container. También se puede indicar el inicio y fin de columna y fila para este item.</dd>
+                
+                    <dt><b>order: </b><i>1;</i></dt>
+                    <dd>Igual que flex, se pueden reordenar los items con esta propiedad, se ordenaran de menor a mayor. Acepta numeros negativos.</dd>
+                
+                    <dt><b>justify-self: </b><i>start;</i></dt>
+                    <dd>Alinea este único item a diferencia del resto en su eje horizontal. Admite valores como start, end, center o stretch.</dd>
+                
+                    <dt><b>align-self: </b> <i>center;</i></dt>
+                    <dd>Alinea este único item en su eje vertical. Puede ser: start, end, center o stretch.</dd>
+                
+                    <dt><b>place-self: </b>JUSTIFY-SELF ALIGN-SELF;</dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>        
+        <p>
+            En general, Grid es utilizado para crear las estructuras y layout y Flexbox se utiliza para alinear los elementos interiores de los items grid que lo requieran. <br>  
+        </p>
+    </div>
+</div>
+
+<!-- ANIMACIONES -->
+<div id="animaciones-transiciones">
+    <h2 class="title-2" id="animaciones">Animaciones</h2>
+    <p>Las animaciones permiten cambiar las propiedades de los elementos en un intervalo de tiempo e incluyendo suavidad de movimiento.</p>
+
+    <h3 class="title-3">Transitions</h3>
+    Muy útiles para cuando definimos diferentes valores a un mismo elemento en varios estados y para evitar que cambie bruscamente y añadir un movimiento mas suave.
+
+    <dl>
+        <dt><b>transition-property:</b> <i>border</i></dt>
+        <dd>Propiedad que queremos animar, si no se indica ninguna se aplicara a todas las propiedades modificadas.</dd>
+
+        <dt><b>transition-duration:</b> <i>2s</i></dt>
+        <dd>Duración de la animación, puede ser en segundos (s) o en milisegundos (ms).</dd>
+
+        <dt><b>transition-timing-function:</b> <i>ease-in-out</i></dt>
+        <dd>Define la curva de velocidad. Permite varios valores como: <i>ease </i>(por defecto), <i>linear, ease-in, ease-out, ease-in-out, step-start, step-end.</i> O incluso con curvas bezier personalizadas con <i>cubic-bezier(n,n,n,n)</i> donde las N puede tener un valor entre 0 y 1.</dd>
+
+        <dt><b>transition-delay: </b><i>3s</i></dt>
+        <dd>Permite añadir un tiempo de espera para iniciar la transición. Valores en segundos (s) o milisegundos (ms).</dd>
+
+        <dt><b>transition: </b><i>PROPERTY DURATION TIMING-FUNCTION DELAY, ... </i></dt>
+        <dd>Abreviatura para simplificar todas las propiedades anteriores en una sola, permite añadir mas de una transición separando por comas.</dd>
+    </dl>
+
+    <h3 class="title-3">Animations</h3>
+    <p>
+        Las animaciones permiten crear movimiento y cambiar las propiedades de un elemento cuando queramos. <br>
+        Para crear animaciones hay que declarar primero los <b>@keyframes</b> que despues podremos incorporar a todos los elementos que queramos.
+    </p>
+    <dl>
+        <dt><b>@keyframes </b> <i>NOMBRE</i></dt>
+        <dd>Declaración de los pasos que va a tener la animación junto a las propiedades y valor a animar. Se pueden crear tantos pasos como se deseen. Los pasos se pueden declarar con <i>from</i> y <i>to</i> o de 0% a 100% y cada paso va seguido de propiedades y valor a modificar en ese instante enter corchetes {{ '{' }}...}. Ej.
+        <p><code>
+            @keyframes mymove {{ '{' }} <br>
+            &nbsp;   0%   {{ '{' }}top: 0px; background: red; width: 100px;} <br>
+            &nbsp;    50%  {{ '{' }}top: 50px; background: orange; width: 100px;} <br>
+            &nbsp;    100% {{ '{' }}top: 200px; background: yellow; width: 300px;} <br>
+              }
+        </code></p></dd>
+
+        <p>
+            Una vez hecha la declaración de los keyframes podemos utilizar esta animación para aplicarla a cualquier selector con las siguientes propiedades:
+        </p>
+
+        <dt><b>animation-name: </b><i>NOMBRE</i></dt>
+        <dd>Se indica el nombre que hace referencia al @keyframes que queremos utilizar.</dd>
+
+        <dt><b>animation-duration: </b> 2s;</dt>
+        <dd>Define la duración entre el primer y el último keyframe. Acepta valores en segundos (s) o milisegundos (ms).</dd>
+
+        <dt><b>animation-delay: </b> .5s</dt>
+        <dd>Define el tiempo previo a iniciar la animación. Acepta valores en segundos (s) o milisegundos (ms).</dd>
+
+        <dt><b>animation-direction: </b>reverse;</dt>
+        <dd>Define el orden a seguir de los keyframes. Puede ser: <i>normal</i> (por defecto), <i>reverse, alternate, alternate-reverse.</i></dd>
+
+        <dt><b>animation-fill-mode: </b><i>forwards;</i></dt>
+        <dd>Define que estilo debe aplicarse al elemento antes y/o despues de la animación. Puede ser <i>forwards</i> (se queda con el último keyframe), <i>backwards</i> (esta como el primer keyframe hasta empezar) o <i>both</i> (esta como el primero y se queda como el último).</dd>
+
+        <dt><b>animation-iteration-count: </b><i>infinite;</i></dt>
+        <dd>Define el número de repeticiones que debe reproducirse la animación, puede ser un número o infinito.</dd>
+
+        <dt><b>animation-play-state: </b><i>paused | running; </i></dt>
+        <dd>Útil para pausar o reaunudar las animaciones con cambios de estado del selector o eventos (:hover, :active, scroll, etc.).</dd>
+
+        <dt><b>animation-timing-function: </b><i>ease-out</i></dt>
+        <dd>Define la curva de velocidad. Permite varios valores como: <i>ease </i>(por defecto), <i>linear, ease-in, ease-out, ease-in-out, step-start, step-end.</i> O incluso con curvas bezier personalizadas con <i>cubic-bezier(n,n,n,n)</i> donde las N puede tener un valor entre 0 y 1. </dd>
+
+        <dt><b>animation: </b><i>NAME DURATION TIMING-FUNCTION DELAY ITERATION-COUNT DIRECTION FILL-MODE PLAY-STATE</i></dt>
+        <dd>Abreviatura para definir todas las propiedades en una sola.</dd>
+    </dl>
+</div>
+
+<!-- OTROS -->
+<div id="otros">
+    <h2 class="title-2" id="otras-propiedades">Otras propiedades</h2>
+    <dl>
+        <dt><b>@media </b><i>MEDIATYPE and (MEDIAFEATURE) {{ '{...}' }}</i></dt>
+        <dd>Define reglas para modificar los esticlos CSS segun los condicionales entre parentesis, siempre que sean true se aplicar los estilos contenidos donde solo sustituiran a los originales en caso de repetirlos. También se puede definir el Mediatype que indica a que dispositivos se aplica la regla, por defecto se aplica a todos, podemos limitar a <i>print</i> (impresoras), <i>screen</i> (pc, portatil, tablet, movil, etc) o <i>speech</i> (screenreaders). Entre parentesis debemos indicar el condicional o mediafeature, valores mas comunes:
+        <ul>
+            <li>min-width: Xpx - cuando la anchura minima sea X, también valido para min-height.</li>
+            <li>max-height: Xpx - cuando la altura máxima sea X, también válido para max-width.</li>
+            <li>orientation: landscape - cuando el viewport es mas ancho que alto, "portait" seria el caso contrario.</li>
+            <li>resolution: X - resolución del dispositivo reproductor en dpi o dpcm. Se puede añadir el prefico min- o max-</li>
+        </ul>
+        Podemos añadir auxiliares delante del Mediatype para cambiar el significado como <i>not</i> (invierte el significado) o <i>only</i> (usado para navegadores antiguos), en los Mediafeatures, ademas de <i>not</i> podemos utilizar también <i>and</i> (para añadir mas reglas, deben ser todas true) y <i>or</i> (permite añadir otra regla y solo una de las dos debe ser true para aplicar).
+        <p>*Las medidas habituales para cambiar la disposición suelen medirse segun el "width" cuando es menor de 900px (tablets), cuando es menor de 600px (móviles) y cuando es mayor de 1200px (escritorio), más detalles <a class="link"href="https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488">aquí</a>. Se pueden añadir mas de una regla utilizando el "and" entremedio, ejemplo: <i>@media (max-width: 900px) and (min-width: 600px)</i> <br>
+        También se pueden crear diferentes archivos CSS para utilizarlos en diferentes anchos: <br>
+        <code>&lt;link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css"&gt; <br>
+            &lt;link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css"&gt;</code></p>
+        Info completa en <a class="link"href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">W3schools</a> <br><br>
+        </dd>
+        
+
+        <dt><b>cursor: </b><i>crosshair;</i> </dt>
+        <dd>Permite elegir el aspecto del mouse cuando passa por encima del elemento seleccionado, permite los siguientes valores:</dd>
+        <img src="../assets/img/mousecursor.png" alt="mouse-aparence" class="h-center img-fluid">
+
+        <dt><b>user-select: </b><i>none;</i></dt>
+        <dd>Controla si el texto puede ser seleccionable o no. Puede ser: 
+            <ul>
+                <li>auto: <i>Por defecto</i> - texto seleccionable si el navegador lo permite</li>
+                <li>none: - texto no seleccionable</li>
+                <li>text - texto si seleccionable</li>
+                <li>all - selecciona todo el texto con solo 1 click</li>
+            </ul>
+        </dd>
+
+        
+    </dl>
+</div>
+
+<h2 class="title-2" id="tips-css">Tips</h2>
+    <dl class="contentlist">
+        <dt><b>Height de capa</b></dt>
+        <dd>Si una capa tiene contenido es mejor no definir su height sino que dejar que se adapte sola a su contenido.</dd>
+
+        <dt><b> Los div por defecto tienen </b> <i>display: block;</i></dt>
+        <dd>Los <code>div</code> tienen <code>display:block</code> por defecto,  por lo que si queremos formar una sola columna no hace falta modificar el display. Por otro lado ocupan todo el ancho de la pagina, no hace falta especificar el width si no deseamos lo contrario.</dd>
+
+        <dt><b>Como centrar horizontalmente?</b></dt>
+        <dd>
+            <ul>
+                <li>Si es un elemento "inline" (text, links, etc.) podemos utilizar <code>text-align: center;</code>.</li>
+                <li>Si es un un elemento "block" (div, p, etc.) podemos centrarlo con <code>margin: 0 auto;</code> siempre que hagamos definido un width, sino ocupará todo el ancho y ya se interpreta como centrado.</li>
+            </ul>
+        </dd>
+
+        <dt><b>Como centrar verticalmente?</b></dt>
+        <dd>
+            <ul>
+                <li>Si es un elemento "inline" (text, links, etc.) podemos utilizar el padding o si es un texto de una sola linia podemos utilizar el <code>line-height: ...</code> con el mismo valor que height.</li>
+                <li>Si se trata de multiples lineas de texto podemos utilizar <code>vertical-align: middle;</code> o definir el elemento contenedor como <code>display:flex;</code> y centrarlo con <code>justify-content: center; flex-direction: column;</code>, esto solo funcionará si el contenedor tiene definido un height.</li>
+            </ul>
+        </dd>
+
+        <dt><b>Centrar vertical y horitzonal rapido</b></dt>
+        <dd>poner al padre <code>height: 100%; display: grid;</code> y al hijo <code>margin: auto;</code></dd>
+
+        <dt><b>Hijos de Flexbox con </b><i>margin-top: auto;</i></dt>
+        <dd>Si definimos <code>margin-top: auto; </code> en un elemento hijo de flexbox (column) este elemento se quedará en la parte inferior siempre, independientemente del contenido que tenga encima suyo o el espacio vacio. También podemos añadir <code>margin: 0 auto;</code> antes para centrarlo horizontalmente.</dd>
+
+        <dt><b>El footer abajo sin importar el height</b></dt>
+        <dd>Podemos utilizar Flexbox en el padre que contiene el footer y el resto de elementos de la página para enviar el footer siempre al final de la página tanto si se ocupa todo el height, haya scroll o no. <br>
+                <code >
+                    min-height: 100vh; <br>
+                    display: flex; <br>
+                    flex-direction: column; <br>
+                    justify-content: space-between;
+                </code>
+        </dd>
+    </dl>
+
+
+<h2 style="color: red;">FALTA</h2>
+<ul>
+    <li>!important</li>
+    <li>Variables</li>
+    <li>scroll bar</li>
+    <li>object-fit</li>
+    <li>Combinaciones de selectores</li>
+</ul>
+

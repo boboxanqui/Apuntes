@@ -1,0 +1,10 @@
+<button id="btn-scroll-up" 
+        (click)="scrollUp()"
+        *ngIf="scrollY$ | async">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+
+<!-- <span>
+    scroll en Y = {{ scrollYnum$ | async }}
+</span> -->

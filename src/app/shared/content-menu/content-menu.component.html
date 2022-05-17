@@ -1,0 +1,10 @@
+<div *ngIf="showList">
+    <h2 >On this page</h2>
+    <mat-divider style="max-width: 300px;"></mat-divider>
+    
+    <ul>
+        <li *ngFor="let section of contentSections">
+            <a (click)="onThePage( section.id )">{{ section.name }}</a>
+        </li>
+    </ul>
+</div>

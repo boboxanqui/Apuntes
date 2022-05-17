@@ -1,0 +1,94 @@
+<h2 class="page-title">SASS</h2>
+
+<p>Sass es un lenguaje de programación 100% compatible con CSS pero con mas funcionalidades, dota a CSS de superpoderes
+    de programación como variables, funciones, selectores anidados, operadores, modularización, etc. Actua como un
+    preprocesador de CSS donde se escribe el códgo y despues se compila en un archivo CSS definitivo que es el que dara
+    estilo a nuestro HTML. En la página oficial podemos ver toda la documentación y posibilidades que ofrece <a class="link"
+        href="https://sass-lang.com/" target="_blank">Sass</a></p>
+<p>El archivo SASS debe tener formato <i>.scss</i> aunque también se permite el <i>.sass</i> pero funciona diferente a la hora de compilar. </p>
+<p>Podemos incluir comentarios de una linea en el archivo .scss con // COMENTARIO...</p>
+
+<h2 class="title-2" id="compilacion">Compilación</h2>
+<p>Hay varios metodos para compilar y transformar nuestro documento .scss en un archivo .css donde se represente todo el código escrito en SASS. Es recomendable tener Node.js instalado para realizar la conversión: </p>
+<dl>
+    <dt><strong>Live Sass Compiler</strong> </dt>
+    <dd>Extensión de VS Code donde va compilando cada vez que guardamos un archivo .scss en uno con el mismo nombre pero
+        .css, hay que tenerlo activado abajo a la derecha clicando sobre <i>Watch Sass</i>. Todo el código debe ser escrito en el .scss no podemos escribir en el archivo compilado.</dd>
+
+    <dt><strong>Terminal</strong> </dt>
+    <dd>Primero debemos asegurarnos que tenemos Node.js instalado y Sass instalado, este último lo podemos instalar
+        escribiendo <code>npm install -g sass</code> en la terminal, con esto se instalará en Windows. Una vez instalado
+        debemos escribir <code>node-sass -w CARPETA SCSS -o CARPETA CSS</code> con esto se estará compilando
+        continuamente cualquier archivo que no tenga guión bajo delante "_NOMBRE" esto se hace para poder guardar mas
+        archivos en la carpeta de origen.</dd>
+</dl>
+
+<h2 class="title-2" id="variables">Variables</h2>
+<code>$VARIABLE: VALOR;</code>
+<dd>Las variables se deben declarar con el simbolo $ y son muy utiles para cuando debemos utilizar un mismo valor (color,
+    numero, lista, boolean, maps) multiples veces.</dd>
+
+<h2 class="title-2" id="sass-maps">Maps</h2>
+Declaración: <code>$NOMBRE_MAP : ( "KEY_1" : VALOR_1, "KEY_2" : VALOR_2, "KEY_3" : VALOR_3 ); </code> <br>
+Llamada: <code>map-get($NOMBRE_MAP, KEY);</code>
+
+<dd>Similares a los arrays de JS, son listas que contienen distintos valores (key) que despues los podemos utilizar como
+    valor de una propiedad. Muy util para guardar valores del mismo tipo (fuentes, colores, tamaños) y despues llamarlos
+    con <code>map-get</code>, de esta manera si queremos cambiar un valor que tenemos en distintos selectores solo hace
+    falta cambiar el valor de la declaración del map.</dd>
+
+<h2 class="title-2" id="selectores-anidados">Selectores anidados</h2>
+<code><pre>
+SELECTOR_1 {{ '{' }}
+    SELECTOR_2 {{ '{' }}
+     ... 
+    }
+}
+</pre> </code>
+<dd>A diferencia de CSS, podemos anidar varios selectores, de esta manera el SELECTOR_2 solo se aplicara a todos los
+    elementos de este tipo que esten dentro de un elemeto del tipo SELECTOR_1. Podemos escribir tantos selectores
+    interiores como queramos con un máximo de 3 niveles de anidado. También podemos referirnos al selector padre como
+    "&" para simplificar el código, muy útil para pseudo-selectores como &:hover.</dd>
+
+<h2 class="title-2" id="import">@import</h2>
+<code>@import 'NOMBRE_ARCHIVO' ;</code>
+<dd>Es muy frecuente tener varios archivos .scss que permiten separar y organizar el código mejor que en un solo archivo,
+    pero solo se puede compilar un .scss a .css, por este motivo se crean otros archivos .scss con una barra baja
+    delante del nombre "_NOMBRE.scss" y despues los importamos al archivo compilador con esta función, cuando llamamos
+    al archivo no hace falta poner la barra baja ni la terminación .scss. La modularización es muy util para separar
+    archivos con variables, funciones, maps o incluso el codigo por partes de la estructura.</dd>
+
+<h2 class="title-2" id="sass-function">@function</h2>
+<code><pre>
+@function NOMBRE (ARGUMENTOS) {{ '{' }}
+    CODE_BLOCK 
+}
+</pre> </code>
+<dd>Muy similar al funcionamiento en Javascript, podemos crear una función para que calcule o ejecute ciertas
+    instrucciones o incluso para que nos devuelva un valor con el <code>@return</code>.</dd>
+
+<h2 class="title-2" id="mixin">@mixin</h2>
+<code><pre>
+@mixin NOMBRE (ARGUMENTOS) {{ '{' }}
+    STYLE BLOCK
+}
+</pre></code>
+<dd>Muy parecido a @function pero mientras la anterior se usa mas para el calculo y retorno de valores, este se utiliza
+    mas para agrupar estilos o compilar varias propiedades que despues queremos aplicar a distintos selectores, entonces
+    solo con llamar al @mixin creado con <code>@include NOMBRE (ARGUMENTOS);</code> ya estaremos aplicando todas las
+    propiedades del mixin.</dd>
+
+<h2 class="title-2" id="sass-extend">@extend</h2>
+<code>@extend SELECTOR;</code>
+<dd>Sirve para copiar el mismo estilo de un selector a otro, escribimos @extend y el nombre del selector origen dentro
+    del selector destino para copiar estilos, podemos aplicar mas estilos en el destino despues de esto. </dd>
+
+<h2 class="title-2" id="sass-operadores">Operadores</h2>
+<code>- + * /</code>
+<dd>En Sass podemos realizar operaciones para obtener el valor final siempre que sea entre la misma unidad métrica. </dd>
+
+<h2 class="title-2" id="sass-colores">Colores</h2>
+<dd>Sass tiene multiples formulas para modificar los colores, muy útil para cuando tenemos una referencia de un color y
+    queremos sacar otro color en relación a este. Con estas funciones se pueden cambiar varios colores de una pagina
+    modificando solo la referencia original. Guia completa en <a class="link"
+        href="https://sass-lang.com/documentation/modules/color" target="_blank">Sass</a>.</dd>

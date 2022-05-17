@@ -1,0 +1,386 @@
+
+    <h2 class="page-title">Typescript</h2>
+    <p class="fs-5 fw-light">Con la intención de mejorar JavaScript, Microsoft lanzo TypeScript, el cual utiliza
+        todo el potencial de JS aplicando distintas mejoras y funcionalidades, sobretodo cuando son necesarias
+        muchas lineas de JS para la app a desarrollar. <br>
+        TypeScript es un Superset de JS que permite escribir código JS, con todas sus ventajas, de manera mas
+        simplificada y tipada para luego compilarlo todo en un archivo .js gracias a través de Node.js <br>
+        Una de las principales características es el sistema de tipado que permite a TS saber el tipo de dato de una
+        variable o valor y de esta forma validar si el código es correcto. Por otro lado, gracias a TS también
+        tenemos clases, arrow functions, mejores sugerencias al escribir y autocompletado.</p>
+
+    <h2 class="title-2" id="como-utilizarlo">Como utilizarlo</h2>
+    <p class="fs-5 fw-light">Debemos tener Node.js instalado e instalar el paquete de Typescript con
+        <code>npm install -g typescript</code>. Una vez creado nuestro archivo NOMBRE.ts, podemos compilar el
+        archivo escribiendo <code>tsc NOMBRE.ts</code> esto creará un archivo con el mismo nombre pero en JavaScript
+        con extensión .js de manera que pueda ser interpretado por el navegador. <br>
+        Se pueden compilar todos los archivos de una misma carpeta con <code>tsc *.ts</code><br>
+        O podemos ordenar que vaya compilando continuamente a cada cambio con <code>tsc NOMBRE.ts -w</code> de
+        --watch
+    </p>
+
+    <h2 class="title-2" id="tsconfig">Archivo tsconfig.json</h2>
+    <p class="fs-5 fw-light">Este archivo debe estar en la carpeta del proyecto y sirve para definir las reglas de
+        compilación a usar para crear el archivo .js definitivo. Se definen los valores dentro de un objeto que
+        contiene el objeto <code>"compilerOptions": {{ '{' }}...}</code> con las reglas de la compilación seguido del array
+        <code>"include": [...]</code> con los archivos a procesar. Las reglas mas comunes son:
+    </p>
+    <div class="mx-2 fw-light fs-5">
+        <p><b>"target": </b>versión de ecmascript a utilizar. Normalmente <i>es2017</i></p>
+        <p><b>"module": </b>modulo de compilación. Normalmente <i>commonjs</i></p>
+        <p><b>"strictNullChecks": </b><i>true/false</i> para indicar si las variables solo puede tener valores null
+            o undefined.</p>
+        <div class="col-3 mx-auto">
+            <code>
+                {{ '{' }}<br>
+                    "compilerOptions": {{ '{' }}<br>
+                        "target": "es2017",<br>
+                        "module": "commonjs",<br>
+                        "strictNullChecks": true<br>
+                    },<br>
+                    "include": ["**/*.ts"]<br>
+                }
+            </code>
+        </div>
+    </div>
+    <p>Configuración estandard, donde <code>"include": </code> acepta cualquier nombre de archivo que acabe en
+        <i>.ts</i>, también se pueden listar los nombres exactos de los archivos o poner a continuación el array
+        <code>"exclude": [...]</code> con los archivos que no queremos compilar.
+    </p>
+    <p>Una vez creado este archivo con tan solo poner <code>tsc</code> en la terminal se realizará la compilación.
+    </p>
+    <p>Por otro lado, también podemos hacer servir la configuración que nos ofrece <code>npx tsc --init</code> el
+        cual nos crea un tsconfig.json con las opciones básicas habilitadas y el resto de opciones comentadas.
+        Recomendable habilitar <i>"outDir", "sourceMap" i "esModuleInterop"</i>.  <a class="link"
+            href="https://www.digitalocean.com/community/tutorials/typescript-new-project" target="blank">Guia completa</a></p>
+    <p>Toda la documentación acerca de este archivo en la <a class="link"
+            href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="blank">página oficial de TypeScript</a></p>
+
+    <!-- VARIABLES -->
+    <h2 class="title-2" id="ts-variables">Variables</h2>
+    <p class="fs-5 fw-light">A diferencia de JS que acepta cualquier tipo de dato en las variables, en TS al ser
+        altamente tipado, las variables solo aceptan el tipo de dato con el que han sido inicializadas en la
+        declaración. En caso de ser otro tipo saltaria error en la terminal. Tipos de datos: <i>string, number,
+            boolean, null, undefined</i>. Este tipado ayuda a detectar errores en nuestro código. <br></p>
+    <div class="text-center fs-4">
+        <code>let VARIABLE: TIPO;</code>
+    </div>
+    <p>También pueden ser declaradas sin inicializar, en este caso la variable sera del tipo <i>any</i> y aceptará
+        cualquier tipo de dato y cambio. <br>
+        <b class="text-info">Type annotations</b> o <b class="text-info">Type declarations</b> permiten indicar el
+        tipo de dato que debe contener una variable cuando no es inicializada en la misma declaración, se indica
+        siguendo el nombre de ":" y el tipo de dato (incluyendo <i>any</i> o multiples tipos separados por barra
+        vertical "|"). Cuando definimos varias posibilidades de tipos estamos hablando de <b class="text-info">Union
+            types</b> Ej:
+    </p>
+    <div class="text-center fs-4">
+        <code>let id: string | number;</code>
+    </div>
+    <p>En este úttimo caso solo podremos utilizar metodos o propiedades que se compartan entre todos los posibles
+        tipos de dato. Por ejemplo si tenemos <i>number | string</i> no podremos utilizar <i>.toUpperCase()</i>
+        porque number no permite este método aunque el valor sea string.</p>
+
+    <!-- PARAMETROS -->
+    <h2 class="title-2" id="ts-parametros">Parámetros</h2>
+    <p>Igual que las variables, podemos indicar el tipo de dato que se debe recibir como argumento de la función
+        llamada. </p>
+    <div class="text-center fs-4">
+        <code>function NOMBRE (PARAMETER: TYPE) {{ '{' }}...};</code>
+    </div>
+    <p>TS también permite <b class="text-info">parametros opcionales</b> los cuales no son obligatorios recibir
+        ningún argumento para ejecutar la función, en caso de no tener ningun argumento estos tomaran el valor de
+        <i>undefined</i>. Para marcar un parametro como opcional debemos añadir "?" despues del nombre. Ej.
+        <code>function (name?: string)</code>. La función puede calcular o retornar distintos valores en función de
+        si recibe parametro o no.
+    </p>
+    <p>Por otro lado, con <b class="text-info">default parametrer</b> podemos marcar un valor por defecto en caso de
+        no recibir nada como argumento. Para ello debemos inicializar el parametros al declarar la función con el
+        valor predeterminado deseado, este valor también marcará el tipo de dato que acepta dicho parametro. Ej.
+        <code>function (name = 'Anonymous')</code>
+    </p>
+    <p>El orden de los parametros siempre debe ser primero normales, despues opcionales y por último los default.
+    </p>
+    <p>Incluso se puede asignar <b class="text-info">tipo para return</b>, de manera que si la función no devuelve
+        este tipo de dato salga un error. Para ello debemos indicarlo a continuación del parentesis de los
+        parametros. Aún cuando no tiene return, podemos indicar ": void".</p>
+    <div class="text-center fs-4">
+        <code>function NOMBRE (PARAMETERES): TYPE {{ '{' }}...};</code>
+    </div>
+
+    <!-- ARRAYS -->
+    <h2 class="title-2" id="ts-arrays">Arrays</h2>
+    <p>TypeScript permite indicar el tipo de dato que debe almacenar un array, se puede definir de 2 maneras:</p>
+    <div class="text-center fs-4">
+        <p><code>let NOMBRE: TYPE[] = [...]</code> </p>
+        <p><code>let NOMBRE: Array&lt;TYPE&gt; = [...]</code></p>
+    </div>
+    <p>Si tenemos un array dentro de otro array podemos indicar el tipo de ambos arrays, Ej.
+        <code>let names: string[][] = [name1, [name2, name3]]</code>
+    </p>
+    <p>Podemos indicar mas de un tipo de dato con el separador "|", en este caso el array podra ser de un tipo o de
+        otro, si queremo que incluya una mezcla de los tipos debemos ponerlo entre parentesis, Ej.
+        <code>let id: (string | number)[] = [...]</code>
+    </p>
+    <p>También se puede crear un <b class="text-info">tuple</b> para indicar el tipo de valor de cada elemento del
+        array. Esta técnica también establece la longitud del array por lo que obtendremos error si el valor no
+        coincide con el tipo de dicha posición o si la longitud del array no es la indicada.</p>
+    <div class="text-center fs-4">
+        <code>let NOMBRE: [TYPE-1, TYPE-2, TYPE-3] = [VALUE-1, VALUE-2, VALUE-3]</code>
+    </div>
+    <p>En cuanto a parametros, también podemos indicar que un parametro es un string del tipo que se requiera como
+        <code>(PARAM: TYPE[])</code>, incluso si en una función tenemos muchos parametros podemos declarar un tuple
+        primero con todos los tipos de datos a utilizar como parametros y despues incluir el tuple en modo spread
+        como argumento <code>function NAME(...TUPLE){{ '{' }}...}</code>
+    </p>
+
+    <!-- CUSTOM TYPES -->
+    <h2 class="title-2" id="custom-types">Custom Types</h2>
+    <p>Así como los tipos de datos primitivos en TS también existen tipos de datos mas complejos y personalizables
+        que nos ayudan a evitar y detectar errores.</p>
+
+    <ul class="mx-5">
+        <li class="my-1"><b class="text-info">enum</b> - listado enumerado de valores, se debe declarar primero, muy
+            parecido a la sintaxis de un objeto pero con la palabra reservada <i>enum:</i>
+            <div class="col-3 mx-auto">
+                <code>
+                enum nOMBRE {{ '{' }}<br>
+                    ITEM-1 = VALOR-1,<br>
+                    ITEM-2 = VALOR-2,<br>
+                    ITEM-3 = VALOR-3,<br>
+                }
+            </code>
+            </div>
+            Una vez declarada (nombre siempre con primera mayuscula), podemos indicar una variable que solo puede
+            contener este tipo de dato <code>let VARIABLE: nOMBRE </code> o incluso asignar un valor de enum
+            directamente <code>let VARIABLE = nOMBRE.VALOR</code> <br>
+            Los enums pueden ser de string o number, por lo que cada item puede contener un valor distinto del mismo
+            tipo. En caso de no asignar valor, estos tendran el number de su indice por defecto.
+        </li>
+
+        <li><b class="text-info">Literal Types</b> - Permiten definir los unicos valores que se pueden aceptar:
+            <div class="text-center fs-4">
+                <code>type nOMBRE = VALUE-1 | VALUE-2 | VALUE-3 ...</code>
+            </div>
+        </li>
+        <li class="my-1"><b class="text-info">Type Aliases</b> - plantilla personalizada de tipos, muy útil para
+            elementos complejos como array o objetos que requieren definir multiples tipos y se van a ir repitiendo
+            en varias ocasiones. Permite definir una plantilla con la variedad de tipos que queremos para despues
+            asignarla cuantas veces queramos
+            <div class="text-center fs-4">
+                <code> type nOMBRE = {{ '{' }}...}</code>
+            </div>
+        </li>
+
+        <li class="my-1"><b class="text-info">Function Type</b> - plantilla personaliza para definir tipos de
+            argumentos y returns para funciones, se utiliza la sintaxis arrow:
+            <div class="text-center fs-4">
+                <code>type nOMBRE = (ARG-1: TYPE, ARG-2: TYPE, ... ) => TYPE-RETURN</code>
+            </div>
+            <p>Este tipado de funciones suele ser muy util para funciones callback. <strong>Importante:</strong> en
+                TS siempre debemos incluir los parametros entre parentesis, aunque solo haya uno en una arrow
+                function.</p>
+        </li>
+
+        <li class="my-1"><b class="text-info">Generic Types</b> - plantilla personalizada de elementos donde no se
+            no se define el tipo de dato al declarar, sino al asignarla a una variable o valor. La declaración
+            utiliza una abreviatura para asignar el tipo a los distintos elementos, al asignar esta abreviatura es
+            sustituida por un tipo de dato real.
+            <div class="text-center fs-4">
+                <code>type nOMBRE &lt;T&gt; {{ '{' }}ITEM-1: T, ITEM-2: T[], ITEM-3: {{ '{' }}PROP-1: T, PROP-2: T}...</code>
+            </div>
+            <p>A la hora de asignar debemos escribir <code>let VARIABLE: NOMBRE&lt;X&gt;</code> donde X puede ser
+                cualquier tipo de dato primitivo o no o incluso otro custom type.</p>
+            <p>Este tipado genérico también es útil a la hora de declarar funciones en las que algunos de los
+                parametros o return puede variar de tipo, en este caso podemos utilizar un tipado genérico para
+                definirlo en la llamada de la función. Ej: una función de rellena un array del argumento que reciba:
+            </p>
+            <div class="col-5 mx-auto">
+                <code>
+                   function getFilledArray&lt;T&gt;(value: T, n: number): T[] {{ '{' }} <br>
+                    return Array(n).fill(value); <br>
+                  } 
+                </code>
+            </div>
+            <p>Cuando llamemos a la función por cualquier tipo como argumento, automaticamente ya sabe de que tipo
+                es el resto de elementos definidos con T.</p>
+        </li>
+    </ul>
+
+    <!-- TYPE GUARDS -->
+    <h2 class="title-2" id="type-guards">Type Guards</h2>
+    <p>Evaluaciones del tipo de dato, muy útiles para funciones con parametros que pueden aceptar mas de un tipo de
+        dato, podemos evaluar el dato que se recibe en la llamada para actuar de una forma u otra. La mas conocida
+        es <b class="text-info">typeof</b>, mediante un concidional evalua el tipo de dato del argumento</p>
+    <div class="text-center fs-4">
+        <code>if (typeof VARIABLE === 'TYPE') {{ '{' }}...}</code>
+    </div>
+    <p>Otra tipo de evaluación puede ser <b class="text-info">in</b> que sirve para identificar si una propiedad o
+        metodo puede hacerse servir en una variable. Se pueden utilizar propiedades y metodos propios del lenguaje o
+        creados por clases o tipados personalizados, esta evaluación tambiés se ejecuta dentro del condicional if:
+    </p>
+    <div class="text-center fs-4">
+        <code>if ("METHOD" in VARIABLE) {{ '{' }}...}</code>
+    </div>
+    <p>En el caso que tengas 2 posibles evaluaciones a hacer, podemos utilizar <i>else</i> para la segunda, TS
+        entenderá que solo puede ser la otra opción no evaluada. O incluso dejar solo un condicional para una opción
+        y a continuación sin condicional, TS interpretará que si la condición resulta true debe ejecutar lo que esté
+        dentro de la condición, en caso contrario lo que haya a continuación.</p>
+
+    <!-- OBJETOS -->
+    <h2 class="title-2" id="ts-objectos">Objectos</h2>
+    <p>TS permite definir el tipo de datos para las propiedades de los objetos de tal manera:</p>
+    <div class="text-center fs-4">
+        <code>let NOMBRE: {{ '{' }}PROPIEDAD-1: TYPE, PROPIEDAD-2: TYPE, PROPIEDAD-3: TYPE}</code>
+    </div>
+    <p>En caso de que el objeto contenga propiedades con otros objetos o arrays también se pueden definir como hasta
+        ahora.</p>
+
+    <!-- INTERFACE -->
+    <h2 class="title-2" id="ts-interfaces">Interfaces</h2>
+    <p>Tipado personalizado muy parecido a Type Aliases pero en este caso, es solo válido para objetos, por lo que
+        ayuda a preservar la POO y sirve como complento de las classes. Para declararlo utilizamos la palabra
+        reservada <i>interface</i> y añadimos entre brackets las propiedades y metodos deseados</p>
+    <div class="col-7 mx-auto">
+        <code><pre>
+        interface nOMBRE {{ '{' }} <br>
+            PROP-1: TYPE-1; <br>
+            PROP-2: TYPE-2 <br>
+            METHOD-1: (PARAM-1: TYPE) => TYPE-RETURN;<br>
+            METHOD-2: (PARAM-1: TYPE-1, PARAM-2: TYPE-2) => TYPE-RETURN;<br>
+        }
+        </pre></code>
+    </div>
+    <p>Se permiten infinitos niveles de anidamiento, por lo que podemos definir multiples tipos de objetos dentro de
+        otro objetos. Para mejor lectura y organización también se pueden incluir interfaces dentro de otras
+        interfaces, simplemente asignando una interface a una de las propiedades de otra interface.</p>
+    <p>También se puede hacer uso de <b class="text-info">extends</b> que permite copiar la configuración de una
+        interface y añadir las propiedades o metedos deseados. Para ello hay que poner
+        <code>extends iNTERFACE</code> a continuación del nombre de la interface donde queremos copiar todo el
+        contenido.
+    </p>
+    <p>Cuando debemos declarar una interface para objetos que no sabemos cuantas propiedades pueden tener de un
+        mismo tipo, podemos declara un <b class="text-info">Index Signatures</b> que permite definir que va a haber
+        multiples propiedades de un mismo tipo, sin dar nombre a la propiedad hasta que se declara el objeto. Este
+        tipo de propiedad se define como <code>[NOMBRE: TYPE-NOMBRE]: TYPE;</code></p>
+    <p>Por otro lado, podemos declarar <b class="text-info">propiedades o metodos opcionales</b> finalizando con un
+        <b class="text-info">?</b> el nombre. Ej: <code>interface Person {{ '{' }}name: string; daughters?: number;}</code>. Cuando llamamos a una propiedad opcional de un objeto, como no sabemos si se ha declarado valor o no, podemos añadir <b class="text-info">?</b> a la llamada para que en caso de tener valor se obtenga o sino sea <i>undefinded</i>. También podemos añadir el operador <b class="text-info">||</b> el cual permite incluir otro valor a la llamada para que en caso de sea <i>undefined o null</i> se obtenga el otro valor.</p>
+        <div class="col-9 mx-auto">
+            <code><pre>
+            const mandi: Person {{ '{' }}
+                name: 'Tamara'
+            }
+            console.log(mandi.daughters? || 0) 
+        </pre></code>
+        <p> <i>*Se printará 0 porque mandi.daughters es undefined</i></p> 
+        </div>
+    <p>Podemos declarar mas de una interface a un objeto con el operador <b class="text-info">?</b> para que obtenga
+        propiedades y metodos de todas las interfaces o podemos indicar que puede ser de una u otra interface con el
+        operador <b class="text-info">|</b> como por ejemplo: <code>let marcos = Human & Wizar | Unicorn;</code>
+        También se pueden combinar varios interfaces entre ellos con estos operadores.</p>
+
+    <!-- CLASS -->
+    <h2 class="title-2" id="ts-classes">Classes</h2>
+    <p>Una de las mejores maneras de trabajar con objetos. Una class se define como un molde para crear objetos del
+        mismo tipo, es una herramienta esencial de la POO que dota de encapsulación, abstrabtismo y modulación entre
+        otras características. Permite definir propiedades y metodos que pueden tener todos los objetos creados con
+        esta clase.</p>
+    <p>Para crear una class, debemos utilizar la palabra reservada <b class="text-info">class</b> seguido del nombre
+        empezando en mayuscula, abrimos brackets y declaramos las propiedades que deseamos que tenga junto a su
+        tipo. No hace falta definir el tipo de variable (let, var, const) ni para propiedades ni metodos. </p>
+    <p>El principal metodo de una clase es el <b class="text-info">constructor()</b> es el encargado de crear los
+        objetos. Recibe los parametros que debe asignar a las propiedades de la class haciendo referencia a ellos
+        con <b class="text-info">this</b>. A parte del metodo constructo podemos declarar otros metodos que vayamos
+        a necesitar.</p>
+
+    <div class="col-6 mx-auto fs-4">
+        <code><pre>
+            class nOMBRE {{ '{' }}
+                PROP-1: TYPE;
+                PROP-2: TYPE;
+                PROP-3: TYPE;
+
+                constructor (PROP-1, PROP-2, PROP-3) {{ '{' }}
+                    this.PROP-1 = PROP-1;
+                    this.PROP-2 = PROP-2;
+                    this.PROP-3 = PROP-3;
+                }
+
+                METHOD-1 (PROPs): TYPE {{ '{' }}...}
+                METHOD-2 (PROPs): TYPE {{ '{' }}...}
+            }
+        </pre></code>
+    </div>
+    <p>Para completar la encapsulación, podemos aplicar <b class="text-info">modificadores de acceso</b> los cuales
+        limitan o restringen el acceso a las propiedades y metodos, tan solo hay que escribir el tipo de modificador
+        delante del nombre de propiedad o metodo. Hay 4 distintos:</p>
+    <div class="mx-2">
+        <ul>
+            <li><b>public </b>(por defecto) - permite el acceso y modificación en todo momento.</li>
+            <li><b>private</b> - restringe acceso y modificación menos a la misma clase que lo ha creado, la cual
+                necesita getters o setters para ser visible y modificado.</li>
+            <li><b>static</b> - elemento perteneciente a la classe y no al objeto. Accesible con la classe.</li>
+            <li><b>protected</b> - restringe acceso y modificación menos a la misma clase que lo ha creado y a las
+                classes descendientes (extends), las cuales necesitan getters o setters.</li>
+            <li><b>readonly</b> - permite solo la lectura a todo el mundo. La modificación solo se puede realizar
+                desde la misma classe creadora con un setter.</li>
+        </ul>
+    </div>
+    <p>Las <i>interface</i> puede incluirse dentro de una <i>class</i> siguiendo en el nombre con <b
+            class="text-info">implements INTERFACE</b>, de esta manera la classe recibe las propiedades y metodos de
+        interface.</p>
+    <p>Una manera de abreviar es delcarar las propiedades y tipos directamente dentro del constructor. Pueden
+        existir propiedades que no hagan falta pasar por el constructor e iniciamos su valor directamente fuera del
+        constructor o en otro metodo.</p>
+    <div class="col-6 mx-auto fs-4">
+        <code><pre>
+                class nOMBRE {{ '{' }}
+                        
+                    constructor (public PROP-1: TYPE,
+                        public PROP-2: TYPE, 
+                        public PROP-3: TYPE
+                    ) {{ '{' }}}
+
+                    METHOD-1 (PROPs): TYPE {{ '{' }}...}
+                    METHOD-2 (PROPs): TYPE {{ '{' }}...}
+                }
+            </pre></code>
+    </div>
+    <p>Con este metodo abreviado nos ahorramos declarar las propiedades antes del constructor y dentro con el
+        <i>this.prop = prop</i>. Por otro lado, como el constructor no deja de ser una función también se pueden
+        poner propiedades opcionales con <span class="text-info">?</span> despues del nombre
+        <code>public prop?: type</code> o inicializar con valores por defecto <code>public prop: type = value</code>
+    </p>
+    <p>Al igual que con las interfaces, podemos crear herencia haciendo <span class="text-info">extends</span> a la
+        classe hija, de manera que <code>class HIJA extends MADRE {{ '{' }}..}</code> la class hija tendra todas las
+        propiedades y metodos de la madre a parte de los suyos que queramos añadir. Al tener un constructor heredado
+        debemos hacer referencia a el dentro del constructor hija con la expresion
+        <code>Super (ARGUMENTOS_CLASS_MADRE)</code></p>
+    <div class="col-6 mx-auto fs-4">
+        <code><pre>
+                class hIJA extends mADRE {{ '{' }}
+                        
+                    constructor (public PROP-1: TYPE,
+                        public PROP-2: TYPE, 
+                        public PROP-3: TYPE
+                    ) {{ '{' }}
+                        super(PROPS_MADRE)
+                    }
+                }
+            </pre></code>
+    </div>
+
+    <h2 class="title-2" id="interface-vs-class">Interface VS Class</h2>
+    <p>Diferencias entre interface y class:</p>
+    <ol style="list-style-position: inside;">
+        <li>Las interfaces no existen en JS, en cambio las classes si que las implementaron.</li>
+        <li>Una interface solo sirve para definir el tipado, en cambio en la classe podemos definir tipado y valores
+        </li>
+        <li>Una classe puede crear metodos (constructor, getters, setters, etc). La interface solo define tipado de
+            parametros y return</li>
+    </ol>
+
+    <!-- DECORADORES -->
+    <h2 class="title-2" id="ts-decoradores">Decoradores</h2>
+    <p>Sirven para cambiar las classes cuando son definidas. Muy utilizadas en Angular, ya que se utilizan muchas
+        classes. Es una función que expande una class añadiendo funcionalidades especiales.</p>
+        <p>El decorador se debe definir y llamar justo antes de la definición de la class con <code>@DECORADOR</code></p>

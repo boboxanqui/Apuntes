@@ -1,0 +1,446 @@
+<h2 class="page-title">HTML</h2>
+<i>HyperText Markup Language</i> es un lenguaje de marcado que define la estructura de tu contenido. Utiliza etiquetas (tags) para enmarcar y definir cada parte del contenido. También se pueden incluir atributos en las etiquetas para definir mejor o personalizarlas.
+
+<p>
+    HTML master tag reference 
+    <a class="link"href="https://www.w3schools.com/tags/ref_byfunc.asp" target="_blank"> w3schools</a>
+</p>
+
+<section> <!-- ESTRUCTURA -->
+    <h2 class="title-2" id="estructura">Estructura</h2>
+    <img class="float-rigth img-fluid" src="../assets/img/html5structure.png" alt="Estructura básica HTML" >
+    <dl>
+        <dt><b>&lt;!DOCTYPE html&gt;</b> </dt>
+        <dd>Marca HTML, se pone al principio de todo para indicar que el codigo es HTML5.</dd>
+
+        <dt><strong>&lt;html&gt;...&lt;/html&gt;</strong> </dt>
+        <dd>Código, indica el principio y final del código HTML. <br>
+            <i class="fa-solid fa-gears"></i> <code>lang="..."</code>
+            <span class="caption"> (es, en-US, cat...) Atributo que indica el lenguaje del contenido.</span> 
+        </dd>
+
+        <dt><b>&lt;head&gt;...&lt;/head&gt;</b></dt>
+        <dd>Metadatos, se incluen etiquetas con metadatos que ayudan y dan mas información acerca del contenido que vamos a encontrar.</dd>
+        
+        <dt><b> &lt;meta&gt;</b></dt>
+        <dd>Metadata, incluimos los datos de metada con atributos. <br>
+            <i class="fa-solid fa-gears"></i> <code>charset="..."</code>
+            <span class="caption">(UTF-8) Codificación de los caracteres, que simbolos o caracteres se van a utilizar, ayuda a escritura con tildes. </span> <br>
+            <i class="fa-solid fa-gears"></i> <code>name="..." content="..."</code>
+            <span class="caption"> (author + Marcos, Keywords + Crack, viewport + width=device-width, initial-scale=1.0 (ancho + ancho del dispositivo y escala 1 ) Se indica el <i>name</i> el tipo de información que se va a dar y en <i>content</i> de defina la información</span> 
+        </dd>
+        
+        <dt><b> &lt;title&gt;...&lt;/title&gt;</b></dt>
+        <dd>Título, texto que aparecera como título de nuestra página en la pestaña.</dd>
+        
+        <dt> <b>&lt;link...&gt;</b></dt>
+        <dd>Sirve para lincar a otros archivos o documentos. Útil para archivo CSS con atributos y url con fuentes tipograficas en linea: <br> 
+            <i class="fa-solid fa-gears"></i><code class="mono">rel="stylesheet" "href="style.css"</code>  </dd>
+        
+        <dt> <b>&lt;body&gt;...&lt;/body&gt;</b></dt>
+        <dd>Contenido, cuerpo de la página donde incluiremos todo el contenido a mostrar. </dd>
+        
+        <dt> <b>&lt;header&gt;...&lt;/header&gt;</b></dt>
+        <dd>Cabecera, suele contener marca y/o logo que linka a la pagina inicial.</dd>
+        
+        <dt> <b>&lt;nav&gt;...&lt;/nav&gt;</b></dt>
+        <dd>Navegación, suele contener el menu de navegación de la página.</dd>
+        
+        <dt><b>&lt;article&gt;...&lt;/article&gt;</b></dt>
+        <dd>Articulo, suele contener contenido independiente, puede haber multiples articulos si es necesario (Ej. noticias).</dd>
+
+        <dt> <b>&lt;section&gt;...&lt;/section&gt;</b> </dt>
+        <dd>Sección, diferencia grandes partes del contenido y lo divide en secciones (Ej. capitulos, categorias).</dd>
+        
+        <dt><b>&lt;main&gt;...&lt;/main&gt;</b></dt>
+        <dd>Contenido principal, marca el contenido principal de la página.</dd>
+        
+        <dt><b>&lt;div&gt;...&lt;/div&gt;</b></dt>
+        <dd>División, sirve para diferenciar diferentes partes del contenido.</dd>
+        
+        <dt> <b>&lt;p&gt;...&lt;/p&gt;</b></dt>
+        <dd>Paragrafo, engloba el conjunto de el texto y realiza un salto de linia al finalizar.</dd>
+        
+        <dt><b>&lt;span&gt;...&lt;/span&gt;</b></dt>
+        <dd>División 2, útil para clasificar o diferenciar texto con ciertos atributos.</dd>
+        
+        <dt> <b>&lt;aside&gt;...&lt;/aside&gt;</b></dt>
+        <dd>Extra info, puede contener algo no relacionado con el contenido como, banner, publicidad, etc. </dd>
+        
+        <dt> <b>&lt;hr&gt;</b></dt>
+        <dd>Linea horizontal, dibuja una linea en todo lo ancho y salto de linea.</dd>
+        
+        <dt> <b>&lt;br&gt;</b></dt>
+        <dd>Break, salto de linea</dd>
+        
+        <dt> <b>&lt;footer&gt;...&lt;/footer&gt;</b></dt>
+        <dd>Pie de pàgina, suele contener marca con &#169; 2021, ayuda, privacidad, contacto, etc. </dd>
+    </dl>
+
+</section>
+
+<div> <!-- FORMATO -->
+    <h2 class="title-2" id="formato">Formato</h2>
+  
+    <b>&lt;!--...--&gt;</b> Comentario <br>
+    <b>&lt;h1&gt;...&lt;/h1&gt;</b><h1 style="display: inline-block;">Título 1</h1><br>
+    <b>&lt;h2&gt;...&lt;/h2&gt;</b><h2 style="display: inline-block; margin-top: 0;">Título 2</h2><br>
+    <b>&lt;h3&gt;...&lt;/h3&gt;</b><h3 style="display: inline-block;">Título 3</h3><br>
+    <b>&lt;h4&gt;...&lt;/h4&gt;</b><h4 style="display: inline-block;">Título 4</h4><br>
+    <b>&lt;h5&gt;...&lt;/h5&gt;</b><h5 style="display: inline-block;">Título 5</h5><br>
+    <b>&lt;h6&gt;...&lt;/h6&gt;</b><h6 style="display: inline-block;">Título 6</h6><br>
+    <b>&lt;hgroup&gt;...&lt;/hgroup&gt;</b>Agrupa títulos para diferenciarlos de otros. <br>
+    <b>&lt;bold&gt;...&lt;/bold&gt;</b> <b>Negrita</b><br>
+    <b>&lt;i&gt;...&lt;/i&gt;</b> <i>Cursiva </i>- (también usada para añadir iconos con <i>class="..."</i>)<br>
+    <b>&lt;small&gt;...&lt;/small&gt;</b> <small>Texto pequeño</small><br>
+    <b>&lt;strong&gt;...&lt;/strong&gt;</b> <strong> Resaltado, fuerte</strong><br>
+    <b>&lt;em&gt;...&lt;/em&gt;</b> <em>Emfatizado.</em> <br>
+    <b>&lt;sub&gt;...&lt;/sub&gt;</b> <sub>Texto sub escrito</sub> <br>
+    <b>&lt;sup&gt;...&lt;/sup&gt;</b> <sup>Texto super escrito</sup> <br>
+    <b>&lt;ins&gt;...&lt;/ins&gt;</b> <ins>Subrallado</ins><br>
+    <b>&lt;del&gt;...&lt;/del&gt;</b> <del>Tachado</del><br>
+    <b>&lt;abbr&gt;...&lt;/abbr&gt;</b> Acronimo o abreviación <abbr>USA</abbr><br>
+    <b>&lt;mark&gt;...&lt;/mark&gt;</b> <mark>Resaltado</mark><br>
+    <b>&lt;address&gt;...&lt;/address&gt;</b> Información de contacto<br>
+    <b>&lt;bdi&gt;...&lt;/bdi&gt;</b> <bdi> Aislante</bdi> <br>
+    <b>&lt;blockquote&gt;...&lt;/blockquote&gt;</b> <blockquote>Con diez cañones por banda</blockquote>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>cite="..."</code> (URL o autor) indica de donde sacamos la cita, la fuente de información o autor.<br><br>
+    </dd>
+    <details>
+           <summary>
+                <b>&lt;details&gt;...&lt;/details&gt;</b> Crea texto comprimido con pestaña para deplegar.
+            </summary>
+            <dd>
+                <b>&lt;summary&gt;...&lt;/summary&gt;</b> Define el texto comprimido de &lt;details&gt;<br>
+                <i class="fa-solid fa-gears"></i> <code>open</code> Deja desplegado al cargar la página. <br> 
+            </dd>
+    </details>
+    <b>&lt;dialog&gt;...&lt;/dialog&gt;</b> texto que se sobreescribe encima de lo que haya para interacciones con el usuario.<br>
+    <b>&lt;cite&gt;...&lt;/cite&gt;</b> <cite> Homero </cite> Define el titulo de la obra. <br>
+    <b>&lt;code&gt;...&lt;/code&gt;</b> <code> document.designMode = 'on' </code> Código de ordenador. <br>
+    <b>&lt;kbd&gt;...&lt;/kbd&gt;</b> Teclas de teclado. <kbd>Alt + F4</kbd><br>
+    <b>&lt;pre&gt;...&lt;/pre&gt;</b> <pre>     Texto con el Pre-formato, 
+        se muestra tal y como    lo escribimos en el código.</pre>
+    <b>&lt;meter&gt;...&lt;/meter&gt;</b> Medida en escala de una unidad conocida <meter>Meter text</meter> <br>
+    <b>&lt;progress&gt;...&lt;/progress&gt;</b> Barra de progreso <progress>PROGRESS</progress>   <br>
+    <b>&lt;q&gt;...&lt;/q&gt;</b> Cita o información de otra fuenta <q>quotation</q>     <br>
+    <b>&lt;rp&gt;...&lt;/rp&gt;</b> Texto que no soporta ruby annotations y no se muestra. <rp>Ejemplo</rp>     <br>
+    <b>&lt;s&gt;...&lt;/s&gt;</b> Texto ya no importante <s>no longer relevant</s>   <br>
+    <b>&lt;samp&gt;...&lt;/samp&gt;</b>Muestra del resultado de un programa o dispositivo. <samp>Sample</samp>     <br>
+    <b>&lt;template&gt;...&lt;/template&gt;</b> Texto que puede ser clonado por el Script, se oculta cuando carga la página <template>Template text</template>   <br>
+    <b>&lt;time&gt;...&lt;/time&gt;</b> Para definir tiempo <time datetime="2021-7-7">7 de Julio</time>   <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>datetime="..."</code> Se define la fecha <br><br>
+    </dd>
+        
+
+    <b>&lt;u&gt;...&lt;/u&gt;</b> Texto sin articular ni estilos <u>Unarticulated</u>  <br>
+    <b>&lt;var&gt;...&lt;/var&gt;</b> Define una variable <br><br>
+
+    <p>
+        *Si escribimos <i>lorem</i> se genera un texto automatico, útil para mostrar algo de texto y comprobar su apariencia o rellenar con cualquier contenido la creación de la página. También podemos indicar un número despues de la <i>loremX</i> para indicar el número de palabras que queremos generar. Ej. <i>lorem20</i> generará 20 palabras aleatorias.
+    </p>
+</div>
+<div> <!-- Atributos generales -->
+    <h2 class="title-2" id="atributos-generales">Atributos generales</h2>
+    <i class="fa-solid fa-gears"></i> <code>id="..."</code> (NOMBRE) identificador único de la etiqueta, muy útil para referirse a este contenido en CSS o JS.<br>
+    <i class="fa-solid fa-gears"></i> <code>class="..."</code> (NOMBRE) identificador que puede repetirse en multiples etiquetas, muy útil para referirse a este contenido en CSS o JS. Se pueden incluir varios identificadores separandolos con un espacio dentro del mismo atributo " ". Ej. <i>class="icon nav menu"</i><br>
+    <i class="fa-solid fa-gears"></i> <code>style="..."</code> (CSS) estilos a aplicar solo en esta etiqueta. Mejor siempre crear archivo .css con los estilos a parte.<br>
+</div>
+
+<div> <!-- LISTAS -->
+    <h2 class="title-2" id="listas">Listas</h2>
+    <dl>
+        <dt> <b>&lt;ul&gt;...&lt;/ul&gt;</b> </dt>
+        <dd>
+            Lista NO ordenada, se clasifica los elementos con el mismo distinguido. <br>
+            <b> &lt;li&gt;...&lt;/li&gt;</b> Elemento de la lista, enmarca cada elemento de la lista.  <br><br>
+        </dd>
+
+        <dt> <b>&lt;ol&gt;...&lt;/ol&gt;</b></dt>
+        <dd>
+            Lista ordenada, se clasifica los elementos ordenandolos de primero a último.<br>
+            <i class="fa-solid fa-gears"></i> <code>type="..."</code> (1, A, I) indica que numero o letras queremos para ordenar. <br>
+            <i class="fa-solid fa-gears"></i> <code>start="..."</code> indica el numero por el que empieza el primer elemento. <br>
+            <b> &lt;li&gt;...&lt;/li&gt;</b> Elemento de la lista, enmarca cada elemento de la lista.  <br><br>
+        </dd>
+
+        <dt><b>&lt;dl&gt;...&lt;/dl&gt;</b></dt>
+        <dd>
+            Lista de definiciones, permite crear una lista con elementos a definir, diferenciando elemento a definir de definición. <br>
+            <strong>&lt;dt&gt;...&lt;/dt&gt;</strong> Elemento a definir.  <br>
+            <strong>&lt;dd&gt;...&lt;/dd&gt;</strong> Definición del elemento.  <br>
+        </dd>
+    </dl>
+</div>
+
+<div> <!-- MULTIMEDIA -->
+    <h2 class="title-2" id="multimedia">Multimedia</h2>
+    Formatos de archivos soportados:
+    <ul>
+        <li>Fotografia: JPEG, GIF, PNG, APNG, SVG (vectorial), BMP</li>
+        <li>Audio: MP3, WAV, OGG.</li>
+        <li>Video: MP4, WEBM, OGG</li>
+    </ul>
+        <b>&lt;img...&gt;</b> Inserta la fotografia indicada en los atributos.
+        <dd>
+            <i class="fa-solid fa-gears"></i> <code>src="..."</code> Nombre del archivo y ruta dentro de la carpeta o URL.  <br>
+            <i class="fa-solid fa-gears"></i> <code>alt="..."</code> Título de la imagen. <br>
+            <i class="fa-solid fa-gears"></i> <code>width="..."</code> Ancho en px <br>
+            <i class="fa-solid fa-gears"></i> <code>height="..."</code> Alto en px <br>
+            <p>
+                *Important saber elegir formato y tamaño de la imagen, los mas importantes: JPEG permite comprimir bastante, útil para fotografias, gradientes. PNG tiene menos perdida de info y permite canal alpha, útil para transparencias, textos, monocolor. GIF solo permite 256 colores pero puede guardar varios frames creando imagenes en movimiento, útil para animaciones cortas. 
+            </p> 
+        </dd>
+        
+        <p>
+          <b>&lt;picture&gt;...&lt;/picture&gt;</b> Define el espacio para multiples imagenes. Se usa el que encaja en el pagina cargada. Las imagenes contenidas se definen con &lt;img&gt; o &lt;source&gt;  
+        </p>
+        
+        <b>&lt;audio&gt;...&lt;/audio&gt;</b> 
+        <dd>
+            <b>&lt;source src="..." type="..."</b> Se indica el nombre del archivo o ruta + el formato (video/mp4). <br>
+            <i class="fa-solid fa-gears"></i> <code>controls</code> añade controles de reproducción. <br>
+            <i class="fa-solid fa-gears"></i> <code>autoplay</code> Se reproduce al cargar la página. <br>
+            <i class="fa-solid fa-gears"></i> <code>loop</code> Se reproduce en bucle. <br>
+            <i class="fa-solid fa-gears"></i> <code>muted</code> Se reproduce sin sonido. <br><br>
+            <p>
+                *Se pueden añadir varios &lt;source src="..." type="..." &gt; con diferentes formatos por si el navegador no reconoce algún formato, eligirá siempre el primer formato reproducible. También se puede incluir un mensaje de error antes de cerrar etiqueta &lt;/audio&gt; para que se muestre si no se puede reproducir ningún formato. 
+            </p>
+        </dd>
+        
+        
+        <b>&lt;video&gt;...&lt;/video&gt;</b> Inserta el video que se indica en la etiquita source.
+        <dd>
+            <b>&lt;source src="..." type="..."&gt; </b> Se indica el nombre del archivo o ruta + el formato (video/mp4). <br>
+            <i class="fa-solid fa-gears"></i> <code>width="..."</code> Ancho en px <br>
+            <i class="fa-solid fa-gears"></i> <code>height="..."</code> Alto en px <br>
+            <i class="fa-solid fa-gears"></i> <code>controls</code> añade controles de reproducción. <br>
+            <i class="fa-solid fa-gears"></i> <code>autoplay</code> Se reproduce al cargar la página. <br>
+            <i class="fa-solid fa-gears"></i> <code>loop</code> Se reproduce en bucle. <br>
+            <i class="fa-solid fa-gears"></i> <code>muted</code> Se reproduce sin sonido. <br>
+            <p>
+                *Se pueden añadir varios &lt;source src="..." type="..." &gt; con diferentes formatos por si el navegador no reconoce algún formato, eligirá siempre el primer formato reproducible. También se puede incluir un mensaje de error antes de cerrar etiqueta &lt;/video&gt; para que se muestre si no se puede reproducir ningún formato. 
+            </p>
+        </dd>
+        
+    
+        <b>&lt;map&gt;...&lt;/map&gt;</b> Convierte imagen en area clicable. Se usa despues de &lt;img&gt;
+        <dd>
+            <i class="fa-solid fa-gears"></i> <code>name="..."</code> Define el nombre el mapa clicable <br>
+            <b>&lt;area&gt;...&lt;/area&gt;</b> Define el area clicable y sus atributos.  <br>
+            <i class="fa-solid fa-gears"></i> <code>alt="..."</code> Titulo del area. <br>
+            <i class="fa-solid fa-gears"></i> <code>coords="..."</code> Coordenadas del area. <br>
+            <i class="fa-solid fa-gears"></i> <code>download="..."</code> (Nombre del archivo) Indica que se va a iniciar una descarga. <br>
+            <i class="fa-solid fa-gears"></i> <code>href="..."</code> URL a redirigir al clicar <br>
+            <i class="fa-solid fa-gears"></i> <code>target="..."</code> Define el metodo de apertura de la URL. <br>
+            <i class="fa-solid fa-gears"></i> <code>shape="..."</code> Define tipo de forma.
+        </dd><br>
+       
+        <b>&lt;canvas&gt;...&lt;/canvas&gt;</b> Permite dibujar graficos, requiere JavaScript.  
+        <dd>
+            <i class="fa-solid fa-gears"></i> <code>id="..."</code> Define el identificador para utilizarlo en JS.
+        </dd><br>
+
+        <b>&lt;svg&gt;...&lt;/svg&gt;</b> Contenedor para dibujos SVG definidos en las siguientes etiquetas y atributos. 
+        <dd>
+            <i class="fa-solid fa-gears"></i> <code>width="..."</code> Ancho en px del contenedor<br>
+            <i class="fa-solid fa-gears"></i> <code>height="..."</code> Alto en px del contenedor<br>
+            <b>&lt;circle</b> <code>cx="..." cy="..." r="..." stroke="..." stroke-width="..." fill="..."</code><b>/&gt;</b>  Dibuja circulo con las caracteristicas de los atributos. <br>
+            <b>&lt;rect</b> <code> width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)"</code> <b>/&gt;</b>   Dibuja rectangulo con las caracteristicas de los atributos. <br>
+            <b>&lt;polygon</b> <code>points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"</code> <b>/&gt;</b>  Dibuja poligono con los vertices marcados en points (X,Y) y el estilo (en este caso Estrella) <br> <br>
+            
+        </dd>
+        <b>&lt;figure&gt;...&lt;/figure&gt;</b> Enmarca un documento tipo foto, diagrama, etc. Suele ir seguido del &lt;img&gt; 
+        <dd>
+            <b>&lt;figcaption&gt;...&lt;/figcaption&gt;</b> Define la descripción de la figura enmarcada. 
+        </dd>
+        
+</div>
+
+<div> <!-- LINKS -->
+    <h2 class="title-2" id="links">Links</h2>
+    <b>&lt;a&gt;...&lt;/a&gt;</b> Habilita el texto encapsulado para ser clicado y enlazar a otra página. Suele ir acompañado de atributos. <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>href="..."</code> URL a redirigir. También puede lincar para enviar correo con "mailto:EMAIL_ADDRES" y "subject=ASUNTO". También puede lincar a otra parte de la pagina con el "#ID" <br>
+        <i class="fa-solid fa-gears"></i> <code>hreflang="..."</code> Idioma de la página redirigida. <br>
+        <i class="fa-solid fa-gears"></i> <code>download="..."</code> (Nombre archivo) Habilita descarga de un archivo. <br>
+        <i class="fa-solid fa-gears"></i> <code>rel="..."</code> Relación de la página actual a la redirigida <br>
+        <i class="fa-solid fa-gears"></i> <code>target="..."</code> Metodo para abrir la página redirigida: _blank (nueva pestaña) _self (misma pestaña [por defecto]) _parent _top <br><br>
+    </dd>
+
+    <b>&lt;nav&gt;...&lt;/nav&gt;</b> Sirve para encapsular panel de navegación con multiples hipervinculos &lt;a&gt; <br>
+</div>
+
+<div> <!-- TABLAS -->
+    <h2 class="title-2" id="tablas">Tablas</h2>
+    <b>&lt;table&gt;...&lt;/table&gt;</b> Tabla, crea tabla con las siguientes etiquetas <br>
+    <b>&lt;caption&gt;...&lt;/caption&gt;</b> Descriptción, define la descripción de la tabla <br>
+    <b>&lt;th&gt;...&lt;/th&gt;</b> Celda de cabezera, util para titulos de las columnas <br>
+    <b>&lt;tr&gt;...&lt;/tr&gt;</b> Fila, crea una filera nueva. <br>
+    <b>&lt;td&gt;...&lt;/td&gt;</b> Celda, crea una celda dentro de la fila. <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>colspan="..."</code> (2, 3, 4...) Indica cuantas columnas debe ocupar dicha celda. <br>
+        <i class="fa-solid fa-gears"></i> <code>rowspan="..."</code> (2, 3, 4...) Indica cuantas filas debe ocupar dicha celda. <br>
+    </dd>
+    <b>&lt;thead&gt;...&lt;/thead&gt;</b> Encabezados, define el título de las columnas, útil para agrupar encabezados <i>th</i>. <br> 
+    <b>&lt;tbody&gt;...&lt;/tbody&gt;</b> Cuerpo de la tabla, útil para agrupar las celdas del cuerpo de la tabla. <br>
+    <b>&lt;tfoot&gt;...&lt;/tfoot&gt;</b> Pie de la tabla, puede agrupar varia celdas. <br>
+    <b>&lt;colgroup&gt;...&lt;/colgroup&gt;</b> Conjunto de columnas, útil para dar un mismo formato a varias columnas. <br>
+    <dd>
+        <i class="fas fa-code"></i><code>&lt;col&gt;</code> Define las propiedades de las columnas de &lt;colgroup&gt;, cada  &lt;colgroup&gt; refiere a cada columna en orden.
+    </dd><br>
+    <p>
+        *Mas info de tablas <a class="link"href="https://www.htmlquick.com/es/reference/tags/table.html">aquí</a>.
+    </p>
+</div>
+
+<div> <!-- FORMULARIOS -->
+    <h2 class="title-2" id="formularios">Formularios</h2>
+    <b>&lt;form&gt;...&lt;/form&gt;</b> Formulario, crea formulario con los siguientes atributos y etiquetas. <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>action="..."</code> (URL, # [misma web]) Acción al finalizar formulario , donde se envia la info escrita en el formulario. <br>
+        <i class="fa-solid fa-gears"></i> <code>method="..."</code> (GET [envia datos con info de origen], POST [envia datos con orgien oculto]) <br>
+        <i class="fa-solid fa-gears"></i> <code>name="..."</code> Nombre del formulario <br>
+        <i class="fa-solid fa-gears"></i> <code>autocomplete="..."</code> (on, off) Habilita o deshabilita autocompletado. <br>
+        <i class="fa-solid fa-gears"></i> <code>target="..."</code> (_blank, _parent...) Donde mostrar siguiente ventana. <br> <br>
+    </dd>
+
+    <b>&lt;label&gt;...&lt;/label&gt;</b> Título del siguiente &lt;/input&gt; <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>name="..."</code> Nombre del campo a rellenar, útil para relacionarlo con el input. <br><br>
+    </dd>
+    
+    <b>&lt;input&gt;</b> Campo a rellenar por el usuario, permite varios atributos <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>type="..."</code> (text, button, checkbox, radio, number, mail, password, submit...) Tipo de dato a esperar por el usuario. <br>
+        <i class="fa-solid fa-gears"></i> <code>id="..."</code> Identificador para este campo, útil para relacionar la info que recibimos cuando enviamos formulario. <br>
+        <i class="fa-solid fa-gears"></i> <code>name="..."</code> Nombre del campo a rellenar, útil para relacionarlo con el label. <br>
+        <i class="fa-solid fa-gears"></i> <code>autocomplete="..."</code> (on, off) Habilita o deshabilita autocompletado. <br>
+        <i class="fa-solid fa-gears"></i> <code>autofocus</code> El navegador te dirige al este campo al cargar la página. <br>
+        <i class="fa-solid fa-gears"></i> <code>size="..."</code> Número de caracteres aceptados en el campo a rellenar. <br>
+        <i class="fa-solid fa-gears"></i> <code>minlenght="..."</code> mínimo de carácteres permitidos. <br>
+        <i class="fa-solid fa-gears"></i> <code>maxlength="..."</code> máximo de carácteres permitidos. <br>
+        <i class="fa-solid fa-gears"></i> <code>min="..."</code> valor mínimo permitido para numero o fechas. <br>
+        <i class="fa-solid fa-gears"></i> <code>max="..."</code> valor máximo permitido para numero o fechas. <br>
+        <i class="fa-solid fa-gears"></i> <code>disabeld="..."</code> Dehsabilita este campo al cargar la página. <br>
+        <i class="fa-solid fa-gears"></i> <code>placeholder="..."</code> Descripción del input esperado, visible antes de escribir. <br>
+        <i class="fa-solid fa-gears"></i> <code>enctype="..."</code> Cuando tenemos <i>&lt;input type="data"&gt;</i> define que archivos son aceptados para poder enviar form. <br>
+        <i class="fa-solid fa-gears"></i> <code>required</code> Obligatorio, campo obligado para continuar. <br><br>
+    </dd>
+
+
+    <p>
+        *Si tenemos varios inputs <i>type="radio" o "checkbox"</i> con el mismo <i>name="..."</i>, solo deja seleccionar uno de ellos.
+    </p>
+
+    <b>&lt;textarea&gt;...&lt;/textarea&gt;</b> Campo para textos extensos, permite redimensionar caja. <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>cols="..."</code> Define numero de columnas de textarea, donde 1 columna = 1 caracter <br>
+        <i class="fa-solid fa-gears"></i> <code>rows="..."</code> Define numero de filas de textarea. <br> <br>
+    </dd>
+
+    <b>&lt;button&gt;...&lt;/button&gt;</b> crea boton, útil para hacer boton de "Enviar" formulario <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>type="..."</code> (submit) define boton para finalizar formulario. <br> 
+        <i class="fa-solid fa-gears"></i> <code>type="..."</code> (reset) Resteablece todas las cajas del formulario. <br> 
+        <i class="fa-solid fa-gears"></i> <code>onclick="..."</code> Define acción a realizar al pulsar el boton. Permite código JS. 
+    </dd>
+
+    <b>&lt;select&gt;...&lt;/select&gt;</b> Desplegable, define un seleccionar de varias opciones. <br>
+    <dd>
+        <b>&lt;option&gt;...&lt;/option&gt;</b> Opción del desplegable. <br>
+        <i class="fa-solid fa-gears"></i> <code>selected="..." </code> selecciona dicha opción por defecto. <br>
+        <i class="fa-solid fa-gears"></i> <code>value="..." </code> valor de dicha opción al enviar formulario. <br>
+    </dd>
+
+    <b>&lt;datalist&gt;...&lt;/datalist&gt;</b> Sugerencias a mostrar en una caja de texto, util para buscador con <i>&lt;input list="NOMBRE"&gt;</i>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>id="..."</code> Identificador que debe tener mismo NOMBRE que  <i>&lt;input list="NOMBRE"&gt;</i> <br>
+        <b>&lt;option&gt;...&lt;/option&gt;</b> Sugerencia a mostrar cuando se escribe. <br> <br>
+    </dd>
+
+    <b>&lt;fieldset&gt;...&lt;/fieldset&gt;</b> Agrupa varios inputs relacionados entre ellos. <br>
+    <dd>
+        <b>&lt;legend&gt;...&lt;/legend&gt;</b> Descripción de las cajas agrupadas. <br> <br>
+    </dd>
+
+    <b>&lt;output&gt;...&lt;/output&gt;</b> Muestra resultado de operación definida con los valores recibidos en los inputs. Requiere definir atributo <i>oninput</i> para asignar operación a calcular.<br>
+    
+</div>
+<div> <!-- OTROS -->
+    <h2 class="title-2" id="otros">Otros</h2>
+    <b>&lt;script&gt;...&lt;/script&gt;</b> Código Javascript, permite añadir código JS. Dentro de esta etiqueta no se puede escribir HTML (excepto en document.write(...)) <br>
+    <b>&lt;embed&gt;...&lt;/embed&gt;</b> Permite añadir contenido externo a la página.  <br>
+    <b>&lt;var&gt;...&lt;/var&gt;</b> Define una variable.  <br>
+    <b>&lt;object&gt;...&lt;/object&gt;</b> Define container para recurso externo, útil para incrustar plug-ins. <br>
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>data="..."</code> (URL o nombre del archivo) archivo o enlace a incrustar. <br>
+        <b>&lt;param&gt;</b> Define parametros del objeto. <br> <br>
+    </dd>
+
+    <b>&lt;iframe&gt;...&lt;/iframe&gt;</b> Sirve para incrustar otros elementos fuera de la página, otras webs, gmaps, youtube.
+    <dd>
+        <i class="fa-solid fa-gears"></i> <code>src="..."</code> (URL o nombre del archivo) archivo o enlace a incrustar. <br>
+        <i class="fa-solid fa-gears"></i> <code>width="..."</code> Ancho en px <br>
+        <i class="fa-solid fa-gears"></i> <code>height="..."</code> Alto en px <br><br>
+    </dd>
+
+</div>
+
+<h2 class="title-2" id="estructura-basica">Estructura básica de un documento HTML</h2>
+<div id="ejemplo">
+    <pre wrap>
+        &lt;html&gt;    
+            &lt;head&gt;
+                &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+                &lt;title&gt;Your Website&lt;/title&gt;
+            &lt;/head&gt;
+
+            &lt;body&gt;
+
+                &lt;header&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Your menu&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/header&gt;
+                
+                &lt;section&gt;
+                    &lt;article&gt;
+                        &lt;header&gt;
+                            &lt;h2&gt;Article title&lt;/h2&gt;
+                            &lt;p&gt;Posted on &lt;time datetime="2009-09-04T16:31:24+02:00"&gt;September 4th 2009&lt;/time&gt; by &lt;a href="#"&gt;Writer&lt;/a&gt; - &lt;a href="#comments"&gt;6 comments&lt;/a&gt;&lt;/p&gt;
+                        &lt;/header&gt;
+                        &lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;
+                    &lt;/article&gt;
+                    
+                    &lt;article&gt;
+                        &lt;header&gt;
+                            &lt;h2&gt;Article title&lt;/h2&gt;
+                            &lt;p&gt;Posted on &lt;time datetime="2009-09-04T16:31:24+02:00"&gt;September 4th 2009&lt;/time&gt; by &lt;a href="#"&gt;Writer&lt;/a&gt; - &lt;a href="#comments"&gt;6 comments&lt;/a&gt;&lt;/p&gt;
+                        &lt;/header&gt;
+                        &lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;
+                    &lt;/article&gt;   
+                &lt;/section&gt;
+
+                &lt;aside&gt;
+                    &lt;h2&gt;About section&lt;/h2&gt;
+                    &lt;p&gt;Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+                &lt;/aside&gt;
+
+                &lt;footer&gt;
+                    &lt;p&gt;Copyright 2009 Your name&lt;/p&gt;
+                &lt;/footer&gt;
+                
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+</div>
+
+<h2 style="color: red;">FALTA</h2>
+<ul>
+    <li>Meta info</li>
+</ul>
