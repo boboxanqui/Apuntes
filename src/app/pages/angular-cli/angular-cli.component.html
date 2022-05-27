@@ -1,0 +1,73 @@
+<h2 class="page-title">Angular CLI</h2>
+
+<p>Angular CLI es un conjunto de comandos que nos ayuda a crear y gestionar toda la variedad de archivos y funcionalidades que que tiene Angular.</p>
+<p>Primero de todo requiere instalación en la máquina a utilizar:</p>
+<p class="text-center"><code>npm install -g @angular/cli</code></p>
+<p>Podemos consultar la web oficial para ver la documentación completa en <a class="link" target="_blank" href="https://angular.io/cli">angular.io</a></p>
+<dt><code>ng help</code></dt>
+<dd>Este comando nos muestra el listado de opciones que podemos escribir con Angular CLI</dd>
+<dt><code>--help</code></dt>
+<dd>Esta opción la podemos escribir tras un comando para ver todas las opciones que tiene ese comando.</dd>
+
+<h2 class="title-2">Inicio</h2>
+
+<dl>
+    <dt><code>ng new NOMBRE</code></dt>
+    <dd>Este comando lo ejecutaremos en la consola dentro de la ruta donde queremos crear un nuevo proyecto y se crearan todos los archivos iniciales para un nuevo proyecto de Angular. Nos preguntará varias cosas:</dd>
+    <ul>
+        <li><b>Routing</b> - podemos crear un archivo <i>app-routing.module.ts</i> pre-configurado</li>
+        <li><b>Estilos</b> - lenguaje a utilizar para los estilos entre CSS, SCSS, Sass, Less y Stylus</li>
+    </ul>
+    <dd>También instalará todos los paquetes npm iniciales de Angular.</dd>
+
+    <dt><code>ng serve</code></dt>
+    <dd>Lanza la app en uno de los puertos, muy util para visualizar cada vez que se guarda el proyecto com va quedando
+        <ul class="option-list" >
+            <li><span class="cli-option">-o</span><i class="fa-solid fa-right-long"></i> abre directamente la app en el navegador.</li>
+        </ul>
+    </dd>
+</dl>
+
+<h2 class="title-2">Archivos</h2>
+
+<dl>
+    <dt>
+        <code>ng g c RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate component</em>
+    </dt>
+    <dd>Genera un componente nuevo y actualiza el modulo de la carpeta donde se crea. Con esta opción se genera una carpeta con los archivos HTML, CSS, TS y SPEC del componente.
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">-f</span>
+                <em class="op-6">(--flat) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Crea los archivos en sin subcarpeta
+            </li>
+            <li>
+                <span class="cli-option">-s</span>
+                <em class="op-6">(--inline-style) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Sin hoja de estilos CSS
+            </li>
+            <li>
+                <span class="cli-option">--skip-tests</span>
+                <i class="fa-solid fa-right-long"></i>
+                Sin archivo de pruebas .spec.ts
+            </li>
+            <li>
+                <span class="cli-option">-t</span>
+                <em class="op-6">(--inline-template) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Sin documento HTML, el contenido deberia incluirse en el archivo .ts
+            </li>
+            <li>
+                <span class="cli-option">-f</span>
+                <em class="op-6">(--force) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Fuerza a sobreescribir otros archivos con el mismo nombre.
+            </li>
+        </ul>
+    </dd>
+
+</dl>

@@ -6,6 +6,7 @@ import { TypescriptComponent } from './typescript/typescript.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { SassComponent } from './sass/sass.component';
+import { AngularCLIComponent } from './angular-cli/angular-cli.component';
 
 
 
@@ -15,7 +16,8 @@ import { SassComponent } from './sass/sass.component';
     CssComponent,
     TypescriptComponent,
     WelcomeComponent,
-    SassComponent
+    SassComponent,
+    AngularCLIComponent
   ],
   imports: [
     CommonModule,

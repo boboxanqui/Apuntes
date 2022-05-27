@@ -111,8 +111,12 @@ footer{
     text-decoration: underline;
 }
 
+.op-6 {
+    opacity: .6;
+}
+
 .fa-html5{
-    color: brown
+    color: #e07a5f;
 }
 
 .fa-css3-alt{
@@ -125,6 +129,10 @@ footer{
 
 .fa-js{
     color: goldenrod;
+}
+
+.fa-angular {
+    color: darkred;
 }
 
 /* Box Styles */
@@ -155,6 +163,11 @@ footer{
 
 .nav-ative{
     border-bottom: 5px solid var(--color2);
+}
+
+.nav-link:hover {
+    opacity: 1;
+    transition: .2s ease;
 }
 
 

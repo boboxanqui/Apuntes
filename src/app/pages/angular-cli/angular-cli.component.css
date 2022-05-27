@@ -1,0 +1,28 @@
+dt {
+    margin-top: 1rem;
+}
+
+code {
+    color: darkred;
+}
+
+.option-list {
+    list-style-type: none;
+}
+
+.cli-option {
+    color: rgb(161, 81, 0);
+    margin-right: .5rem;
+    letter-spacing: 2pt;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.fa-right-long {
+    margin: 0 .5rem;
+}
+
+.fa-minus {
+    opacity: .7;
+    margin: 0 .5rem;
+}

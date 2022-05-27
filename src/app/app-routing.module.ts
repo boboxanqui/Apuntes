@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularCLIComponent } from './pages/angular-cli/angular-cli.component';
 
 import { CssComponent } from './pages/css/css.component';
 import { HtmlComponent } from './pages/html/html.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'css', component: CssComponent},
   {path: 'sass', component: SassComponent},
   {path: 'typescript', component:TypescriptComponent},
+  {path: 'angular', component:AngularCLIComponent},
   {path: '**', redirectTo: ''}
 ]
 
