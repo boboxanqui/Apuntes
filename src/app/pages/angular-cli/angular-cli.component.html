@@ -28,7 +28,7 @@
     </dd>
 </dl>
 
-<h2 class="title-2">Archivos</h2>
+<h2 class="title-2">Generación de archivos</h2>
 
 <dl>
     <dt>
@@ -39,8 +39,7 @@
     <dd>Genera un componente nuevo y actualiza el modulo de la carpeta donde se crea. Con esta opción se genera una carpeta con los archivos HTML, CSS, TS y SPEC del componente.
         <ul class="option-list">
             <li>
-                <span class="cli-option">-f</span>
-                <em class="op-6">(--flat) </em>
+                <span class="cli-option">--flat</span>
                 <i class="fa-solid fa-right-long"></i>
                 Crea los archivos en sin subcarpeta
             </li>
@@ -70,4 +69,182 @@
         </ul>
     </dd>
 
+    <dt>
+        <code>ng g class RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate class</em>
+    </dt>
+    <dd>Genera un archivo con una declaración generica de una classe.
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--skip-tests</span>
+                <i class="fa-solid fa-right-long"></i>
+                Sin archivo de pruebas .spec.ts
+            </li>
+        </ul>
+    </dd>
+
+    <dt>
+        <code>ng g guard RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate guard</em>
+    </dt>
+    <dd>Genera un Guard con las funciones que le marquemos. Podemos seleccionar <em>CanActivate, CanActivateChild, CanDeactivate i CanLoa</em> con la barra espaciadora y enter a continuación. Se exporta por defecto a la raiz ('provideIn:root')
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--flat</span>
+                <i class="fa-solid fa-right-long"></i>
+                Crea los archivos en sin subcarpeta
+            </li>
+            <li>
+                <span class="cli-option">--skip-tests</span>
+                <i class="fa-solid fa-right-long"></i>
+                Sin archivo de pruebas .spec.ts
+            </li>
+
+        </ul>
+    </dd>
+
+    <dt>
+        <code>ng g i RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate interface</em>
+    </dt>
+    <dd>Genera un archivo .ts con una declaración de interface generica.</dd>
+
+    <dt>
+        <code>ng g m RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate module</em>
+    </dt>
+    <dd>Genera un archivo .ts con la declaración de un Modulo y su NgModule.
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--flat</span>
+                <i class="fa-solid fa-right-long"></i>
+                Crea los archivos en sin subcarpeta
+            </li>
+            <li>
+                <span class="cli-option">--routing</span>
+                <i class="fa-solid fa-right-long"></i>
+                Crea un modulo para realizar routing con el array Routes y el RouterModule.
+            </li>
+            <li>
+                <span class="cli-option">-f</span>
+                <em class="op-6">(--force) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Fuerza a sobreescribir otros archivos con el mismo nombre.
+            </li>
+            <li>
+                <span class="cli-option">-d</span>
+                <em class="op-6">(--dry-run) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Crea una simulación de lo que pasaria si se ejecuta el comando pero sin crear ni modificar archivos.
+            </li>
+        </ul>
+    </dd>
+
+    <dt>
+        <code>ng g p RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate pipe</em>
+    </dt>
+    <dd>Genera un archivo .ts con la declaración de un Pipe generico y su NgModule.
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--flat</span>
+                <i class="fa-solid fa-right-long"></i>
+                Crea los archivos en sin subcarpeta
+            </li>
+            <li>
+                <span class="cli-option">--export</span>
+                <i class="fa-solid fa-right-long"></i>
+                Para añadir la exportación del pipe.
+            </li>
+            <li>
+                <span class="cli-option">--skip-tests</span>
+                <i class="fa-solid fa-right-long"></i>
+                Sin archivo de pruebas .spec.ts
+            </li>
+            <li>
+                <span class="cli-option">--skip-import</span>
+                <i class="fa-solid fa-right-long"></i>
+                No importa este archivo en el modulo corresponiente.
+            </li>           
+        </ul>
+    </dd>
+
+    <dt>
+        <code>ng g s RUTA/NOMBRE</code> 
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng generate service</em>
+    </dt>
+    <dd>Genera un servicio nuevo con exportación a raiz del proyecto ('provideOn: root').
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--flat</span>
+                <i class="fa-solid fa-right-long"></i>
+                Crea los archivos en sin subcarpeta
+            </li>
+            <li>
+                <span class="cli-option">--skip-tests</span>
+                <i class="fa-solid fa-right-long"></i>
+                Sin archivo de pruebas .spec.ts
+            </li>
+            <li>
+                <span class="cli-option">-f</span>
+                <em class="op-6">(--force) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Fuerza a sobreescribir otros archivos con el mismo nombre.
+            </li>
+            <li>
+                <span class="cli-option">-d</span>
+                <em class="op-6">(--dry-run) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Crea una simulación de lo que pasaria si se ejecuta el comando pero sin crear ni modificar archivos.
+            </li>
+        </ul>
+    </dd>
+</dl>
+
+<h2 class="title-2">Otros</h2>
+
+<dl>
+    <dt>
+        <code>ng b NOMBRE</code>
+        <i class="fa-solid fa-minus"></i> 
+        <em class="op-6">ng build</em>
+    </dt>
+    <dd>Construye y exporta los archivos finales del proyecto en una carpeta <em>dist/</em>. La construcción se vasa en lo especificado en el archivo <em>angular.json</em>.
+        <ul class="option-list">
+            <li>
+                <span class="cli-option">--base-href</span>
+                <i class="fa-solid fa-right-long"></i>
+                Permite añadir en formato string la url base del proyecto.
+            </li>
+            <li>
+                <span class="cli-option">--configuration</span>
+                <i class="fa-solid fa-right-long"></i>
+                Permite añadir con strings configuraciones como las de angular.json.
+            </li>
+            <li>
+                <span class="cli-option">--inline-style-language</span>
+                <em class="op-6">(--force) </em>
+                <i class="fa-solid fa-right-long"></i>
+                PErmite indicar en lenguaje de los estilos inline CSS, LESS o SASS.
+            </li>
+            <li>
+                <span class="cli-option">--progress</span>
+                <em class="op-6">(--dry-run) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Va indicando el estado durante el progreso de construcción.
+            </li>
+            <li>
+                <span class="cli-option">--watch</span>
+                <em class="op-6">(--dry-run) </em>
+                <i class="fa-solid fa-right-long"></i>
+                Abre el proyecto al finalizar la construcción.
+            </li>
+        </ul>
+    </dd>
 </dl>
