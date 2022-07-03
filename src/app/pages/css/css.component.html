@@ -710,6 +710,15 @@
                     justify-content: space-between;
                 </code>
         </dd>
+
+        <dt><b>Tener en cuenta width del Scrollbar</b></dt>
+        <dd>Importante saber que la medida "vw" incluye el espacio del scrollbar, por lo que si utilizamos <code>100vw</code> el contenido quedara debajo del scrolbar. Para que el html no quede por debajo del scrollbar y parece que los elementos no queden centrados del todo incluso cuando cambiamos de una página con scrollbar a otra sin se nota el cambio de width. Hay varias maneras de solucionarlo:
+            <ul>
+                <li><code> html { overflow-y: overlay; }</code></li>
+                <li><code> html { overflow-y: scroll; }</code></li>
+                <li><code> html { width: 100vw; }</code></li>
+            </ul>
+        </dd>
     </dl>
 
 
