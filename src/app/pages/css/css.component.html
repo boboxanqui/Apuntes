@@ -102,6 +102,7 @@
             <li><i>calc() </i>- Permite hacer calculos con los valores dentro de los parentesis para determinar el valor resultante.</li>
             <li><i>min(...) </i>- Permite establecer un minimo para medidas cambiantes como anchos, largos, etc. Se aceptan varios valores y se elegira siempre el menor. Ej. <code>min( 20%, 100px, 4rem )</code></li>
             <li><i>max(...) </i>- Permite establecer un máximo para medidas cambiantes. Acepta mas de un valor eligiendo el que sea siempre mas grande. Ej. <code>max( 80%, 500px, 50vw ). </code></li>
+            <li><i>clamp(MIN, IDEAL, MAX) </i>- Muy útil para comportamientos responsive. Se establece un valor ideal que tendrá preferencia sobreo los otros dos los cuales marcan que no puede ser mas pequeño que MIN ni mas grande que MAX. Ej. <code>clamp( 200px, 50%, 800px); </code></li>
             <li><i>auto </i>- Igual que % depende de su parentesco, en este caso reparte el mismo valor si hay mas de una propiedad o equivale al valor más céntrico (útil cuando asignamos un mismo valor a multiples propiedades/lados). </li>
 
             *min() y max() permiten mas de un valor entre parentesis. Ejemplo <i>width: min(500px 70%);</i>  escogerá siempre la mínima medida en función del ancho navegador, si 500px es menor que 70% entonces escogerá 500px como medida mínima. Lo mismo para max() pero escogiendo la medida mas grande.
@@ -714,9 +715,9 @@
         <dt><b>Tener en cuenta width del Scrollbar</b></dt>
         <dd>Importante saber que la medida "vw" incluye el espacio del scrollbar, por lo que si utilizamos <code>100vw</code> el contenido quedara debajo del scrolbar. Para que el html no quede por debajo del scrollbar y parece que los elementos no queden centrados del todo incluso cuando cambiamos de una página con scrollbar a otra sin se nota el cambio de width. Hay varias maneras de solucionarlo:
             <ul>
-                <li><code> html { overflow-y: overlay; }</code></li>
-                <li><code> html { overflow-y: scroll; }</code></li>
-                <li><code> html { width: 100vw; }</code></li>
+                <li><code> html {{ '{' }} overflow-y: overlay; }</code></li>
+                <li><code> html {{ '{' }} overflow-y: scroll; }</code></li>
+                <li><code> html {{ '{' }} width: 100vw; }</code></li>
             </ul>
         </dd>
     </dl>

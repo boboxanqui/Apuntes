@@ -1,4 +1,12 @@
-<h2 class="page-title">Angular CLI</h2>
+<h2 class="page-title">Angular</h2>
+
+<p>Angular es un Framework de JavaScript de código abierto escrito en <b>TypeScript</b>. Su objetivo principal es desarrollar aplicaciones de una sola página SPA. Google se encarga del mantenimiento y constantes actualizaciones de mejoras para este framework.</p>
+
+<p>Angular está basado en componentes para crear aplicaciones web escalables. Una colección de bibliotecas bien integradas que cubren una amplia variedad de características, que incluyen enrutamiento, administración de formularios, comunicación cliente-servidor y más. Un conjunto de herramientas para desarrolladores que permiten desarrollar, compilar, probar y actualizar el código fuente de la aplicación.</p>
+
+<p>Las principales ventajas de Angular son el <b>Data binding</b>, que permite conectar y manipular datos de manera muy dinàmica y sencilla. Está basado <b>Typescript</b> por lo que resulta más sencillo de identificar errores y saber que datos se estan manejando en todo momento. <b>Arquitectura de documentos</b>, permite modularizar cada proyecto en grandes partes (modulos) a su misma vez estas en pequeñas piezas funcionales (componentes) y a si mismo conectar todo lo necesario mediante sericios, inyección de dependencias, directivas, etc. Por último también tiene una parte de testing muy potente con <b>Jasmine</b> y <b>Karma.</b></p>
+
+<h2 class="title-2">Angular CLI</h2>
 
 <p>Angular CLI es un conjunto de comandos que nos ayuda a crear y gestionar toda la variedad de archivos y funcionalidades que que tiene Angular.</p>
 <p>Primero de todo requiere instalación en la máquina a utilizar:</p>
@@ -9,7 +17,7 @@
 <dt><code>--help</code></dt>
 <dd>Esta opción la podemos escribir tras un comando para ver todas las opciones que tiene ese comando.</dd>
 
-<h2 class="title-2">Inicio</h2>
+<h3 class="title-3">Inicio</h3>
 
 <dl>
     <dt><code>ng new NOMBRE</code></dt>
@@ -28,7 +36,7 @@
     </dd>
 </dl>
 
-<h2 class="title-2">Generación de archivos</h2>
+<h3 class="title-3">Generación de archivos</h3>
 
 <dl>
     <dt>
@@ -207,7 +215,7 @@
     </dd>
 </dl>
 
-<h2 class="title-2">Otros</h2>
+<h3 class="title-3">Otros</h3>
 
 <dl>
     <dt>
@@ -248,3 +256,31 @@
         </ul>
     </dd>
 </dl>
+
+<h2 class="title-2">Modulos</h2>
+
+<p>Los módulos permiten dividir el proyecto en varias partes de manera que pueda ser escalable y manejable a la hora de modificar o añadir código. </p>
+<p>De esta forma, es recomendable crear varias carpetas generales donde poder segmentar todos los componentes de nuestro proyecto de manera lógica. Una segmentación habitual es:</p>
+
+<ul>
+    <li><b>Auth</b> - módulo dedicado a la autenticación y registro de usuarios</li>
+    <li><b>Pages</b> - módulo donde añadir las diferentes páginas que formaran la web</li>
+    <li><b>Shared</b> - módulo donde se ubicaran todos los componentes que deben aparecer en la mayoria de las páginas (navbar, footer, header, etc.)</li>
+    <li><b>Components</b> - componentes varios que se iran utilizando en según qué páginas. Se puede crear un módulo a parte o se puede añadir una carpeta en Pages si no son muchos.</li>
+    <li><b>Librería</b> - si utilizamos alguna libreria puede que se necesiten importar multiples módulos de esta, de modo que es habitual crear un módulo donde importar todo lo de la libreria y despues importar este módulo donde lo vayamos a necesitar.</li>
+</ul>
+
+<p>Cada una de estas partes necesitara un módulo donde gestionar todos los componentes de dicha parte asi como la importación de otros módulos necesarios. </p>
+
+<p>La configuración de un módulo se realiza con un documento <b>.ts</b> con la directiva <b>@NgModule()</b> la cual tiene como parametro un objeto con los arrays de toda la composición del módulo:</p>
+
+<code>@NgModule({{ '{' }}</code>
+<ul>
+    <li><code>declarations: [...]</code> - se incluyen todos los componentes que formarán el módulo</li>
+    <li><code>exports: [...]</code> - los componentes que serán utilizados fuera de este módulo</li>
+    <li><code>imports: [...]</code> - Importación de otros módulos necesarios.</li>
+    <li><code>providers: [...]</code> - </li>
+    <li><code>bootstrap: [...]</code> - .</li>
+</ul>
+
+<p>Otra funcionalidad de los módulos es la creción de los archivos de configuración del Routing, incluyendo rutas hijas y lazy-loading, Guards.</p>
