@@ -121,102 +121,127 @@
 <!-- COMANDOS BÁSICOS -->
 <h3 class="title-2">Comandos Básicos</h3>
 
-<p>Con los siguientes comandos podremos ir capturando el proyecto a medida que avanzamos y vamos modificandolo y ampliandolo. </p>
+<p>Con los siguientes comandos podremos ir capturando el proyecto a medida que avanzamos y vamos modificandolo y
+    ampliandolo. </p>
 
 <dl>
-<dt><code>git status</code></dt>
-<dd>Nos da información de como esta el proyecto en git (brancas, commits y estado de archivos).</dd>
+    <dt><code>git status</code></dt>
+    <dd>Nos da información de como esta el proyecto en git (brancas, commits y estado de archivos).</dd>
 
-<dt><code>git add ARCHIVOS</code></dt>
-<dd>Permite elegir que archivos se van a tener en cuenta para ir guardando el progreso. Podemos añadir todos los
-    archivos escribiendo un punto "." en lugar del nombre de los archivos. Los archivos pasan a estar en estado
-    <span class="muted">stage</span>.
-</dd>
+    <dt><code>git add ARCHIVOS</code></dt>
+    <dd>Permite elegir que archivos se van a tener en cuenta para ir guardando el progreso. Podemos añadir todos los
+        archivos escribiendo un punto "." en lugar del nombre de los archivos. Los archivos pasan a estar en estado
+        <span class="muted">stage</span>.
+    </dd>
 
-<dt><code>git commit</code></dt>
-<dd>Guarda los archivos añadidos en la branca donde nos encontremos. Crea una captura de como se encuentran los
-    archivos en ese preciso momento. <br>
-    Tras ejecutar este comando se informa de los cambios realizados en la branca y del <span class="muted">HASH</span>
-    del commit (este hash es un identificador único del commit que puede resultar
-    útil para otros comandos a los que tengamos que hacer referencia a dicho commit). <br>
-    <strong>HEAD</strong> se denomina al último commit sobre el que estamos trabajando.</dd>
+    <dt><code>git commit</code></dt>
+    <dd>Guarda los archivos añadidos en la branca donde nos encontremos. Crea una captura de como se encuentran los
+        archivos en ese preciso momento. <br>
+        Tras ejecutar este comando se informa de los cambios realizados en la branca y del <span
+              class="muted">HASH</span>
+        del commit (este hash es un identificador único del commit que puede resultar
+        útil para otros comandos a los que tengamos que hacer referencia a dicho commit). <br>
+        <strong>HEAD</strong> se denomina al último commit sobre el que estamos trabajando.
+    </dd>
 
-<ul class="option-list">
-    <li>
-        <span class="git-option">-m "MENSAJE"</span>
-        <i class="fa-solid fa-right-long"></i>
-        Obligatorio añadir un mensaje/comentario que describa lo que hemos guardado o el progreso aplicado.
-    </li>
-</ul>
+    <ul class="option-list">
+        <li>
+            <span class="git-option">-m "MENSAJE"</span>
+            <i class="fa-solid fa-right-long"></i>
+            Obligatorio añadir un mensaje/comentario que describa lo que hemos guardado o el progreso aplicado.
+        </li>
+    </ul>
 
-<dt><code>git log</code></dt>
-<dd>Imprime el historial de commits y el usuario que lo ha realizado.</dd>
+    <dt><code>git log</code></dt>
+    <dd>Imprime el historial de commits y el usuario que lo ha realizado.</dd>
 
-<ul class="option-list">
-    <li>
-        <span class="git-option">--graph</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra el historial con un gráfico de las ramificaciones.
-    <li>
-        <span class="git-option">--pretty=FORMATO</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra el historial con un formato diferente, puede ser: oneline, short, full, fuller y format.
-    </li>
-    <li>
-        <span class="git-option">--stat</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra más datos de cada commit (archivos modificados, lineas modificadas o eliminadas).
-    </li>
-    <li>
-        <span class="git-option">--shortstat</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra un resumen de las modificaciones de cada commit.
-    </li>
-    <li>
-        <span class="git-option">--name-only</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra la lista de los archivos afectados en cada commit.
-    </li>
-    <li>
-        <span class="git-option">-NÚMERO</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra los últimos commits guardados que indiquemos.
-    </li>
-    <li>
-        <span class="git-option">--since=TIEMPO</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra historial desde el tiempo indicado (se debe indicar en ingles) o fecha. Ej. <i>git log
-            --since=2024-01-16</i> o por tiempo <i>git log --since=2.weeks.1.day</i>.
-    </li>
-    <li>
-        <span class="git-option">--after=FECHA</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra historial despues de la fecha indicada (formato ingles). Ej. <i>git log --after=2023-01</i>.
-    </li>
-    <li>
-        <span class="git-option">--until=FECHA</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra historial hasta la fecha indicada (formato ingles). Ej. <i>git log --until=2024-01</i>.
-    </li>
-    <li>
-        <span class="git-option">--before=FECHA</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra historial de antes de la fecha indicada (formato ingles). Ej. <i>git log --before=2023-01</i>.
-    </li>
-    <li>
-        <span class="git-option">--author=USERNAME</span>
-        <i class="fa-solid fa-right-long"></i>
-        Muestra historial de commits de un determinado usuario.
-    </li>
-</ul>
+    <ul class="option-list">
+        <li>
+            <span class="git-option">--graph</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra el historial con un gráfico de las ramificaciones.
+        </li>
+        <li>
+            <span class="git-option">--pretty=FORMATO</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra el historial con un formato diferente, puede ser: oneline, short, full, fuller y format.
+        </li>
+        <li>
+            <span class="git-option">--stat</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra más datos de cada commit (archivos modificados, lineas modificadas o eliminadas).
+        </li>
+        <li>
+            <span class="git-option">--shortstat</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra un resumen de las modificaciones de cada commit.
+        </li>
+        <li>
+            <span class="git-option">--name-only</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra la lista de los archivos afectados en cada commit.
+        </li>
+        <li>
+            <span class="git-option">-NÚMERO</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra los últimos commits guardados que indiquemos.
+        </li>
+        <li>
+            <span class="git-option">--since=TIEMPO</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra historial desde el tiempo indicado (se debe indicar en ingles) o fecha. Ej. <i>git log
+                --since=2024-01-16</i> o por tiempo <i>git log --since=2.weeks.1.day</i>.
+        </li>
+        <li>
+            <span class="git-option">--after=FECHA</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra historial despues de la fecha indicada (formato ingles). Ej. <i>git log --after=2023-01</i>.
+        </li>
+        <li>
+            <span class="git-option">--until=FECHA</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra historial hasta la fecha indicada (formato ingles). Ej. <i>git log --until=2024-01</i>.
+        </li>
+        <li>
+            <span class="git-option">--before=FECHA</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra historial de antes de la fecha indicada (formato ingles). Ej. <i>git log --before=2023-01</i>.
+        </li>
+        <li>
+            <span class="git-option">--author=USERNAME</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra historial de commits de un determinado usuario.
+        </li>
+    </ul>
 
-<dt><code>git checkout ARCHIVO / COMMIT_HASH / BRANCA</code></dt>
-<dd>En caso de que el arhivo este en estado <span class="status">Modified</span>, se deshacen los cambios y vuelve a
-    estar como en su último commit. <br>
-Si ponemos el Hash del Commit que obtenemos con <i>git log</i> volveremos al punto de se mismo commit, deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo.</dd>
+    <dt><code>git checkout ARCHIVO / COMMIT_HASH / BRANCA</code></dt>
+    <dd>En caso de que el arhivo este en estado <span class="status">Modified</span>, se deshacen los cambios y vuelve a
+        estar como en su último commit. <br>
+        Si ponemos el Hash del Commit que obtenemos con <i>git log</i> volveremos al punto de se mismo commit,
+        deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo.</dd>
 
-<dt><code>git diff</code></dt>
-<dd>Se imprime en pantalla los cambios de todos los archivos con estado <span class="status">Modified</span></dd>
+    <dt><code>git diff</code></dt>
+    <dd>Se imprime en pantalla los cambios de todos los archivos con estado <span class="status">Modified</span></dd>
+
+    <dt><code>git reset</code></dt>
+    <dd>Deshace los últimos commits para mover el HEAD. Es obligatorio añadir parametros para ejecutarlo</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">--graph</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra el historial con un gráfico de las ramificaciones.
+        </li>
+        <li>
+            <span class="git-option">--pretty=FORMATO</span>
+            <i class="fa-solid fa-right-long"></i>
+            Muestra el historial con un formato diferente, puede ser: oneline, short, full, fuller y format.
+        </li>
+    </ul>
+
+    <dt><code>git reflog</code></dt>
+    <dd>Historial completo de commits, incluyendo incluso los que hemos deshecho con <i>git reset o git checkout</i>. <br>
+    Podemos volver al commit que queramos con <i>git reset --hard COMMIT_HASH</i> (incluso a commits deshechos).</dd>
 
 </dl>
 
