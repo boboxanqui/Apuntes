@@ -1,13 +1,5 @@
-dt {
-    margin-top: 1rem;
-}
-
 code {
     color: darkred;
-}
-
-.option-list {
-    list-style-type: none;
 }
 
 .cli-option {

@@ -1,0 +1,19 @@
+
+code{
+    color: orangered;
+    font-weight: 600;
+}
+
+.git-option{
+    color: orangered;
+    margin-right: .5rem;
+    /* letter-spacing: 2pt; */
+    font-style: italic;
+    opacity: .7;
+    /* font-weight: 300; */
+}
+
+.status{
+    font-weight: 600;
+    color: #555;
+}

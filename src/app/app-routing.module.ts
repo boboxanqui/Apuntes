@@ -7,6 +7,7 @@ import { HtmlComponent } from './pages/html/html.component';
 import { SassComponent } from './pages/sass/sass.component';
 import { TypescriptComponent } from './pages/typescript/typescript.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { GitComponent } from './pages/git/git.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent, pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'sass', component: SassComponent},
   {path: 'typescript', component:TypescriptComponent},
   {path: 'angular', component:AngularCLIComponent},
+  {path: 'git', component:GitComponent},
   {path: '**', redirectTo: ''}
 ]
 

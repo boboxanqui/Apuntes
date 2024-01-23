@@ -16,7 +16,13 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px; 
-    background-color:white;
+    background-color: #eee;
+}
+
+/* HACK: Posible dark theme */
+body.dark-theme{
+    background-color: #20272b;
+    color: #ccc;
 }
 
 app-root {
@@ -77,12 +83,36 @@ footer{
     font-family: 'Roboto Mono', monospace;
 }
 
+.fs-1{
+    font-size: 1rem;
+}
+
+.fs-2{
+    font-size: 1.2rem;
+}
+
+.fs-3{
+    font-size: 1.5rem;
+}
+
+.fs-4{
+    font-size: 1.8rem;
+}
+
 .fs1-5{
     font-size: 1.5rem;
 }
 
 .text-center{
     text-align: center !important;
+}
+
+.mt-1{
+    margin-top: .5rem;
+}
+
+.mt-2{
+    margin-top: 1rem;
 }
 
 .page-title{
@@ -92,9 +122,9 @@ footer{
 }
 
 .title-2{
-    font-size: 1.5rem !important;
+    font-size: 2rem ;
     text-align: center;
-    margin-top: 2rem !important;
+    margin-top: 3rem ;
 }
 
 .title-3{
@@ -112,7 +142,8 @@ footer{
     text-decoration: underline;
 }
 
-.op-6 {
+.op-6,
+.muted{
     opacity: .6;
 }
 
@@ -134,6 +165,10 @@ footer{
 
 .fa-angular {
     color: darkred;
+}
+
+.fa-git-alt{
+    color: #e84d31;
 }
 
 /* Box Styles */
@@ -171,6 +206,15 @@ footer{
     transition: .2s ease;
 }
 
+/* ·········· PAGES ·········· */
+
+dt {
+    margin-top: 1rem;
+}
+
+.option-list {
+    list-style-type: none;
+}
 
 /* ·········· SCROLL-UP BUTTON ·········· */
 

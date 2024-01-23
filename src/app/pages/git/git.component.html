@@ -1,0 +1,269 @@
+<h2 class="page-title">Git</h2>
+
+<p>Git es un software de código abierto para realizar un <b>control de versiones distribuido</b> de cualquier proyecto
+    de desarrollo y programación.</p>
+
+<p>Git permite trabajar a distintos miembros de un equipo en el mismo proyecto, cada uno con una copia del proyecto
+    independiente para ir efectuando contribuciones al proyecto original. Por este motivo se considera distributibo.</p>
+
+<p>Por otro lado, <b>permite trabajar en multiples brancas</b> para ir construyendo el proyecto por distintos lados e ir
+    guardando la progresión con su sistema de control de versiones con la que se guardan copias del proyecto para poder
+    ir versionando y volver a una copia antigua en caso necesario.</p>
+
+<p>Git tiene una <a href="https://git-scm.com/"
+       target="_blank"
+       rel="noopener noreferrer">página oficial</a> y un <a href="https://git-scm.com/book/es/v2"
+       target="_blank"
+       rel="noopener noreferrer">libro</a> con toda la documentación.</p>
+
+<p>Para poder utilizar git previamente se debe instalar en nuestra máquina. Se puede descargar directamente desde su <a
+       href="https://git-scm.com/downloads"
+       target="_blank"
+       rel="noopener noreferrer">página web</a>.</p>
+
+<p>Git se puede utilizar directamente en una terminal (incluyendo la terminal Git Bash especializada en git) o en un
+    entorno gráfico que permite trabajar git de una manera más visual. Hay varias opciones de entorno gráfico <a
+       href="https://git-scm.com/download/gui/windows"
+       target="_blank"
+       rel="noopener noreferrer">aquí</a>.</p>
+
+<p>Como en cualquier otro programa que se ejecuta en la terminal tenemos <code>git --version</code> para saber la
+    version instalada y <code>git --help</code> para obtener las palabras claves que se utilizan en la terminal.</p>
+
+<h4 class="title-3">Comandos básicos</h4>
+
+<p>Dejando a parte Git, algunos de los comandos básicos para cualquier terminal son los siguientes:</p>
+
+<dl>
+    <dt><code>ls</code></dt>
+    <dd>Lista todas las ubicaciones a las que tiene acceso en la ruta en la que se encuentre.</dd>
+
+    <dt><code>cd UBICACIÓN</code></dt>
+    <dd>Acceder a una nueva ruta. Ej <i class="muted">cd desktop/curso-git/capitulo_1</i>. <br>
+        Con <code>cd ..</code> se vuelve a la ruta anterior.</dd>
+
+    <dt><code>pwd</code></dt>
+    <dd>Indica la ruta donde se encuentra.</dd>
+
+    <dt><code>mkdir "CARPETA"</code></dt>
+    <dd>crea una nueva carpeta en la ruta con el nombre indicado.</dd>
+
+</dl>
+
+<!-- INICIO -->
+<h3 class="title-2">Inicio</h3>
+
+<p>Para empezar a utilizar git es necesario configurarlo con un correo y ejecutarlo</p>
+
+<dl>
+    <dt><code>git config</code></dt>
+    <dd>Comando para establecer la configuración (usuario).</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">--global</span>
+            <i class="fa-solid fa-right-long"></i>
+            Establece la configuración para toda la máquina.
+        </li>
+        <li>
+            <span class="git-option">user.name "NOMBRE"</span>
+            <i class="fa-solid fa-right-long"></i>
+            Crea el nombre de usuario, es obligatorio para empezar a utilizar git.
+        </li>
+        <li>
+            <span class="git-option">user.email "EMAIL"</span>
+            <i class="fa-solid fa-right-long"></i>
+            Crea el email de usuario, es obligatorio para empezar a utilizar git.
+        </li>
+        <li>
+            <span class="git-option">init.defaultBranch NOMBRE</span>
+            <i class="fa-solid fa-right-long"></i>
+            Se puede elegir el nombre para la primera branca del proyecto. Por defecto se crea con nombre <span
+                  class="muted">master</span>.
+        </li>
+        <li>
+            <span class="git-option">alias.NOMBRE "CONFIGS"</span>
+            <i class="fa-solid fa-right-long"></i>
+            Permite crear una abreviatura para ejecutar un comando que pueda tener varias opciones, con el fin de
+            ejecutar un mismo comando mucho más rápido. <br>
+            Ej. <i>git.config --global alias.tree "log --graph --decorate --all --oneline</i> guardará toda esta
+            configuración para ver los logs con el alias <i>tree.</i>
+        </li>
+    </ul>
+
+    <dt><code>git ALIAS</code></dt>
+    <dd>Ejecuta el alias que hayamos guardado previamente en <i>git config</i></dd>
+
+    <dt><code>git init</code></dt>
+    <dd>Comando para empezar a utilizar git en la ruta donde se ejecuta. Este comando crea una carpeta oculta
+        <i>.git</i> donde se almacena
+    </dd>
+
+</dl>
+
+<p>Si hay algunos archivos que no queremos que nunca se guarden ni se tengan en cuenta para los commits ni versiones de
+    git debemos ingluirlos en un archivo llamado <strong>.gitignore</strong></p>
+
+<p>Todos los archivos que se incluyan en este archivo no seran guardados en ningún momento por git ni github. </p>
+
+<p>Muy útil para ignorar archivos sensibles, las carpetas <span class="muted">/node-modules, /dist, /tmp</span> y de más
+    archivos temporales o de la propia máquina.</p>
+
+<p>Al crear este archivo debe ser añadido a git en un commit para que tenga en cuenta los archivos que debe ignorar.</p>
+
+<pre>
+    git add .gitignore
+    git commit -m "gitignore file added"
+</pre>
+
+<p>Al crear un proyecto de Angular, el archivo .gitignore se crea por defecto con todas estas carpetas.</p>
+
+<!-- COMANDOS BÁSICOS -->
+<h3 class="title-2">Comandos Básicos</h3>
+
+<p>Con los siguientes comandos podremos ir capturando el proyecto a medida que avanzamos y vamos modificandolo y ampliandolo. </p>
+
+<dl>
+<dt><code>git status</code></dt>
+<dd>Nos da información de como esta el proyecto en git (brancas, commits y estado de archivos).</dd>
+
+<dt><code>git add ARCHIVOS</code></dt>
+<dd>Permite elegir que archivos se van a tener en cuenta para ir guardando el progreso. Podemos añadir todos los
+    archivos escribiendo un punto "." en lugar del nombre de los archivos. Los archivos pasan a estar en estado
+    <span class="muted">stage</span>.
+</dd>
+
+<dt><code>git commit</code></dt>
+<dd>Guarda los archivos añadidos en la branca donde nos encontremos. Crea una captura de como se encuentran los
+    archivos en ese preciso momento. <br>
+    Tras ejecutar este comando se informa de los cambios realizados en la branca y del <span class="muted">HASH</span>
+    del commit (este hash es un identificador único del commit que puede resultar
+    útil para otros comandos a los que tengamos que hacer referencia a dicho commit). <br>
+    <strong>HEAD</strong> se denomina al último commit sobre el que estamos trabajando.</dd>
+
+<ul class="option-list">
+    <li>
+        <span class="git-option">-m "MENSAJE"</span>
+        <i class="fa-solid fa-right-long"></i>
+        Obligatorio añadir un mensaje/comentario que describa lo que hemos guardado o el progreso aplicado.
+    </li>
+</ul>
+
+<dt><code>git log</code></dt>
+<dd>Imprime el historial de commits y el usuario que lo ha realizado.</dd>
+
+<ul class="option-list">
+    <li>
+        <span class="git-option">--graph</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra el historial con un gráfico de las ramificaciones.
+    <li>
+        <span class="git-option">--pretty=FORMATO</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra el historial con un formato diferente, puede ser: oneline, short, full, fuller y format.
+    </li>
+    <li>
+        <span class="git-option">--stat</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra más datos de cada commit (archivos modificados, lineas modificadas o eliminadas).
+    </li>
+    <li>
+        <span class="git-option">--shortstat</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra un resumen de las modificaciones de cada commit.
+    </li>
+    <li>
+        <span class="git-option">--name-only</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra la lista de los archivos afectados en cada commit.
+    </li>
+    <li>
+        <span class="git-option">-NÚMERO</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra los últimos commits guardados que indiquemos.
+    </li>
+    <li>
+        <span class="git-option">--since=TIEMPO</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra historial desde el tiempo indicado (se debe indicar en ingles) o fecha. Ej. <i>git log
+            --since=2024-01-16</i> o por tiempo <i>git log --since=2.weeks.1.day</i>.
+    </li>
+    <li>
+        <span class="git-option">--after=FECHA</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra historial despues de la fecha indicada (formato ingles). Ej. <i>git log --after=2023-01</i>.
+    </li>
+    <li>
+        <span class="git-option">--until=FECHA</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra historial hasta la fecha indicada (formato ingles). Ej. <i>git log --until=2024-01</i>.
+    </li>
+    <li>
+        <span class="git-option">--before=FECHA</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra historial de antes de la fecha indicada (formato ingles). Ej. <i>git log --before=2023-01</i>.
+    </li>
+    <li>
+        <span class="git-option">--author=USERNAME</span>
+        <i class="fa-solid fa-right-long"></i>
+        Muestra historial de commits de un determinado usuario.
+    </li>
+</ul>
+
+<dt><code>git checkout ARCHIVO / COMMIT_HASH / BRANCA</code></dt>
+<dd>En caso de que el arhivo este en estado <span class="status">Modified</span>, se deshacen los cambios y vuelve a
+    estar como en su último commit. <br>
+Si ponemos el Hash del Commit que obtenemos con <i>git log</i> volveremos al punto de se mismo commit, deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo.</dd>
+
+<dt><code>git diff</code></dt>
+<dd>Se imprime en pantalla los cambios de todos los archivos con estado <span class="status">Modified</span></dd>
+
+</dl>
+
+<!-- ESTADOS ARCHIVOS -->
+<h4 class="title-3">Estados archivos</h4>
+
+<p>Los archivos pueden fluctuar por distintos estados dependiendo de los comandos ejecutados y de las modificaciones que
+    hagamos en ellos y con los commits:</p>
+
+<ul>
+    <li>
+        <strong>UNTRACKET</strong>
+        ➡ El archivo aún no ha sido añadido a git, por lo que no se tiene en cuenta para ningún comando.
+    </li>
+    <li>
+        <strong>STAGE</strong>
+        ➡ El archivo ha sido añadido para guardarse en un commit por primera vez.
+    </li>
+    <li>
+        <strong>????????</strong>
+        ➡ DESCIPTION.
+    </li>
+    <li>
+        <strong>MODIFIED</strong>
+        ➡ El archivo que ya habia sido commiteado se ha modificado y aún no se ha ejecutado ningún commit para guardar
+        los cambios.
+    </li>
+
+</ul>
+
+<!-- BRANCAS -->
+<h3 class="title-2">Ramas</h3>
+
+<p>Una de las principales características de git es que permite trabajar en diferentes Ramas paralelas, lo que permite
+    organizar el trabajo de una manera más eficiente sobretodo si hay varias personas implicadas.</p>
+
+<p>Hay varias técnicas para organizar las Ramas pero principalmente se distingue la branca master donde se guardas
+    versiones finales, branca de trabajo donde se van juntando los avances, Ramas de funcionalidades donde cada
+    persona añade su parte individual y Ramas de arreglos utilizadas para corregir fallos.</p>
+
+<img src="./../../../assets/img/git-branch-workflow.webp"
+     alt="distribución de Ramas en GIT"
+     class="img-fluid text-center">
+
+
+
+
+
+<h3 class="title-2">Título 2</h3>
+<h4 class="title-3">Título 3</h4>

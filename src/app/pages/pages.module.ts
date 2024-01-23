@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { SassComponent } from './sass/sass.component';
 import { AngularCLIComponent } from './angular-cli/angular-cli.component';
+import { GitComponent } from './git/git.component';
 
 
 
@@ -17,7 +18,8 @@ import { AngularCLIComponent } from './angular-cli/angular-cli.component';
     TypescriptComponent,
     WelcomeComponent,
     SassComponent,
-    AngularCLIComponent
+    AngularCLIComponent,
+    GitComponent
   ],
   imports: [
     CommonModule,
