@@ -186,6 +186,8 @@ footer{
     padding: 10px;
     max-width: 100%;
     height: auto;
+    display: flex;
+    margin: 10px auto;
 }
 
 .column-2{

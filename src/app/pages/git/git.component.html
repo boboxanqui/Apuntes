@@ -214,11 +214,13 @@
         </li>
     </ul>
 
-    <dt><code>git checkout ARCHIVO / COMMIT_HASH / BRANCA</code></dt>
+    <dt><code>git checkout ARCHIVO / COMMIT_HASH / tags/ETIQUETA / RAMA</code></dt>
     <dd>En caso de que el arhivo este en estado <span class="status">Modified</span>, se deshacen los cambios y vuelve a
         estar como en su último commit. <br>
         Si ponemos el Hash del Commit que obtenemos con <i>git log</i> volveremos al punto de se mismo commit,
-        deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo.</dd>
+        deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo. <br>
+        En caso de poner tags/ETIQUETA mueve el Head a la etiqueta indicada. <br>
+        Si indicamos la RAMA cambiamos a la rama especificada y ponemos el Head en su último commit.</dd>
 
     <dt><code>git diff</code></dt>
     <dd>Se imprime en pantalla los cambios de todos los archivos con estado <span class="status">Modified</span></dd>
@@ -228,20 +230,72 @@
 
     <ul class="option-list">
         <li>
-            <span class="git-option">--graph</span>
+            <span class="git-option">HEAD ARCHIVO</span>
             <i class="fa-solid fa-right-long"></i>
-            Muestra el historial con un gráfico de las ramificaciones.
+            Permite modificar un archivo <span class="status">Modified</span> a su estado del commit Head.
         </li>
         <li>
-            <span class="git-option">--pretty=FORMATO</span>
+            <span class="git-option">--hard COMMIT_HASH</span>
             <i class="fa-solid fa-right-long"></i>
-            Muestra el historial con un formato diferente, puede ser: oneline, short, full, fuller y format.
+            Descarta los commits posteriores a COMMIT_HASH y permite mover el Head al commit indicado.
+        </li>
+        <li>
+            <span class="git-option">--soft COMMIT_HASH</span>
+            <i class="fa-solid fa-right-long"></i>
+            Mueve el Head al commit indicado sin descartar los commits posteriores.
+        </li>
+        <li>
+            <span class="git-option">--merge COMMIT_HASH</span>
+            <i class="fa-solid fa-right-long"></i>
+            Mueve el Head al commit indicado haciendo merge de los cambios con el Head anterior.
         </li>
     </ul>
 
     <dt><code>git reflog</code></dt>
-    <dd>Historial completo de commits, incluyendo incluso los que hemos deshecho con <i>git reset o git checkout</i>. <br>
-    Podemos volver al commit que queramos con <i>git reset --hard COMMIT_HASH</i> (incluso a commits deshechos).</dd>
+    <dd>Historial completo de commits, incluyendo incluso los que hemos deshecho con <i>git reset o git checkout</i>.
+        <br>
+        Podemos volver al commit que queramos con <i>git reset --hard COMMIT_HASH</i> (incluso a commits deshechos).
+    </dd>
+
+    <dt><code>git tag </code></dt>
+    <dd>Permite añadir etiquetas tipo versionado después de un commit importante. Muy útil para ir marcando el progreso
+        con versiones e ir diferenciando el progreso con los cambios más relevantes. Muy habitual ir haciendo tags con
+        la nomenclatura <i>v0.0.0</i>. <br>
+        Si no añadimos nada más este comando nos muestra el historial de tags</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">ETIQUETA</span>
+            <i class="fa-solid fa-right-long"></i>
+            Añade el tag o versión con el texto ETIQUETA.
+        </li>
+        <li>
+            <span class="git-option">-a ETIQUETA</span>
+            <i class="fa-solid fa-right-long"></i>
+            Añade el tag de manera anotada, incluyendo username, correo, fecha, mensaje, etc.
+        </li>
+        <li>
+            <span class="git-option">-m "MENSAJE"</span>
+            <i class="fa-solid fa-right-long"></i>
+            Permite añadir un comentario al tag.
+        </li>
+        <li>
+            <span class="git-option">--merge COMMIT_HASH</span>
+            <i class="fa-solid fa-right-long"></i>
+            Mueve el Head al commit indicado haciendo merge de los cambios con el Head anterior.
+        </li>
+    </ul>
+
+    <p>En desarrollo de software hay un modo de ir versionando el progreso que va marcando el avance teniendo en cuenta
+        3 números vX.X.X: </p>
+
+    <img src="./../../../assets/img/versioning.jpg"
+         alt="Software versioning system"
+         width="500"
+         class="img-fluid text-center">
+
+    <dt><code>git show ETIQUETA</code></dt>
+    <dd>Permite ver la información de la etiqueta anotada.</dd>
 
 </dl>
 
@@ -284,9 +338,78 @@
 
 <img src="./../../../assets/img/git-branch-workflow.webp"
      alt="distribución de Ramas en GIT"
-     class="img-fluid text-center">
+     class="img-fluid">
 
+<dl>
+    <dt><code>git branch</code></dt>
+    <dd>Comando que permite ir creando nuevas ramas en nuestro proyecto. <br>
+        Si no añadimos nada más, este comando muestra todas las brancas que hay y marca en la que estamos trabajando
+        actualmente. </dd>
 
+    <ul class="option-list">
+        <li>
+            <span class="git-option">NOMBRE</span>
+            <i class="fa-solid fa-right-long"></i>
+            Crea una nueva rama con el nombre indicado. La rama se crea a partir del commit del Head donde nos
+            encontremos.
+        </li>
+        <li>
+            <span class="git-option">NOMBRE --delete (-d)</span>
+            <i class="fa-solid fa-right-long"></i>
+            Borra la rama indicada. Podemos añadir <i>--force</i> para forzar la eliminación. <br>
+        </li>
+        <li>
+            <span class="git-option">NOMBRE --move (-m)</span>
+            <i class="fa-solid fa-right-long"></i>
+            Cambia el nombre de la rama en la que estamos.
+        </li>
+
+    </ul>
+
+    <dt><code>git switch RAMA</code></dt>
+    <dd>Permite moverse a la rama indicada. <br>
+        Es habitual cambiar de rama también con <i>git checkout RAMA</i>, este comando hace descargarse la rama si
+        estamos trabajando en remoto y mover el Head a su último commit. <br>
+        Moverse de rama implica que los archivos y las modificaciones pueden desaparecer si la otra rama tiene un commit
+        más antiguo.</dd>
+
+    <dt><code>git merge RAMA</code></dt>
+    <dd>Fusiona la rama indicada en la rama en la que estamos, es decir que <strong> incluye todos los cambios de RAMA en la rama
+        que donde estamos.</strong> Esta acción genera un nuevo commit en la branca donde aplicamos el merge.<br>
+        Ejemplo: para fusionar los cambios que hemos hecho en la rama <i>bug_fix</i> debemos cambiar primero a la rama
+        <i>master</i> i ejecutar <i>git merge bug_fix</i>. <br>
+        Al hacer merge la RAMA que hemos incluido en la rama actual sigue existiendo. <strong> Si no se va a trabajar más en esa rama es recomendable eliminarla con <i>git branch -d RAMA</i></strong> para evitar tener multiples ramas activas </dd>
+
+</dl>
+
+<p>Al hacer merge se pueden generar <strong>conflictos</strong> cuando hay una modificación en ambas ramas de una misma linea de código. En este caso git avisa del conflicto para que se <strong>elija la modificación definitiva</strong> que se debe permanecer en el merge y el nuevo commit generado.</p>
+
+<dl>
+    <dt><code>git stash</code></dt>
+    <dd>Permite dejar los archivos con estado <span class="status">Modified</span> guardados sin necesidad de hacer commit. <br>
+    Muy útil cuando queremos cambiar de rama sin haber finalizado el código, hacemos <i>git stash</i>, se queda guardado el progreso y entonces git nos deja cambiar de rama guardando las modificaciones.</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">list</span>
+            <i class="fa-solid fa-right-long"></i>
+            Informa de los stash que hay guardados.
+        </li>
+        <li>
+            <span class="git-option">pop</span>
+            <i class="fa-solid fa-right-long"></i>
+            Recupera los cambios guardados en el stash.
+        </li>
+        <li>
+            <span class="git-option">drop</span>
+            <i class="fa-solid fa-right-long"></i>
+            Elimina el stash guardado y permite volver a como estaban los archivos en el último commit.
+        </li>
+    </ul>
+
+    <dt><code>git diff RAMA</code></dt>
+    <dd>Muestra las diferencias entre la rama actual y la rama indicada en el comando.</dd>
+</dl>
 
 
 
