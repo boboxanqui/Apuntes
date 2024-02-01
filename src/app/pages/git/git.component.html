@@ -95,7 +95,7 @@
             <i class="fa-solid fa-right-long"></i>
             Permite crear una abreviatura para ejecutar un comando que pueda tener varias opciones, con el fin de
             ejecutar un mismo comando mucho más rápido. <br>
-            Ej. <i>git.config --global alias.tree "log --graph --decorate --all --oneline</i> guardará toda esta
+            Ej. <i>git config --global alias.tree "log --graph --decorate --all --oneline"</i> guardará toda esta
             configuración para ver los logs con el alias <i>tree.</i>
         </li>
     </ul>
@@ -437,14 +437,56 @@
     guardado remotamente y permite compartirlo con otras personas para poder trabajar en el mismo proyecto remotamente.
 </p>
 
-<p>Github permite ver perfiles y repositorios de otros usuarios, por lo que es una buena herramienta para mostrar el trabajo realizado y los proyectos tanto personales como en los que se ha participado. Es recomendable organizar y ofrecer información para todos los visitantes que puedan acabar en nuestro perfil.</p>
+<p>Github permite ver perfiles y repositorios de otros usuarios, por lo que es una buena herramienta para mostrar el
+    trabajo realizado y los proyectos tanto personales como en los que se ha participado. Es recomendable organizar y
+    ofrecer información para todos los visitantes que puedan acabar en nuestro perfil.</p>
 
-<p>Muy importante crear la <strong>página principal</strong> donde podemos mostrar la información que queramos que la gente vea nada más entrar en nuestro perfil. Para ello se debe crear un nuevo repositorio con el mismo nombre que tenemos de usuario y con un <i>readme</i>.</p>
+<p>Muy importante crear la <strong>página principal</strong> donde podemos mostrar la información que queramos que la
+    gente vea nada más entrar en nuestro perfil. Para ello se debe crear un nuevo repositorio con el mismo nombre que
+    tenemos de usuario y con un <i>readme</i>.</p>
 
-<p>Tanto en la página principal como en cualquier otro documento <i>readme</i> o escrito de Github se utiliza el <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer" class="link">markdown</a> para enriquezer el texto. También se acepta código HTML.</p>
+<p>Tanto en la página principal como en cualquier otro documento <i>readme</i> o escrito de Github se utiliza el <a
+       href="https://www.markdownguide.org/cheat-sheet/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="link">markdown</a> para enriquezer el texto. También se acepta código HTML.</p>
 
-<p>Se puede <strong>sincronizar un proyecto</strong> de git con Github, es decir de local a remoto o al revés, de Github a git. Para empezar a sincronizar proyectos en Github primero de todo debemos autenticarnos, lo más recomendable es hacerlo con SSH, consulta <a class="link" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener noreferrer">este enlace</a> para más información. Este tipo de autenticación crear una carpeta con unos archivos utilizados para autenticar, podemos comprobar si ya hemos realizado este paso con el comando <code>ls -al ~/.ssh</code> en la consola de Git Bash.</p>
+<p>Se puede <strong>sincronizar un proyecto</strong> de git con Github, es decir de local a remoto o al revés, de Github
+    a git. Para empezar a sincronizar proyectos en Github primero de todo debemos autenticarnos, lo más recomendable es
+    hacerlo con SSH, consulta <a class="link"
+       href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+       target="_blank"
+       rel="noopener noreferrer">este enlace</a> para más información. Este tipo de autenticación crear una carpeta con
+    unos archivos utilizados para autenticar, podemos comprobar si ya hemos realizado este paso con el comando
+    <code>ls -al ~/.ssh</code> en la consola de Git Bash.
+</p>
 
+<p>Para trabajar con Github desde nuestro equipo local se utilizan varios comandos:</p>
+
+<dl>
+    <dt><code>git remote</code></dt>
+    <dd>Connecta el proyecto con el repositorio remoto de github</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">add origin LINK_REPO</span>
+            <i class="fa-solid fa-right-long"></i>
+            Se indica a que repositorio remoto debe conectarse. Ej. <i>git remote add origin git@github.com:boboxanqui/Apuntes.git</i>
+        </li>
+    </ul>
+
+    <dt><code>git push</code></dt>
+    <dd>Actualiza todos los últimos commits con el repositorio remoto.</dd>
+
+    <dt><code>git fetch</code></dt>
+    <dd>Descarga en local el historial de cambios, es decir los datos de los últimos commits sin descargar las modificaciones. Útil para comprobar si hay algun conflicto.</dd>
+
+    <dt><code>git pull</code></dt>
+    <dd>Descarga el historial de cambios y las modificaciones.</dd>
+
+    <dt><code>git clone LINK_REPO</code></dt>
+    <dd>Se descarga un repositorio remoto completo a local.</dd>
+</dl> 
 
 
 
