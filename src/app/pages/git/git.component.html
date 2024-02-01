@@ -10,25 +10,34 @@
     guardando la progresión con su sistema de control de versiones con la que se guardan copias del proyecto para poder
     ir versionando y volver a una copia antigua en caso necesario.</p>
 
-<p>Git tiene una <a href="https://git-scm.com/"
+<p>Git tiene una <a class="link"
+       href="https://git-scm.com/"
        target="_blank"
-       rel="noopener noreferrer">página oficial</a> y un <a href="https://git-scm.com/book/es/v2"
+       rel="noopener noreferrer">página oficial</a> y un <a class="link"
+       href="https://git-scm.com/book/es/v2"
        target="_blank"
        rel="noopener noreferrer">libro</a> con toda la documentación.</p>
 
 <p>Para poder utilizar git previamente se debe instalar en nuestra máquina. Se puede descargar directamente desde su <a
+       class="link"
        href="https://git-scm.com/downloads"
        target="_blank"
        rel="noopener noreferrer">página web</a>.</p>
 
 <p>Git se puede utilizar directamente en una terminal (incluyendo la terminal Git Bash especializada en git) o en un
     entorno gráfico que permite trabajar git de una manera más visual. Hay varias opciones de entorno gráfico <a
+       class="link"
        href="https://git-scm.com/download/gui/windows"
        target="_blank"
        rel="noopener noreferrer">aquí</a>.</p>
 
 <p>Como en cualquier otro programa que se ejecuta en la terminal tenemos <code>git --version</code> para saber la
     version instalada y <code>git --help</code> para obtener las palabras claves que se utilizan en la terminal.</p>
+
+<p>Muy recomendable revisar <a class="link"
+       href="https://training.github.com/downloads/es_ES/github-git-cheat-sheet.pdf"
+       target="_blank"
+       rel="noopener noreferrer">este cheatsheet</a> con los comandos principales de git</p>
 
 <h4 class="title-3">Comandos básicos</h4>
 
@@ -374,20 +383,28 @@
         más antiguo.</dd>
 
     <dt><code>git merge RAMA</code></dt>
-    <dd>Fusiona la rama indicada en la rama en la que estamos, es decir que <strong> incluye todos los cambios de RAMA en la rama
-        que donde estamos.</strong> Esta acción genera un nuevo commit en la branca donde aplicamos el merge.<br>
+    <dd>Fusiona la rama indicada en la rama en la que estamos, es decir que <strong> incluye todos los cambios de RAMA
+            en la rama
+            que donde estamos.</strong> Esta acción genera un nuevo commit en la branca donde aplicamos el merge.<br>
         Ejemplo: para fusionar los cambios que hemos hecho en la rama <i>bug_fix</i> debemos cambiar primero a la rama
         <i>master</i> i ejecutar <i>git merge bug_fix</i>. <br>
-        Al hacer merge la RAMA que hemos incluido en la rama actual sigue existiendo. <strong> Si no se va a trabajar más en esa rama es recomendable eliminarla con <i>git branch -d RAMA</i></strong> para evitar tener multiples ramas activas </dd>
+        Al hacer merge la RAMA que hemos incluido en la rama actual sigue existiendo. <strong> Si no se va a trabajar
+            más en esa rama es recomendable eliminarla con <i>git branch -d RAMA</i></strong> para evitar tener
+        multiples ramas activas
+    </dd>
 
 </dl>
 
-<p>Al hacer merge se pueden generar <strong>conflictos</strong> cuando hay una modificación en ambas ramas de una misma linea de código. En este caso git avisa del conflicto para que se <strong>elija la modificación definitiva</strong> que se debe permanecer en el merge y el nuevo commit generado.</p>
+<p>Al hacer merge se pueden generar <strong>conflictos</strong> cuando hay una modificación en ambas ramas de una misma
+    linea de código. En este caso git avisa del conflicto para que se <strong>elija la modificación definitiva</strong>
+    que se debe permanecer en el merge y el nuevo commit generado.</p>
 
 <dl>
     <dt><code>git stash</code></dt>
-    <dd>Permite dejar los archivos con estado <span class="status">Modified</span> guardados sin necesidad de hacer commit. <br>
-    Muy útil cuando queremos cambiar de rama sin haber finalizado el código, hacemos <i>git stash</i>, se queda guardado el progreso y entonces git nos deja cambiar de rama guardando las modificaciones.</dd>
+    <dd>Permite dejar los archivos con estado <span class="status">Modified</span> guardados sin necesidad de hacer
+        commit. <br>
+        Muy útil cuando queremos cambiar de rama sin haber finalizado el código, hacemos <i>git stash</i>, se queda
+        guardado el progreso y entonces git nos deja cambiar de rama guardando las modificaciones.</dd>
 
     <ul class="option-list">
         <li>
@@ -410,6 +427,25 @@
     <dt><code>git diff RAMA</code></dt>
     <dd>Muestra las diferencias entre la rama actual y la rama indicada en el comando.</dd>
 </dl>
+
+<!-- GITHUB -->
+<h3 class="title-2">GITHUB</h3>
+<p><a class="link"
+       href="http://github.com"
+       target="_blank"
+       rel="noopener noreferrer">Github</a> es una plataforma online que permite utilizar git. El proyecto queda
+    guardado remotamente y permite compartirlo con otras personas para poder trabajar en el mismo proyecto remotamente.
+</p>
+
+<p>Github permite ver perfiles y repositorios de otros usuarios, por lo que es una buena herramienta para mostrar el trabajo realizado y los proyectos tanto personales como en los que se ha participado. Es recomendable organizar y ofrecer información para todos los visitantes que puedan acabar en nuestro perfil.</p>
+
+<p>Muy importante crear la <strong>página principal</strong> donde podemos mostrar la información que queramos que la gente vea nada más entrar en nuestro perfil. Para ello se debe crear un nuevo repositorio con el mismo nombre que tenemos de usuario y con un <i>readme</i>.</p>
+
+<p>Tanto en la página principal como en cualquier otro documento <i>readme</i> o escrito de Github se utiliza el <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank" rel="noopener noreferrer" class="link">markdown</a> para enriquezer el texto. También se acepta código HTML.</p>
+
+<p>Se puede <strong>sincronizar un proyecto</strong> de git con Github, es decir de local a remoto o al revés, de Github a git. Para empezar a sincronizar proyectos en Github primero de todo debemos autenticarnos, lo más recomendable es hacerlo con SSH, consulta <a class="link" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener noreferrer">este enlace</a> para más información. Este tipo de autenticación crear una carpeta con unos archivos utilizados para autenticar, podemos comprobar si ya hemos realizado este paso con el comando <code>ls -al ~/.ssh</code> en la consola de Git Bash.</p>
+
+
 
 
 
