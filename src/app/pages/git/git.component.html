@@ -471,7 +471,8 @@
         <li>
             <span class="git-option">add origin LINK_REPO</span>
             <i class="fa-solid fa-right-long"></i>
-            Se indica a que repositorio remoto debe conectarse. Ej. <i>git remote add origin git@github.com:boboxanqui/Apuntes.git</i>
+            Se indica a que repositorio remoto debe conectarse. Ej. <i>git remote add origin
+                git@github.com:boboxanqui/Apuntes.git</i>
         </li>
     </ul>
 
@@ -479,14 +480,33 @@
     <dd>Actualiza todos los últimos commits con el repositorio remoto.</dd>
 
     <dt><code>git fetch</code></dt>
-    <dd>Descarga en local el historial de cambios, es decir los datos de los últimos commits sin descargar las modificaciones. Útil para comprobar si hay algun conflicto.</dd>
+    <dd>Descarga en local el historial de cambios, es decir los datos de los últimos commits sin descargar las
+        modificaciones. Útil para comprobar si hay algun conflicto.</dd>
 
     <dt><code>git pull</code></dt>
     <dd>Descarga el historial de cambios y las modificaciones.</dd>
 
     <dt><code>git clone LINK_REPO</code></dt>
     <dd>Se descarga un repositorio remoto completo a local.</dd>
-</dl> 
+</dl>
+
+<!-- Flujo colaborativo -->
+<h4 class="title-3">Flujo colaborativo</h4>
+
+<p>Github permite trabajar a varias personas en un único proyecto. Para poder participar en un proyecto es necesario dar
+    permisos a los contribuyentes.</p>
+
+<p>Para añadir cambios a un proyecto, primero es necesario hacer un <strong>fork</strong> del proyecto original. Se hace
+    directamente desde Github, dentro del repositorio del usuario que tiene el proyecto. Esto crea una copia del
+    repositorio en nuestro usuario, en el cual podremos hacer las modificaciones que queramos aportar haciendo un
+    <i>clone</i> a nuestro equipo local para poder trabajar.</p>
+
+<img src="../../../assets/img/github-fork-button.webp"
+     alt="Captura de pantalla de Github donde se indica el botón de Fork"
+     class="img-fluid text-center">
+
+<p>Para poder añadir los cambios al proyecto original, se hace a través de <strong>Pull Request</strong> (PR de forma
+    abreviada). La PR se hace directamente desde Github, en la copia del proyecto que tenemos en nuestra cuenta. </p>
 
 
 
