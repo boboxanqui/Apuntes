@@ -508,6 +508,24 @@
 <p>Para poder añadir los cambios al proyecto original, se hace a través de <strong>Pull Request</strong> (PR de forma
     abreviada). La PR se hace directamente desde Github, en la copia del proyecto que tenemos en nuestra cuenta. </p>
 
+<p>Al hacer una PR podemos comparar las modificaciones con el proyecto original, ver en la parte superior la rama y el proyecto al que queremos hacer los cambios. También es aconsejable añadir un título (explicando el cambio) y podemos dejar comentarios. Una vez enviada la PR debe ser el usuario del proyecto original quien apruebe los cambios, deje un comentario o solicite modificar algo más. Una vez aprobado debe hacer <i>merge</i> a su proyecto. </p>
+
+<p>El flujo completo de trabajo seria:</p>
+
+<ol>
+    <li>Hacemos <strong>fork</strong> del proyecto.</li>
+    <li><strong>Clonamos</strong> el proyecto para tenerlo en local y poder trabajar en él.</li>
+    <li>Creamos una <strong>nueva rama</strong> donde añadiremos nuestras modificaciones.</li>
+    <li>Hacemos un <strong>push</strong> a nuestro repositorio remoto para añadir los cambios.</li>
+    <li>Solicitamos la <strong>pull request</strong> al proyecto originial desde nuestra nueva rama a la rama correspondiente del proyecto original.</li>
+    <li>Esperamos la <strong>aprobación o revisión</strong> de nuestros cambios por parte del autor.</li>
+</ol>
+
+<p>Las PR pueden generar <strong>conflictos</strong> cuando hay un cambio solicitado con una PR en una misma linea que ya ha sido modificada.</p>
+
+<p>Github nos permite solventar los conflictos directamente desde su web, de modo que podemos quedarnos con una de las dos partes, añadir las dos o hacer los cambios requeridos.</p>
+
+<p>Después de completar una PR es recomendable <strong>sincronizar</strong> el repositorio remoto de nuestro usuario para tener todos los nuevos cambios que se han añadido al proyecto original y poder seguir trabajando con el proyecto actualizado. Lo podemos hacer directamente desde Github con la opción <strong>Sync fork</strong>.</p>
 
 
 
