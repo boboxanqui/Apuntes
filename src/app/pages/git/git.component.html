@@ -95,17 +95,17 @@
             <i class="fa-solid fa-right-long"></i>
             Permite crear una abreviatura para ejecutar un comando que pueda tener varias opciones, con el fin de
             ejecutar un mismo comando mucho más rápido. <br>
-            Ej. <i>git config --global alias.tree "log --graph --decorate --all --oneline"</i> guardará toda esta
-            configuración para ver los logs con el alias <i>tree.</i>
+            Ej. <i class="muted">git config --global alias.tree "log --graph --decorate --all --oneline"</i> guardará toda esta
+            configuración para ver los logs con el alias <i class="muted">tree.</i>
         </li>
     </ul>
 
     <dt><code>git ALIAS</code></dt>
-    <dd>Ejecuta el alias que hayamos guardado previamente en <i>git config</i></dd>
+    <dd>Ejecuta el alias que hayamos guardado previamente en <i class="muted">git config</i></dd>
 
     <dt><code>git init</code></dt>
     <dd>Comando para empezar a utilizar git en la ruta donde se ejecuta. Este comando crea una carpeta oculta
-        <i>.git</i> donde se almacena
+        <i class="muted">.git</i> donde se almacena
     </dd>
 
 </dl>
@@ -226,7 +226,7 @@
     <dt><code>git checkout ARCHIVO / COMMIT_HASH / tags/ETIQUETA / RAMA</code></dt>
     <dd>En caso de que el arhivo este en estado <span class="status">Modified</span>, se deshacen los cambios y vuelve a
         estar como en su último commit. <br>
-        Si ponemos el Hash del Commit que obtenemos con <i>git log</i> volveremos al punto de se mismo commit,
+        Si ponemos el Hash del Commit que obtenemos con <i class="muted">git log</i> volveremos al punto de se mismo commit,
         deshaciendo todas los modificaciones e incluso eliminando archivos en caso de haber creado alguno nuevo. <br>
         En caso de poner tags/ETIQUETA mueve el Head a la etiqueta indicada. <br>
         Si indicamos la RAMA cambiamos a la rama especificada y ponemos el Head en su último commit.</dd>
@@ -261,15 +261,15 @@
     </ul>
 
     <dt><code>git reflog</code></dt>
-    <dd>Historial completo de commits, incluyendo incluso los que hemos deshecho con <i>git reset o git checkout</i>.
+    <dd>Historial completo de commits, incluyendo incluso los que hemos deshecho con <i class="muted">git reset o git checkout</i>.
         <br>
-        Podemos volver al commit que queramos con <i>git reset --hard COMMIT_HASH</i> (incluso a commits deshechos).
+        Podemos volver al commit que queramos con <i class="muted">git reset --hard COMMIT_HASH</i> (incluso a commits deshechos).
     </dd>
 
     <dt><code>git tag </code></dt>
     <dd>Permite añadir etiquetas tipo versionado después de un commit importante. Muy útil para ir marcando el progreso
         con versiones e ir diferenciando el progreso con los cambios más relevantes. Muy habitual ir haciendo tags con
-        la nomenclatura <i>v0.0.0</i>. <br>
+        la nomenclatura <i class="muted">v0.0.0</i>. <br>
         Si no añadimos nada más este comando nos muestra el historial de tags</dd>
 
     <ul class="option-list">
@@ -315,10 +315,12 @@
 
 <dl>
     <dt><code>git cherry-pick COMMIT_HASH</code></dt>
-    <dd>Permite ir a un commit concreto para traerlo a otra rama. Útil para traer partes de código que queremos reutilizar en otras ramas.</dd>
+    <dd>Permite ir a un commit concreto para traerlo a otra rama. Útil para traer partes de código que queremos
+        reutilizar en otras ramas.</dd>
 
     <dt><code>git rebase RAMA</code></dt>
-    <dd>Permite modificar el orden de las rama, por lo que cambia el historial. Este comando mueve la rama indicada al lugar donde nos encontramos de la actual rama.</dd>
+    <dd>Permite modificar el orden de las rama, por lo que cambia el historial. Este comando mueve la rama indicada al
+        lugar donde nos encontramos de la actual rama.</dd>
 </dl>
 
 <!-- ESTADOS ARCHIVOS -->
@@ -378,7 +380,7 @@
         <li>
             <span class="git-option">NOMBRE --delete (-d)</span>
             <i class="fa-solid fa-right-long"></i>
-            Borra la rama indicada. Podemos añadir <i>--force</i> para forzar la eliminación. <br>
+            Borra la rama indicada. Podemos añadir <i class="muted">--force</i> para forzar la eliminación. <br>
         </li>
         <li>
             <span class="git-option">NOMBRE --move (-m)</span>
@@ -390,7 +392,7 @@
 
     <dt><code>git switch RAMA</code></dt>
     <dd>Permite moverse a la rama indicada. <br>
-        Es habitual cambiar de rama también con <i>git checkout RAMA</i>, este comando hace descargarse la rama si
+        Es habitual cambiar de rama también con <i class="muted">git checkout RAMA</i>, este comando hace descargarse la rama si
         estamos trabajando en remoto y mover el Head a su último commit. <br>
         Moverse de rama implica que los archivos y las modificaciones pueden desaparecer si la otra rama tiene un commit
         más antiguo.</dd>
@@ -399,10 +401,10 @@
     <dd>Fusiona la rama indicada en la rama en la que estamos, es decir que <strong> incluye todos los cambios de RAMA
             en la rama
             que donde estamos.</strong> Esta acción genera un nuevo commit en la branca donde aplicamos el merge.<br>
-        Ejemplo: para fusionar los cambios que hemos hecho en la rama <i>bug_fix</i> debemos cambiar primero a la rama
-        <i>master</i> i ejecutar <i>git merge bug_fix</i>. <br>
+        Ejemplo: para fusionar los cambios que hemos hecho en la rama <i class="muted">bug_fix</i> debemos cambiar primero a la rama
+        <i class="muted">master</i> i ejecutar <i class="muted">git merge bug_fix</i>. <br>
         Al hacer merge la RAMA que hemos incluido en la rama actual sigue existiendo. <strong> Si no se va a trabajar
-            más en esa rama es recomendable eliminarla con <i>git branch -d RAMA</i></strong> para evitar tener
+            más en esa rama es recomendable eliminarla con <i class="muted">git branch -d RAMA</i></strong> para evitar tener
         multiples ramas activas
     </dd>
 
@@ -416,7 +418,7 @@
     <dt><code>git stash</code></dt>
     <dd>Permite dejar los archivos con estado <span class="status">Modified</span> guardados sin necesidad de hacer
         commit. <br>
-        Muy útil cuando queremos cambiar de rama sin haber finalizado el código, hacemos <i>git stash</i>, se queda
+        Muy útil cuando queremos cambiar de rama sin haber finalizado el código, hacemos <i class="muted">git stash</i>, se queda
         guardado el progreso y entonces git nos deja cambiar de rama guardando las modificaciones.</dd>
 
     <ul class="option-list">
@@ -456,9 +458,9 @@
 
 <p>Muy importante crear la <strong>página principal</strong> donde podemos mostrar la información que queramos que la
     gente vea nada más entrar en nuestro perfil. Para ello se debe crear un nuevo repositorio con el mismo nombre que
-    tenemos de usuario y con un <i>readme</i>.</p>
+    tenemos de usuario y con un <i class="muted">readme</i>.</p>
 
-<p>Tanto en la página principal como en cualquier otro documento <i>readme</i> o escrito de Github se utiliza el <a
+<p>Tanto en la página principal como en cualquier otro documento <i class="muted">readme</i> o escrito de Github se utiliza el <a
        href="https://www.markdownguide.org/cheat-sheet/"
        target="_blank"
        rel="noopener noreferrer"
@@ -466,7 +468,8 @@
 
 <p>El archivo <strong>readme</strong> de cualquier proyecto es el que se muestra nada más abrir el proyecto en Github,
     por lo que es aconsejable añadir la documentación o información a cerca del proyecto. El formato suele ser
-    <i>readme.md</i> para que acepte el texto enriquecido de markdown. </p>
+    <i class="muted">readme.md</i> para que acepte el texto enriquecido de markdown.
+</p>
 
 <p>Se puede <strong>sincronizar un proyecto</strong> de git con Github, es decir de local a remoto o al revés, de Github
     a git. Para empezar a sincronizar proyectos en Github primero de todo debemos autenticarnos, lo más recomendable es
@@ -488,7 +491,7 @@
         <li>
             <span class="git-option">add origin LINK_REPO</span>
             <i class="fa-solid fa-right-long"></i>
-            Se indica a que repositorio remoto debe conectarse. Ej. <i>git remote add origin
+            Se indica a que repositorio remoto debe conectarse. Ej. <i class="muted">git remote add origin
                 git@github.com:boboxanqui/Apuntes.git</i>
         </li>
     </ul>
@@ -507,6 +510,20 @@
     <dd>Se descarga un repositorio remoto completo a local.</dd>
 </dl>
 
+<p class="tip">Github tiene un servicio de <strong>hosting gratuito</strong> que permite públicar la web desarrollada en
+    nuestro
+    repositorio remoto a traves de <a href="https://pages.github.com/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="link">Github Pages</a>.</p>
+
+<p class="tip">Github también ofrece <a href="https://github.com/features/actions"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="link">Github Actions</a> que se trata un servicio para <strong>automatizar tareas</strong>, de modo que cada vez que
+    hagamos una acción concreta, Github se encarga de realizar las tareas que hayamos configurado (tests, desplegues,
+    publicaciones, versionado, etc.).</p>
+
 <!-- Flujo colaborativo -->
 <h4 class="title-3">Flujo colaborativo</h4>
 
@@ -516,7 +533,8 @@
 <p>Para añadir cambios a un proyecto, primero es necesario hacer un <strong>fork</strong> del proyecto original. Se hace
     directamente desde Github, dentro del repositorio del usuario que tiene el proyecto. Esto crea una copia del
     repositorio en nuestro usuario, en el cual podremos hacer las modificaciones que queramos aportar haciendo un
-    <i>clone</i> a nuestro equipo local para poder trabajar.</p>
+    <i class="muted">clone</i> a nuestro equipo local para poder trabajar.
+</p>
 
 <img src="../../../assets/img/github-fork-button.webp"
      alt="Captura de pantalla de Github donde se indica el botón de Fork"
@@ -528,7 +546,7 @@
 <p>Al hacer una PR podemos comparar las modificaciones con el proyecto original, ver en la parte superior la rama y el
     proyecto al que queremos hacer los cambios. También es aconsejable añadir un título (explicando el cambio) y podemos
     dejar comentarios. Una vez enviada la PR debe ser el usuario del proyecto original quien apruebe los cambios, deje
-    un comentario o solicite modificar algo más. Una vez aprobado debe hacer <i>merge</i> a su proyecto. </p>
+    un comentario o solicite modificar algo más. Una vez aprobado debe hacer <i class="muted">merge</i> a su proyecto. </p>
 
 <p>El flujo completo de trabajo seria:</p>
 
@@ -610,28 +628,32 @@
 <p>Consiste en 2 ramas principales, la rama <strong>main</strong> donde se van creando las versiones del proyecto y la
     rama <strong>develop</strong> en la cual se va trabajando y añadiendo todo el progreso.</p>
 
-<p>Una vez llegamos a un punto en <i>develop</i> donde se ha conseguido y testeado la mejora o el cambio a realizar se
-    crea la rama <strong>release</strong> donde haremos el <i>tag</i> con la versión correspondiente y el merge a la
-    rama <i>main</i>. La rama <i>release</i> se elimina despues de cada merge y la rama <i>develop</i> y <i>main</i> se
+<p>Una vez llegamos a un punto en <i class="muted">develop</i> donde se ha conseguido y testeado la mejora o el cambio a realizar se
+    crea la rama <strong>release</strong> donde haremos el <i class="muted">tag</i> con la versión correspondiente y el merge a la
+    rama <i class="muted">main</i>. La rama <i class="muted">release</i> se elimina despues de cada merge y la rama <i class="muted">develop</i> y <i class="muted">main</i> se
     mantienen siempre para continuar con el desarrollo.</p>
 
-<p>Desde la rama <i>develop</i> se van creando ramas <strong>feature</strong> donde se crean las nuevas funcionalidades
-    o cambios en el proyecto, una vez completado se hace <i>merge</i> a develop y se cierra la rama. Se puede tener
-    multiples ramas <i>feature</i> abiertas al mismo tiempo.</p>
+<p>Desde la rama <i class="muted">develop</i> se van creando ramas <strong>feature</strong> donde se crean las nuevas funcionalidades
+    o cambios en el proyecto, una vez completado se hace <i class="muted">merge</i> a develop y se cierra la rama. Se puede tener
+    multiples ramas <i class="muted">feature</i> abiertas al mismo tiempo.</p>
 
 <p>Otro tipo de rama es la <strong>hotfix</strong> que se utiliza para solucionar errores urgentes. Para agilizar el
-    proceso, se detecta en que verión se ha generado el bug y desde la rama <i>main</i> se abre una nueva rama
-    <i>hotfix</i> donde se resuelve el bug y se hace merge a la rama <i>main</i> y <i>develop</i> para que todos sigan
-    trabajando con el bug solucionado. La rama <i>hotfix</i> se cierra al finalizar este proceso. </p>
+    proceso, se detecta en que verión se ha generado el bug y desde la rama <i class="muted">main</i> se abre una nueva rama
+    <i class="muted">hotfix</i> donde se resuelve el bug y se hace merge a la rama <i class="muted">main</i> y <i class="muted">develop</i> para que todos sigan
+    trabajando con el bug solucionado. La rama <i class="muted">hotfix</i> se cierra al finalizar este proceso.
+</p>
 
-<p class="tip"> <strong>GitKraken</strong> tiene un template para poder trabajar con este tipo de flujo que automatiza la creación de las ramas.</p>
+<p class="tip"> <strong>GitKraken</strong> tiene un template para poder trabajar con este tipo de flujo que automatiza
+    la creación de las ramas.</p>
 
 <p>Más información en <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="link">este enlace</a>.</p>
-    
-<p><strong>Git</strong> también incorpora una herramienta para poder trabajar con git flow llamada <strong>git flow</strong>. Podemos ejectura el comando <code>git flow</code> en la consola para ver todos los posibles comandos. Siempre es necesario la sintaxis <code>git flow COMMAND</code> para trabajar con git flow.</p>
+       target="_blank"
+       rel="noopener noreferrer"
+       class="link">este enlace</a>.</p>
+
+<p><strong>Git</strong> también incorpora una herramienta para poder trabajar con git flow llamada <strong>git
+        flow</strong>. Podemos ejectura el comando <code>git flow</code> en la consola para ver todos los posibles
+    comandos. Siempre es necesario la sintaxis <code>git flow COMMAND</code> para trabajar con git flow.</p>
 
 <p>Algunos comandos básicos de git flow:</p>
 
@@ -640,41 +662,49 @@
     <dd>Inicia el flujo tipo gitflow y permite modificar los nombres de las ramas estandars.</dd>
 
     <dt><code>git flow feature</code></dt>
-    <dd>Permite trabajar con las ramas <strong>feature</strong> que se crean desde <i>develop</i>.</dd>
+    <dd>Permite trabajar con las ramas <strong>feature</strong> que se crean desde <i class="muted">develop</i>.</dd>
 
     <ul class="option-list">
         <li>
             <span class="git-option">start NOMBRE</span>
             <i class="fa-solid fa-right-long"></i>
-            Crea una nueva rama <i>feature</i>.
+            Crea una nueva rama <i class="muted">feature</i>.
         </li>
         <li>
             <span class="git-option">finish NOMBRE</span>
             <i class="fa-solid fa-right-long"></i>
-            Cuando hemos completado el desarrolo de esta rama, este comando añade los cambios a <i>develop</i> y cierra la rama.
+            Cuando hemos completado el desarrolo de esta rama, este comando añade los cambios a <i class="muted">develop</i> y cierra
+            la rama.
         </li>
     </ul>
 
     <dt><code>git flow release</code></dt>
-    <dd>Permite trabajar con las ramas <strong>release</strong> que se crean desde <i>develop</i> para añadir las versiones en la rama <i>main</i>.</dd>
+    <dd>Permite trabajar con las ramas <strong>release</strong> que se crean desde <i class="muted">develop</i> para añadir las
+        versiones en la rama <i class="muted">main</i>.</dd>
 
     <ul class="option-list">
         <li>
             <span class="git-option">start VERSIÓN</span>
             <i class="fa-solid fa-right-long"></i>
-            Crea una nueva rama <i>release</i> con la versión indicada.
+            Crea una nueva rama <i class="muted">release</i> con la versión indicada.
         </li>
         <li>
             <span class="git-option">finish VERSIÓN</span>
             <i class="fa-solid fa-right-long"></i>
-            Cierra la rama y añade la versión a la rama <i>main</i>.
+            Cierra la rama y añade la versión a la rama <i class="muted">main</i>.
         </li>
     </ul>
 </dl>
 
 
+<hr>
 
-
-
+<pre>Custom formats</pre>
 <h3 class="title-2">Título 2</h3>
 <h4 class="title-3">Título 3</h4>
+<span class="status">Status</span><br>
+<a href="#" target="_blank" rel="noopener noreferrer" class="link">Link</a><br>
+<span class="muted">Muted</span><br>
+<span class="tip">Tip</span><br>
+<code>code</code><br>
+<span class="git-option">optional code</span><br>
