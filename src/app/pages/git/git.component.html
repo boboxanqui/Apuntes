@@ -308,6 +308,19 @@
 
 </dl>
 
+<!-- COMANDOS AVANZADOS -->
+
+<h4 class="title-3">Comandos Avanzados</h4>
+<p>Comandos poco usados, para ocasiones especiales que pueden dar un poco de respeto:</p>
+
+<dl>
+    <dt><code>git cherry-pick COMMIT_HASH</code></dt>
+    <dd>Permite ir a un commit concreto para traerlo a otra rama. Útil para traer partes de código que queremos reutilizar en otras ramas.</dd>
+
+    <dt><code>git rebase RAMA</code></dt>
+    <dd>Permite modificar el orden de las rama, por lo que cambia el historial. Este comando mueve la rama indicada al lugar donde nos encontramos de la actual rama.</dd>
+</dl>
+
 <!-- ESTADOS ARCHIVOS -->
 <h4 class="title-3">Estados archivos</h4>
 
@@ -451,7 +464,9 @@
        rel="noopener noreferrer"
        class="link">markdown</a> para enriquezer el texto. También se acepta código HTML.</p>
 
-<p>El archivo <strong>readme</strong> de cualquier proyecto es el que se muestra nada más abrir el proyecto en Github, por lo que es aconsejable añadir la documentación o información a cerca del proyecto. El formato suele ser <i>readme.md</i> para que acepte el texto enriquecido de markdown. </p>
+<p>El archivo <strong>readme</strong> de cualquier proyecto es el que se muestra nada más abrir el proyecto en Github,
+    por lo que es aconsejable añadir la documentación o información a cerca del proyecto. El formato suele ser
+    <i>readme.md</i> para que acepte el texto enriquecido de markdown. </p>
 
 <p>Se puede <strong>sincronizar un proyecto</strong> de git con Github, es decir de local a remoto o al revés, de Github
     a git. Para empezar a sincronizar proyectos en Github primero de todo debemos autenticarnos, lo más recomendable es
@@ -510,7 +525,10 @@
 <p>Para poder añadir los cambios al proyecto original, se hace a través de <strong>Pull Request</strong> (PR de forma
     abreviada). La PR se hace directamente desde Github, en la copia del proyecto que tenemos en nuestra cuenta. </p>
 
-<p>Al hacer una PR podemos comparar las modificaciones con el proyecto original, ver en la parte superior la rama y el proyecto al que queremos hacer los cambios. También es aconsejable añadir un título (explicando el cambio) y podemos dejar comentarios. Una vez enviada la PR debe ser el usuario del proyecto original quien apruebe los cambios, deje un comentario o solicite modificar algo más. Una vez aprobado debe hacer <i>merge</i> a su proyecto. </p>
+<p>Al hacer una PR podemos comparar las modificaciones con el proyecto original, ver en la parte superior la rama y el
+    proyecto al que queremos hacer los cambios. También es aconsejable añadir un título (explicando el cambio) y podemos
+    dejar comentarios. Una vez enviada la PR debe ser el usuario del proyecto original quien apruebe los cambios, deje
+    un comentario o solicite modificar algo más. Una vez aprobado debe hacer <i>merge</i> a su proyecto. </p>
 
 <p>El flujo completo de trabajo seria:</p>
 
@@ -519,38 +537,143 @@
     <li><strong>Clonamos</strong> el proyecto para tenerlo en local y poder trabajar en él.</li>
     <li>Creamos una <strong>nueva rama</strong> donde añadiremos nuestras modificaciones.</li>
     <li>Hacemos un <strong>push</strong> a nuestro repositorio remoto para añadir los cambios.</li>
-    <li>Solicitamos la <strong>pull request</strong> al proyecto originial desde nuestra nueva rama a la rama correspondiente del proyecto original.</li>
+    <li>Solicitamos la <strong>pull request</strong> al proyecto originial desde nuestra nueva rama a la rama
+        correspondiente del proyecto original.</li>
     <li>Esperamos la <strong>aprobación o revisión</strong> de nuestros cambios por parte del autor.</li>
 </ol>
 
-<p>Las PR pueden generar <strong>conflictos</strong> cuando hay un cambio solicitado con una PR en una misma linea que ya ha sido modificada.</p>
+<p>Las PR pueden generar <strong>conflictos</strong> cuando hay un cambio solicitado con una PR en una misma linea que
+    ya ha sido modificada.</p>
 
-<p>Github nos permite solventar los conflictos directamente desde su web, de modo que podemos quedarnos con una de las dos partes, añadir las dos o hacer los cambios requeridos.</p>
+<p>Github nos permite solventar los conflictos directamente desde su web, de modo que podemos quedarnos con una de las
+    dos partes, añadir las dos o hacer los cambios requeridos.</p>
 
-<p>Después de completar una PR es recomendable <strong>sincronizar</strong> el repositorio remoto de nuestro usuario para tener todos los nuevos cambios que se han añadido al proyecto original y poder seguir trabajando con el proyecto actualizado. Lo podemos hacer directamente desde Github con la opción <strong>Sync fork</strong>.</p>
+<p>Después de completar una PR es recomendable <strong>sincronizar</strong> el repositorio remoto de nuestro usuario
+    para tener todos los nuevos cambios que se han añadido al proyecto original y poder seguir trabajando con el
+    proyecto actualizado. Lo podemos hacer directamente desde Github con la opción <strong>Sync fork</strong>.</p>
 
 <h3 class="title-2">Herramientas Gràficas</h3>
 
-<p>Son programas externos que sirven para realizar las tareas de git y github de una forma más visual y accesible, sin necesidad de ejecutar comandos.</p>
+<p>Son programas externos que sirven para realizar las tareas de git y github de una forma más visual y accesible, sin
+    necesidad de ejecutar comandos.</p>
 
 <p>Las herramientas más utilizadas son:</p>
 
 <dl>
-    <dt> <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer" class="link">Github Desktop</a></dt>
-    <dd>Herramienta creada por github que permite sincornizar el repositorio remoto, abrir repositorios locales e ir trabajando con ellos. <br>
-    Programa útil para realizar tareas simples.</dd>
+    <dt> <a href="https://desktop.github.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="link">Github Desktop</a></dt>
+    <dd>Herramienta creada por github que permite sincornizar el repositorio remoto, abrir repositorios locales e ir
+        trabajando con ellos. <br>
+        Programa útil para realizar tareas simples.</dd>
 
-    <dt><a href="https://www.gitkraken.com/" target="_blank" rel="noopener noreferrer" class="link">Git Kraken</a></dt>
-    <dd>Herramienta profesiona (favorita de mouredev) que permite hacer muchisimas acciones. Visionado visual de ramas, commits, merges, PR. <br>
-    Permite sincronización con git local y github remoto, abrir varios proyectos a la vez, UI intuitiva y terminal incluida. <br>
-    Para trabajar con repositorios privados es de pago.</dd>
+    <dt><a href="https://www.gitkraken.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="link">Git Kraken</a></dt>
+    <dd>Herramienta profesiona (favorita de mouredev) que permite hacer muchisimas acciones. Visionado visual de ramas,
+        commits, merges, PR. <br>
+        Permite sincronización con git local y github remoto, abrir varios proyectos a la vez, UI intuitiva y terminal
+        incluida. <br>
+        Para trabajar con repositorios privados es de pago.</dd>
 
-    <dt><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener noreferrer" class="link">Source Tree</a></dt>
-    <dd>Creada por Atlassian, totalmente gratuita para repos privados o públicos. También dispone de UI muy intuitiva y parecida a git kraken.</dd>
+    <dt><a href="https://www.sourcetreeapp.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="link">Source Tree</a></dt>
+    <dd>Creada por Atlassian, totalmente gratuita para repos privados o públicos. También dispone de UI muy intuitiva y
+        parecida a git kraken.</dd>
 
-    <dt><a href="https://git-fork.com/" target="_blank" rel="noopener noreferrer" class="link">Git fork</a></dt>
+    <dt><a href="https://git-fork.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="link">Git fork</a></dt>
     <dd>Otra herramienta utilizada con UI intuitiva.</dd>
 </dl>
+
+<!-- Flujo de trabajo -->
+<h3 class="title-2">Flujo de trabajo</h3>
+
+<p>Cuando se trabaja tanto en solitario como en un equipo es muy importante definir un flujo de trabajo para coordinar y
+    establecer un orden a la hora de desarrollar el proyecto.</p>
+
+<p>Hay dos flujos de trabajo estandarizados, el <strong>Gitflow</strong> y el <strong>GithubFlow</strong>.</p>
+
+<h4 class="title-3">Gitflow</h4>
+
+<img src="../../../assets/img/gitflow.svg"
+     alt="Diagrama de trabajo de gitflow"
+     class="img-fluid text-center"
+     width="700">
+
+<p>Consiste en 2 ramas principales, la rama <strong>main</strong> donde se van creando las versiones del proyecto y la
+    rama <strong>develop</strong> en la cual se va trabajando y añadiendo todo el progreso.</p>
+
+<p>Una vez llegamos a un punto en <i>develop</i> donde se ha conseguido y testeado la mejora o el cambio a realizar se
+    crea la rama <strong>release</strong> donde haremos el <i>tag</i> con la versión correspondiente y el merge a la
+    rama <i>main</i>. La rama <i>release</i> se elimina despues de cada merge y la rama <i>develop</i> y <i>main</i> se
+    mantienen siempre para continuar con el desarrollo.</p>
+
+<p>Desde la rama <i>develop</i> se van creando ramas <strong>feature</strong> donde se crean las nuevas funcionalidades
+    o cambios en el proyecto, una vez completado se hace <i>merge</i> a develop y se cierra la rama. Se puede tener
+    multiples ramas <i>feature</i> abiertas al mismo tiempo.</p>
+
+<p>Otro tipo de rama es la <strong>hotfix</strong> que se utiliza para solucionar errores urgentes. Para agilizar el
+    proceso, se detecta en que verión se ha generado el bug y desde la rama <i>main</i> se abre una nueva rama
+    <i>hotfix</i> donde se resuelve el bug y se hace merge a la rama <i>main</i> y <i>develop</i> para que todos sigan
+    trabajando con el bug solucionado. La rama <i>hotfix</i> se cierra al finalizar este proceso. </p>
+
+<p class="tip"> <strong>GitKraken</strong> tiene un template para poder trabajar con este tipo de flujo que automatiza la creación de las ramas.</p>
+
+<p>Más información en <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="link">este enlace</a>.</p>
+    
+<p><strong>Git</strong> también incorpora una herramienta para poder trabajar con git flow llamada <strong>git flow</strong>. Podemos ejectura el comando <code>git flow</code> en la consola para ver todos los posibles comandos. Siempre es necesario la sintaxis <code>git flow COMMAND</code> para trabajar con git flow.</p>
+
+<p>Algunos comandos básicos de git flow:</p>
+
+<dl>
+    <dt><code>git flow init</code></dt>
+    <dd>Inicia el flujo tipo gitflow y permite modificar los nombres de las ramas estandars.</dd>
+
+    <dt><code>git flow feature</code></dt>
+    <dd>Permite trabajar con las ramas <strong>feature</strong> que se crean desde <i>develop</i>.</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">start NOMBRE</span>
+            <i class="fa-solid fa-right-long"></i>
+            Crea una nueva rama <i>feature</i>.
+        </li>
+        <li>
+            <span class="git-option">finish NOMBRE</span>
+            <i class="fa-solid fa-right-long"></i>
+            Cuando hemos completado el desarrolo de esta rama, este comando añade los cambios a <i>develop</i> y cierra la rama.
+        </li>
+    </ul>
+
+    <dt><code>git flow release</code></dt>
+    <dd>Permite trabajar con las ramas <strong>release</strong> que se crean desde <i>develop</i> para añadir las versiones en la rama <i>main</i>.</dd>
+
+    <ul class="option-list">
+        <li>
+            <span class="git-option">start VERSIÓN</span>
+            <i class="fa-solid fa-right-long"></i>
+            Crea una nueva rama <i>release</i> con la versión indicada.
+        </li>
+        <li>
+            <span class="git-option">finish VERSIÓN</span>
+            <i class="fa-solid fa-right-long"></i>
+            Cierra la rama y añade la versión a la rama <i>main</i>.
+        </li>
+    </ul>
+</dl>
+
+
+
 
 
 <h3 class="title-2">Título 2</h3>
