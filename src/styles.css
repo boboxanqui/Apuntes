@@ -5,18 +5,22 @@
 /* Variables */
 
 :root{
-    --color1: #f4f1de;
-    --color2: #e07a5f;
-    --color2-light: #fbebd2;
-    --color3: #3d405b;
+    --color1: #F4F1DE;
+    --color2: #E07A5F;
+    --color2-light: #EAB69F;
+    --color3: #3D405B;
+    --color4: #81B29A;
+    --color5: #F2CC8F;
 }
 
 /* ·········· MAIN STRUCTURE ·········· */
 
+
+
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    font-size: 16px; 
+    font-size: 18px; 
     background-color: #eee;
 }
 
@@ -100,6 +104,10 @@ footer{
     font-size: 1.8rem;
 }
 
+.fs-5{
+    font-size: 2.3rem;
+}
+
 .fs1-5{
     font-size: 1.5rem;
 }
@@ -114,6 +122,18 @@ footer{
 
 .mt-2{
     margin-top: 1rem;
+}
+
+.mt-3{
+    margin-top: 1.5rem;
+}
+
+.mt-4{
+    margin-top: 2rem;
+}
+
+.mt-5{
+    margin-top: 3rem;
 }
 
 .page-title{

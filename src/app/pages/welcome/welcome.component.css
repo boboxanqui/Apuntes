@@ -6,21 +6,9 @@
     margin: 30px 0 50px;
 }
 
-h2 {
-    font-size: 2rem !important;
-    margin-bottom: 30px;
-}
-
-h4 {
-    font-size: 1.2rem !important;
-}
-
-#frontend-paint{
-    flex-grow: 1;
-}
-
-#real-dream{
-    flex-grow: 1;
+#welcome-img{
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 /* ********** CARD STYLE ********** */
@@ -29,7 +17,7 @@ h4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    justify-items: center;
+    justify-items: stretch;
     margin: 50px 0;
 }
 
@@ -37,33 +25,15 @@ h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid linear-gradient(#eb3636, #f1f1f1); 
     max-width: 220px;
     text-align: center;
     padding: 10px;
-    /* background-image: linear-gradient(45deg, #fff2f2, #f1f1f1); */
-    background-color: rgb(245, 245, 245);
+    /* background: linear-gradient(120deg, var(--color5) 10%, var(--color1) ); */
+    background-color: white;
     border-radius: 20px;
-    border: 3px solid transparent;
-    box-shadow: 0px 0px 10px #777;
+    box-shadow: 0px 0px 10px #BBB;
     cursor: pointer;
     transition: all .2s ease-out;
-}
-
-.card:hover {
-    border-radius: 50px 10px 50px 10px;
-    border: 3px solid var(--color2);
-    box-shadow: 0px 0px 15px var(--color2), inset 0px 0px 10px var(--color2);
-    transform: scale(1.02);
-}
-
-.card:nth-child(even):hover{
-    border-radius: 10px 50px 10px 50px;
-}
-
-.card:active {
-    box-shadow: 0px 0px 20px 5px var(--color2);
-    transform: scale(0.98);
 }
 
 .card-title{
@@ -76,13 +46,20 @@ h4 {
     font-size: 8rem;
     user-select: none;
     margin: 5px auto;
+    transform: scale(1.05);
+    transform-origin: top center;
+    transition: transform .2s ease-out;
+
 }
 
 .card-subtitle {
-    font: 400 0.8rem 'Roboto Mono', monospace !important;
+    font: 400 0.9rem 'Roboto Mono', monospace !important;
+    transition: all .2s ease-out;
+
 }
 
 .card-caption {
+    visibility: hidden;
     opacity: 0.7;
 }
 
@@ -96,6 +73,37 @@ h4 {
     border:2px solid var(--color2);
     border-radius: 10px;
     cursor: pointer;
+}
+
+.card:hover {
+    border-radius: 50px 10px 50px 10px;
+    outline: 3px solid var(--color2);
+    box-shadow: 0px 0px 15px var(--color2), inset 0px 0px 10px var(--color2);
+    /* transform: scale(1.02); */
+}
+
+
+
+.card:hover .card-img{
+    transform: scale(0.9);
+}
+
+.card:hover .card-subtitle{
+    margin-top: 0px;
+    opacity: .7;
+}
+
+.card:hover .card-caption{
+    visibility: visible;
+}
+
+.card:nth-child(even):hover{
+    border-radius: 10px 50px 10px 50px;
+}
+
+.card:active {
+    box-shadow: 0px 0px 20px 5px var(--color2);
+    transform: scale(0.98);
 }
 
 .card-button:hover {
@@ -129,6 +137,15 @@ h4 {
         margin: 50px;
     }
 
+    #welcome-head{
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px 30px 50px;
+    }
+    
+    #welcome-text {
+        order: -1
+    }
 }
 
 @media (max-width: 600px) {
@@ -140,17 +157,6 @@ h4 {
         /* justify-items: center; */
         margin: 50px 20px;
     }
-
-    #welcome-head{
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 30px 30px 50px;
-    }
-
-    #real-dream {
-        order: -1
-    }
-
 
 }
 

@@ -1,12 +1,15 @@
+<h2 class="text-center fs-5 mt-5">Apuntes personales</h2>
+
 <section id="welcome-head">
 
-    <div id="frontend-paint">
+    <div id="welcome-img">
         <img class="img-fluid" src="../assets/img/frontend-paint.webp" alt="Paint of a boy designing a webpage">
     </div>
 
-    <div id="real-dream">
-        <h2 class="text-center" >Todo en una misma página</h2>
-        <h4 class="text-center" >En esta página encontrarás todo el material necesario para consultar mientras te formas como programador Frontend o incluso si eres ya uno experimentado.</h4>
+    <div id="welcome-text">
+        <h3 class="text-center" >Todo en una misma página</h3>
+        <p class="text-center fs-2" >En esta página encontrarás todo el material necesario para consultar mientras te formas como programador Frontend o incluso si eres ya uno experimentado.</p>
+        <p class="text-center fs-2" >No te dejes llevar por la emoción del título de la web, esto es una recopilación de apuntes y documentación de varias tecnologias que se ha ido creando a medida que se aprendian.</p>
     </div>
 
 </section>
@@ -18,7 +21,9 @@
 
     <div class="card" (click)="navigateTo('html')">
         <h3 class="card-title">HTML</h3>
-        <i class="fa-brands fa-html5 card-img"></i>
+        <div class="card-img">
+            <i class="fa-brands fa-html5 card-img"></i>
+        </div>
         <h5 class="card-subtitle">HyperText Markup Language</h5>
         <p class="card-caption">Permite añadir todo el contenido que queremos visualizar en la página.</p>
         <button class="card-button">Abrir</button>
@@ -26,7 +31,9 @@
 
     <div class="card" (click)="navigateTo('css')">
         <h3 class="card-title">CSS</h3>
-        <i class="fa-brands fa-css3-alt card-img"></i>
+        <div class="card-img">
+            <i class="fa-brands fa-css3-alt card-img"></i>
+        </div>
         <h5 class="card-subtitle">Cascade Style Sheet</h5>
         <p class="card-caption">Establece la presentación del contenido proporcionando estilos y animaciones.</p>
         <button class="card-button">Abrir</button>
@@ -34,7 +41,9 @@
 
     <div class="card" (click)="navigateTo('sass')">
         <h3 class="card-title">SASS</h3>
-        <i class="fa-brands fa-sass card-img"></i>
+        <div class="card-img">
+            <i class="fa-brands fa-sass card-img"></i>
+        </div>
         <h5 class="card-subtitle">Syntactically Awesome Style Sheets</h5>
         <p class="card-caption">Dota a CSS más herramientas y funcionalidades.</p>
         <button class="card-button">Abrir</button>
@@ -42,7 +51,9 @@
 
     <div class="card" (click)="navigateTo('typescript')">
         <h3 class="card-title">TS</h3>
-        <div id="typescript">TS </div>
+        <div class="card-img">
+            <div id="typescript">TS </div>
+        </div>
         <h5 class="card-subtitle">TypeScript</h5>
         <p class="card-caption">Variación de Javascript que aporta tipado para mejorar su escritura y programación.</p>
         <button class="card-button">Abrir</button>
