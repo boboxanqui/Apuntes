@@ -15,8 +15,8 @@
 
 #welcome-cards{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
     justify-items: stretch;
     margin: 50px 0;
 }
@@ -25,7 +25,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 220px;
+    position: relative;
+    max-width: 250px;
     text-align: center;
     padding: 10px;
     /* background: linear-gradient(120deg, var(--color5) 10%, var(--color1) ); */
@@ -39,7 +40,7 @@
 .card-title{
     font: 600 2.2rem 'Rajdhani', sans-serif !important;
     color: var(--color3);
-    margin: 10px 0;
+    margin: 0;
 }
 
 .card-img{
@@ -53,14 +54,23 @@
 }
 
 .card-subtitle {
-    font: 400 0.9rem 'Roboto Mono', monospace !important;
-    transition: all .2s ease-out;
-
+    font: 400 0.9rem'Roboto Mono', monospace !important;
+    margin: 0 auto;
+    position: absolute;
+    transform-origin: top center;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    transition: top 150ms ease-out;
 }
 
 .card-caption {
+    /* font-size: smaller; */
     visibility: hidden;
-    opacity: 0.7;
+    opacity: 0;
+    margin: 0;
+    transform: translatey(30px);
+    transition: all .2s ease;
 }
 
 .card-button {
@@ -82,19 +92,19 @@
     /* transform: scale(1.02); */
 }
 
-
-
 .card:hover .card-img{
-    transform: scale(0.9);
+    transform: scale(0.8);
 }
 
 .card:hover .card-subtitle{
-    margin-top: 0px;
+    top: 50%;
     opacity: .7;
 }
 
 .card:hover .card-caption{
     visibility: visible;
+    transform: translatey(0px);
+    opacity: 1;
 }
 
 .card:nth-child(even):hover{
