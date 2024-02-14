@@ -16,7 +16,7 @@
 #welcome-cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 70px;
     justify-items: stretch;
     margin: 50px 0;
 }
@@ -26,7 +26,9 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    margin: 0 auto;
     max-width: 250px;
+    height: 380px;
     text-align: center;
     padding: 10px;
     /* background: linear-gradient(120deg, var(--color5) 10%, var(--color1) ); */
@@ -83,10 +85,11 @@
     border:2px solid var(--color2);
     border-radius: 10px;
     cursor: pointer;
+    transition: all .2s ease;
 }
 
 .card:hover {
-    border-radius: 50px 10px 50px 10px;
+    border-radius: 10px 10px 10px 10px;
     outline: 3px solid var(--color2);
     box-shadow: 0px 0px 15px var(--color2), inset 0px 0px 10px var(--color2);
     /* transform: scale(1.02); */
@@ -107,8 +110,23 @@
     opacity: 1;
 }
 
-.card:nth-child(even):hover{
-    border-radius: 10px 50px 10px 50px;
+.card:hover .card-button {
+    color: whitesmoke;
+    background-color: var(--color2);
+    box-shadow: 0px 0px 5px var(--color2)
+}
+
+.card:nth-child(1):hover{
+    border-radius: 50px 10px 10px 10px;
+}
+.card:nth-child(3):hover{
+    border-radius: 10px 50px 10px 10px;
+}
+.card:nth-child(4):hover{
+    border-radius: 10px 10px 10px 50px;
+}
+.card:nth-child(6):hover{
+    border-radius: 10px 10px 50px 10px;
 }
 
 .card:active {
@@ -116,10 +134,6 @@
     transform: scale(0.98);
 }
 
-.card-button:hover {
-    color: whitesmoke;
-    background-color: var(--color2);
-}
 
 /* Typescript icon */
 
@@ -141,10 +155,33 @@
 
     #welcome-cards{
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 50px;
         row-gap: 50px;
         /* justify-items: center; */
-        margin: 50px;
+        margin: 50px 20px;
+    }
+
+    .card{
+        height: 350px;
+    }
+
+    .card:nth-child(1):hover{
+        border-radius: 50px 10px 10px 10px;
+    }
+    .card:nth-child(2):hover{
+        border-radius: 10px 50px 10px 10px;
+    }
+    .card:nth-child(3):hover{
+        border-radius: 10px 10px 10px 10px;
+    }
+    .card:nth-child(4):hover{
+        border-radius: 10px 10px 10px 10px;
+    }
+    .card:nth-child(5):hover{
+        border-radius: 10px 10px 10px 50px;
+    }
+    .card:nth-child(6):hover{
+        border-radius: 10px 10px 50px 10px;
     }
 
     #welcome-head{
@@ -166,6 +203,13 @@
         row-gap: 50px;
         /* justify-items: center; */
         margin: 50px 20px;
+    }
+
+    .card:nth-child(even):hover{
+        border-radius: 50px 10px 50px 10px;
+    }
+    .card:nth-child(odd):hover{
+        border-radius: 10px 50px 10px 50px;
     }
 
 }
