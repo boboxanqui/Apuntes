@@ -4,7 +4,25 @@
 
 <nav mat-tab-nav-bar
      mat-align-tabs="center"
-     animationDuration="0ms">
+     animationDuration="300ms">
+
+    <a mat-tab-link
+       *ngFor="let link of links"
+       (click)="selectedLink(link)"
+       [active]="activeLink == link"
+       routerLink="html"
+       routerLinkActive="nav-ative"
+       class="nav-link"
+       [innerHTML]="link.htmlContent">
+
+    </a>
+
+
+</nav>
+
+<!-- <nav mat-tab-nav-bar
+     mat-align-tabs="center"
+     animationDuration="3000ms">
 
     <a mat-tab-link
        routerLink="html"
@@ -50,8 +68,8 @@
        routerLink="git"
        routerLinkActive="nav-ative"
        class="nav-link">
-        <i class="fa-brands fa-git-alt fs1-5"></i> 
+        <i class="fa-brands fa-git-alt fs1-5"></i>
         <span class="mono fs1-5">Git</span>
     </a>
 
-</nav>
+</nav> -->

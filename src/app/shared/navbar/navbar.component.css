@@ -8,17 +8,13 @@
     cursor: pointer;
 }
 
-.typescript-logo{
-    display: inline;
-    font-family: monospace;
-    width: 20px;
-    height: 20px;
-    background-color: cornflowerblue;
-    margin: 5px;
-    color: snow;
-    font-size: .7rem;
-    text-align: end;
-    line-height: 30px;
-    padding: 2px;
-    user-select: none;
+
+
+@media (max-width: 900px) {
+    
+}
+
+
+@media (max-width: 600px) {
+    
 }
