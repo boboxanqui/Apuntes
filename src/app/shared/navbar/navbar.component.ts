@@ -4,28 +4,30 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: []
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.router.getCurrentNavigation()
   }
 
+  // FIXME: OLD NAVBAR
   links = [
     {
-      htmlContent:`<i class="fa-brands fa-html5 fs1-5"></i>
+      htmlContent: `<i class="fa-brands fa-html5 fs1-5"></i>
       <span class="mono fs1-5">HTML</span>`,
       route: 'html'
     },
     {
-      htmlContent:`<i class="fa-brands fa-css3-alt fs1-5"></i>
+      htmlContent: `<i class="fa-brands fa-css3-alt fs1-5"></i>
       <span class="mono fs1-5">CSS</span>`,
       route: 'css'
     },
     {
-      htmlContent:`<i class="fa-brands fa-sass fs1-5"></i>
+      htmlContent: `<i class="fa-brands fa-sass fs1-5"></i>
       <span class="mono fs1-5">SASS</span>`,
       route: 'sass'
     },
@@ -35,12 +37,12 @@ export class NavbarComponent implements OnInit {
       route: 'typescript'
     },
     {
-      htmlContent:`<i class="fa-brands fa-angular fs1-5"></i>
+      htmlContent: `<i class="fa-brands fa-angular fs1-5"></i>
       <span class="mono fs1-5">Angular</span>`,
       route: 'angular'
     },
     {
-      htmlContent:`<i class="fa-brands fa-git-alt fs1-5"></i>
+      htmlContent: `<i class="fa-brands fa-git-alt fs1-5"></i>
       <span class="mono fs1-5">Git</span>`,
       route: 'git'
     }
@@ -48,10 +50,32 @@ export class NavbarComponent implements OnInit {
 
   activeLink = this.links[0];
 
+  // NOTE: NEW NAVBAR 
+  private _navSelectionLeft: number = 100;
 
-  selectedLink(link: any){
-    this.activeLink = link;
+  selectedRoute(link: HTMLElement, navSelection: HTMLElement) {
+    this._navSelectionLeft = link.offsetLeft + link.offsetWidth / 2;
 
-    this.router.navigate( [link.route] )
+    if (navSelection.className.includes('hide')) {
+      navSelection.style.left = this.navSelectionLeft;
+      navSelection.classList.remove('hide');
+      setTimeout(() =>
+        navSelection.classList.add('active'),
+        1
+      )
+    } else {
+      navSelection.style.left = this.navSelectionLeft;
+    }
   }
+
+  hideSelectedRoute(navSelection: HTMLElement) {
+    navSelection.classList.remove('active')
+    navSelection.classList.add('hide')
+  }
+
+  get navSelectionLeft() {
+    return this._navSelectionLeft.toString().concat('px');
+  }
+
+
 }

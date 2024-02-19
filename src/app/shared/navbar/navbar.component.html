@@ -1,75 +1,65 @@
 <h1 class="text-center"
     id="head-title"
-    routerLink="''">The Final Frontend Master Cheatsheet</h1>
+    routerLink="''"
+    (click)="hideSelectedRoute(navSelection)">The Final Frontend Master Cheatsheet</h1>
 
-<nav mat-tab-nav-bar
-     mat-align-tabs="center"
-     animationDuration="300ms">
+<nav>
+    <ul class="nav-menu">
+        <li routerLink="html"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink1,navSelection)"
+            #navLink1>
+            <i class="fa-brands fa-html5 fs-4"></i>
+            <span class="mono fs1-5">HTML</span>
+        </li>
 
-    <a mat-tab-link
-       *ngFor="let link of links"
-       (click)="selectedLink(link)"
-       [active]="activeLink == link"
-       routerLink="html"
-       routerLinkActive="nav-ative"
-       class="nav-link"
-       [innerHTML]="link.htmlContent">
+        <li routerLink="css"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink2,navSelection)"
+            #navLink2>
+            <i class="fa-brands fa-css3-alt fs-4"></i>
+            <span class="mono fs1-5">CSS</span>
+        </li>
 
-    </a>
+        <li routerLink="sass"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink3,navSelection)"
+            #navLink3>
+            <i class="fa-brands fa-sass fs-4"></i>
+            <span class="mono fs1-5">SASS</span>
+        </li>
 
+        <li routerLink="typescript"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink4,navSelection)"
+            #navLink4>
+            <div class="typescript-logo">TS</div>
+            <span class="mono fs1-5">TypeScript</span>
+        </li>
 
+        <li routerLink="angular"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink5,navSelection)"
+            #navLink5>
+            <i class="fa-brands fa-angular fs-4"></i>
+            <span class="mono fs1-5">Angular</span>
+        </li>
+
+        <li routerLink="git"
+            routerLinkActive="active"
+            class="nav-link"
+            (click)="selectedRoute(navLink6,navSelection)"
+            #navLink6>
+            <i class="fa-brands fa-git-alt fs-4"></i>
+            <span class="mono fs1-5">Git</span>
+        </li>
+
+        <div class="nav-selection hide"
+             #navSelection></div>
+    </ul>
 </nav>
-
-<!-- <nav mat-tab-nav-bar
-     mat-align-tabs="center"
-     animationDuration="3000ms">
-
-    <a mat-tab-link
-       routerLink="html"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <i class="fa-brands fa-html5 fs1-5"></i>
-        <span class="mono fs1-5">HTML</span>
-    </a>
-
-    <a mat-tab-link
-       routerLink="css"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <i class="fa-brands fa-css3-alt fs1-5"></i>
-        <span class="mono fs1-5">CSS</span>
-    </a>
-
-    <a mat-tab-link
-       routerLink="sass"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <i class="fa-brands fa-sass fs1-5"></i>
-        <span class="mono fs1-5">SASS</span>
-    </a>
-
-    <a mat-tab-link
-       routerLink="typescript"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <div class="typescript-logo">TS</div>
-        <span class="mono fs1-5">TypeScript</span>
-    </a>
-
-    <a mat-tab-link
-       routerLink="angular"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <i class="fa-brands fa-angular fs1-5"></i>
-        <span class="mono fs1-5">Angular</span>
-    </a>
-
-    <a mat-tab-link
-       routerLink="git"
-       routerLinkActive="nav-ative"
-       class="nav-link">
-        <i class="fa-brands fa-git-alt fs1-5"></i>
-        <span class="mono fs1-5">Git</span>
-    </a>
-
-</nav> -->
