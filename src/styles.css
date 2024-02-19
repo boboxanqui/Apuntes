@@ -25,7 +25,7 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 18px; 
-    background-color: #fefefe;
+    background-color: #FDFAF8;
 }
 
 /* HACK: Posible dark theme */
@@ -114,6 +114,10 @@ footer{
 
 .fs1-5{
     font-size: 1.5rem;
+}
+
+.fw-500{
+    font-weight: 500;
 }
 
 .text-center{
