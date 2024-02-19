@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     margin: 30px 0 50px;
 }
 
@@ -18,7 +18,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 70px;
     justify-items: stretch;
-    margin: 50px 0;
+    margin: 70px 0;
 }
 
 .card {
@@ -32,7 +32,7 @@
     text-align: center;
     padding: 10px;
     /* background: linear-gradient(120deg, var(--color5) 10%, var(--color1) ); */
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 20px;
     box-shadow: 0px 0px 10px #BBB;
     cursor: pointer;
@@ -191,7 +191,8 @@
     }
     
     #welcome-text {
-        order: -1
+        order: -1;
+        text-align: center;
     }
 }
 
