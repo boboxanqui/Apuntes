@@ -41,12 +41,7 @@ app-root {
     justify-content: space-between;
 }
 
-header{
-    position: sticky;
-    top: -110px;
-    background-color: var(--color1);
-    z-index: 1;
-}
+
 
 main{
     /* width: 900px; */
@@ -64,7 +59,8 @@ main{
 
 #content-menu{
     position: sticky;
-    top: 80px ;
+    top: 100px ;
+    padding-top: 50px;
     align-self: start;
 }
 
@@ -319,6 +315,22 @@ hr{
 
 /* ·········· NAVBAR ·········· */
 
+header{
+    position: sticky;
+    top: -130px;
+    background-color: var(--color1);
+    z-index: 1;
+    border-bottom: 2px solid var(--color5);
+    box-shadow: 0px 0px 20px var(--color2-light);
+    animation: header-sticky linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 800px;
+}
+
+header:hover{
+    opacity: 1;
+}
+
 #head-title{
     cursor: pointer;
     width: fit-content;
@@ -421,6 +433,12 @@ dt {
     height: 50px;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+@keyframes header-sticky {
+    0%{ top: 0; }
+    50%{ top: -130px }
+    100%{ opacity: .9;}
 }
 
 /* ·········· MEDIA QUERY ·········· */
