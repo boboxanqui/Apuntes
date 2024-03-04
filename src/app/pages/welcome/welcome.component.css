@@ -36,7 +36,7 @@
     border-radius: 20px;
     box-shadow: 0px 0px 10px #BBB;
     cursor: pointer;
-    transition: all .2s ease-out;
+    transition: all .15s ease-out;
 }
 
 .card-title{
@@ -89,7 +89,7 @@
 }
 
 .card:hover {
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
     outline: 3px solid var(--color2);
     box-shadow: 0px 0px 15px var(--color2), inset 0px 0px 10px var(--color2);
     /* transform: scale(1.02); */
@@ -117,16 +117,16 @@
 }
 
 .card:nth-child(1):hover{
-    border-radius: 50px 10px 10px 10px;
+    border-radius: 50px 20px 20px 20px;
 }
 .card:nth-child(3):hover{
-    border-radius: 10px 50px 10px 10px;
+    border-radius: 20px 50px 20px 20px;
 }
 .card:nth-child(4):hover{
-    border-radius: 10px 10px 10px 50px;
+    border-radius: 20px 20px 20px 50px;
 }
 .card:nth-child(6):hover{
-    border-radius: 10px 10px 50px 10px;
+    border-radius: 20px 20px 50px 20px;
 }
 
 .card:active {
@@ -166,22 +166,22 @@
     }
 
     .card:nth-child(1):hover{
-        border-radius: 50px 10px 10px 10px;
+        border-radius: 50px 20px 20px 20px;
     }
     .card:nth-child(2):hover{
-        border-radius: 10px 50px 10px 10px;
+        border-radius: 20px 50px 20px 20px;
     }
     .card:nth-child(3):hover{
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 20px 20px 20px 20px;
     }
     .card:nth-child(4):hover{
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 20px 20px 20px 20px;
     }
     .card:nth-child(5):hover{
-        border-radius: 10px 10px 10px 50px;
+        border-radius: 20px 20px 20px 50px;
     }
     .card:nth-child(6):hover{
-        border-radius: 10px 10px 50px 10px;
+        border-radius: 20px 20px 50px 20px;
     }
 
     #welcome-head{
@@ -207,10 +207,10 @@
     }
 
     .card:nth-child(even):hover{
-        border-radius: 50px 10px 50px 10px;
+        border-radius: 50px 20px 50px 20px;
     }
     .card:nth-child(odd):hover{
-        border-radius: 10px 50px 10px 50px;
+        border-radius: 20px 50px 20px 50px;
     }
 
 }
