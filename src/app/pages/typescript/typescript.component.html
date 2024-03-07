@@ -22,7 +22,7 @@
     <h2 class="title-2" id="tsconfig">Archivo tsconfig.json</h2>
     <p class="fs-5 fw-light">Este archivo debe estar en la carpeta del proyecto y sirve para definir las reglas de
         compilación a usar para crear el archivo .js definitivo. Se definen los valores dentro de un objeto que
-        contiene el objeto <code>"compilerOptions": {{ '{' }}...}</code> con las reglas de la compilación seguido del array
+        contiene el objeto <code>"compilerOptions": {{ '{' }}...&#125;</code> con las reglas de la compilación seguido del array
         <code>"include": [...]</code> con los archivos a procesar. Las reglas mas comunes son:
     </p>
     <div class="mx-2 fw-light fs-5">
@@ -37,9 +37,9 @@
                         "target": "es2017",<br>
                         "module": "commonjs",<br>
                         "strictNullChecks": true<br>
-                    },<br>
+                    &#125;,<br>
                     "include": ["**/*.ts"]<br>
-                }
+                &#125;
             </code>
         </div>
     </div>
@@ -85,7 +85,7 @@
     <p>Igual que las variables, podemos indicar el tipo de dato que se debe recibir como argumento de la función
         llamada. </p>
     <div class="text-center fs-4">
-        <code>function NOMBRE (PARAMETER: TYPE) {{ '{' }}...};</code>
+        <code>function NOMBRE (PARAMETER: TYPE) {{ '{' }}...&#125;;</code>
     </div>
     <p>TS también permite <b class="text-info">parametros opcionales</b> los cuales no son obligatorios recibir
         ningún argumento para ejecutar la función, en caso de no tener ningun argumento estos tomaran el valor de
@@ -104,7 +104,7 @@
         este tipo de dato salga un error. Para ello debemos indicarlo a continuación del parentesis de los
         parametros. Aún cuando no tiene return, podemos indicar ": void".</p>
     <div class="text-center fs-4">
-        <code>function NOMBRE (PARAMETERES): TYPE {{ '{' }}...};</code>
+        <code>function NOMBRE (PARAMETERES): TYPE {{ '{' }}...&#125;;</code>
     </div>
 
     <!-- ARRAYS -->
@@ -130,7 +130,7 @@
     <p>En cuanto a parametros, también podemos indicar que un parametro es un string del tipo que se requiera como
         <code>(PARAM: TYPE[])</code>, incluso si en una función tenemos muchos parametros podemos declarar un tuple
         primero con todos los tipos de datos a utilizar como parametros y despues incluir el tuple en modo spread
-        como argumento <code>function NAME(...TUPLE){{ '{' }}...}</code>
+        como argumento <code>function NAME(...TUPLE){{ '{' }}...&#125;</code>
     </p>
 
     <!-- CUSTOM TYPES -->
@@ -147,7 +147,7 @@
                     ITEM-1 = VALOR-1,<br>
                     ITEM-2 = VALOR-2,<br>
                     ITEM-3 = VALOR-3,<br>
-                }
+                &#125;
             </code>
             </div>
             Una vez declarada (nombre siempre con primera mayuscula), podemos indicar una variable que solo puede
@@ -167,7 +167,7 @@
             en varias ocasiones. Permite definir una plantilla con la variedad de tipos que queremos para despues
             asignarla cuantas veces queramos
             <div class="text-center fs-4">
-                <code> type nOMBRE = {{ '{' }}...}</code>
+                <code> type nOMBRE = {{ '{' }}...&#125;</code>
             </div>
         </li>
 
@@ -186,7 +186,7 @@
             utiliza una abreviatura para asignar el tipo a los distintos elementos, al asignar esta abreviatura es
             sustituida por un tipo de dato real.
             <div class="text-center fs-4">
-                <code>type nOMBRE &lt;T&gt; {{ '{' }}ITEM-1: T, ITEM-2: T[], ITEM-3: {{ '{' }}PROP-1: T, PROP-2: T}...</code>
+                <code>type nOMBRE &lt;T&gt; {{ '{' }}ITEM-1: T, ITEM-2: T[], ITEM-3: {{ '{' }}PROP-1: T, PROP-2: T&#125;...</code>
             </div>
             <p>A la hora de asignar debemos escribir <code>let VARIABLE: NOMBRE&lt;X&gt;</code> donde X puede ser
                 cualquier tipo de dato primitivo o no o incluso otro custom type.</p>
@@ -198,7 +198,7 @@
                 <code>
                    function getFilledArray&lt;T&gt;(value: T, n: number): T[] {{ '{' }} <br>
                     return Array(n).fill(value); <br>
-                  } 
+                  &#125; 
                 </code>
             </div>
             <p>Cuando llamemos a la función por cualquier tipo como argumento, automaticamente ya sabe de que tipo
@@ -212,14 +212,14 @@
         dato, podemos evaluar el dato que se recibe en la llamada para actuar de una forma u otra. La mas conocida
         es <b class="text-info">typeof</b>, mediante un concidional evalua el tipo de dato del argumento</p>
     <div class="text-center fs-4">
-        <code>if (typeof VARIABLE === 'TYPE') {{ '{' }}...}</code>
+        <code>if (typeof VARIABLE === 'TYPE') {{ '{' }}...&#125;</code>
     </div>
     <p>Otra tipo de evaluación puede ser <b class="text-info">in</b> que sirve para identificar si una propiedad o
         metodo puede hacerse servir en una variable. Se pueden utilizar propiedades y metodos propios del lenguaje o
         creados por clases o tipados personalizados, esta evaluación tambiés se ejecuta dentro del condicional if:
     </p>
     <div class="text-center fs-4">
-        <code>if ("METHOD" in VARIABLE) {{ '{' }}...}</code>
+        <code>if ("METHOD" in VARIABLE) {{ '{' }}...&#125;</code>
     </div>
     <p>En el caso que tengas 2 posibles evaluaciones a hacer, podemos utilizar <i>else</i> para la segunda, TS
         entenderá que solo puede ser la otra opción no evaluada. O incluso dejar solo un condicional para una opción
@@ -230,7 +230,7 @@
     <h2 class="title-2" id="ts-objectos">Objectos</h2>
     <p>TS permite definir el tipo de datos para las propiedades de los objetos de tal manera:</p>
     <div class="text-center fs-4">
-        <code>let NOMBRE: {{ '{' }}PROPIEDAD-1: TYPE, PROPIEDAD-2: TYPE, PROPIEDAD-3: TYPE}</code>
+        <code>let NOMBRE: {{ '{' }}PROPIEDAD-1: TYPE, PROPIEDAD-2: TYPE, PROPIEDAD-3: TYPE&#125;</code>
     </div>
     <p>En caso de que el objeto contenga propiedades con otros objetos o arrays también se pueden definir como hasta
         ahora.</p>
@@ -247,7 +247,7 @@
             PROP-2: TYPE-2 <br>
             METHOD-1: (PARAM-1: TYPE) => TYPE-RETURN;<br>
             METHOD-2: (PARAM-1: TYPE-1, PARAM-2: TYPE-2) => TYPE-RETURN;<br>
-        }
+        &#125;
         </pre></code>
     </div>
     <p>Se permiten infinitos niveles de anidamiento, por lo que podemos definir multiples tipos de objetos dentro de
@@ -263,12 +263,12 @@
         multiples propiedades de un mismo tipo, sin dar nombre a la propiedad hasta que se declara el objeto. Este
         tipo de propiedad se define como <code>[NOMBRE: TYPE-NOMBRE]: TYPE;</code></p>
     <p>Por otro lado, podemos declarar <b class="text-info">propiedades o metodos opcionales</b> finalizando con un
-        <b class="text-info">?</b> el nombre. Ej: <code>interface Person {{ '{' }}name: string; daughters?: number;}</code>. Cuando llamamos a una propiedad opcional de un objeto, como no sabemos si se ha declarado valor o no, podemos añadir <b class="text-info">?</b> a la llamada para que en caso de tener valor se obtenga o sino sea <i>undefinded</i>. También podemos añadir el operador <b class="text-info">||</b> el cual permite incluir otro valor a la llamada para que en caso de sea <i>undefined o null</i> se obtenga el otro valor.</p>
+        <b class="text-info">?</b> el nombre. Ej: <code>interface Person {{ '{' }}name: string; daughters?: number;&#125;</code>. Cuando llamamos a una propiedad opcional de un objeto, como no sabemos si se ha declarado valor o no, podemos añadir <b class="text-info">?</b> a la llamada para que en caso de tener valor se obtenga o sino sea <i>undefinded</i>. También podemos añadir el operador <b class="text-info">||</b> el cual permite incluir otro valor a la llamada para que en caso de sea <i>undefined o null</i> se obtenga el otro valor.</p>
         <div class="col-9 mx-auto">
             <code><pre>
             const mandi: Person {{ '{' }}
                 name: 'Tamara'
-            }
+            &#125;
             console.log(mandi.daughters? || 0) 
         </pre></code>
         <p> <i>*Se printará 0 porque mandi.daughters es undefined</i></p> 
@@ -303,11 +303,11 @@
                     this.PROP-1 = PROP-1;
                     this.PROP-2 = PROP-2;
                     this.PROP-3 = PROP-3;
-                }
+                &#125;
 
-                METHOD-1 (PROPs): TYPE {{ '{' }}...}
-                METHOD-2 (PROPs): TYPE {{ '{' }}...}
-            }
+                METHOD-1 (PROPs): TYPE {{ '{' }}...&#125;
+                METHOD-2 (PROPs): TYPE {{ '{' }}...&#125;
+            &#125;
         </pre></code>
     </div>
     <p>Para completar la encapsulación, podemos aplicar <b class="text-info">modificadores de acceso</b> los cuales
@@ -338,11 +338,11 @@
                     constructor (public PROP-1: TYPE,
                         public PROP-2: TYPE, 
                         public PROP-3: TYPE
-                    ) {{ '{' }}}
+                    ) {{ '{' }}&#125;
 
-                    METHOD-1 (PROPs): TYPE {{ '{' }}...}
-                    METHOD-2 (PROPs): TYPE {{ '{' }}...}
-                }
+                    METHOD-1 (PROPs): TYPE {{ '{' }}...&#125;
+                    METHOD-2 (PROPs): TYPE {{ '{' }}...&#125;
+                &#125;
             </pre></code>
     </div>
     <p>Con este metodo abreviado nos ahorramos declarar las propiedades antes del constructor y dentro con el
@@ -351,7 +351,7 @@
         <code>public prop?: type</code> o inicializar con valores por defecto <code>public prop: type = value</code>
     </p>
     <p>Al igual que con las interfaces, podemos crear herencia haciendo <span class="text-info">extends</span> a la
-        classe hija, de manera que <code>class HIJA extends MADRE {{ '{' }}..}</code> la class hija tendra todas las
+        classe hija, de manera que <code>class HIJA extends MADRE {{ '{' }}..&#125;</code> la class hija tendra todas las
         propiedades y metodos de la madre a parte de los suyos que queramos añadir. Al tener un constructor heredado
         debemos hacer referencia a el dentro del constructor hija con la expresion
         <code>Super (ARGUMENTOS_CLASS_MADRE)</code></p>
@@ -364,8 +364,8 @@
                         public PROP-3: TYPE
                     ) {{ '{' }}
                         super(PROPS_MADRE)
-                    }
-                }
+                    &#125;
+                &#125;
             </pre></code>
     </div>
 
@@ -383,4 +383,4 @@
     <h2 class="title-2" id="ts-decoradores">Decoradores</h2>
     <p>Sirven para cambiar las classes cuando son definidas. Muy utilizadas en Angular, ya que se utilizan muchas
         classes. Es una función que expande una class añadiendo funcionalidades especiales.</p>
-        <p>El decorador se debe definir y llamar justo antes de la definición de la class con <code>@DECORADOR</code></p>
+        <p>El decorador se debe definir y llamar justo antes de la definición de la class con <code>&#64;DECORADOR</code></p>

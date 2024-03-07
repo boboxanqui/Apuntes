@@ -132,7 +132,7 @@
     <dl>
         <dt> <b>font-family: </b><i>Arial, Roboto, Serif, Sans Serif;</i> </dt>
         <dd></dd>
-        <dd>Aplica tipografia al selector, suele indicarse varias fuentes por si el navegador no puede aplicar alguna, también se suelen añadirse fuentes familiares al final que incluen un grupo de tipografias parecidas para dar mas opciones al navegador. En caso de no poder aplicar ninguna, cada navegador tiene su propia tipografia por defecto. También se pueden incluir las fuentes con la url y etiqueta &lt;link...&gt; en el meta o la regla @font-face importando el archivo.</dd>
+        <dd>Aplica tipografia al selector, suele indicarse varias fuentes por si el navegador no puede aplicar alguna, también se suelen añadirse fuentes familiares al final que incluen un grupo de tipografias parecidas para dar mas opciones al navegador. En caso de no poder aplicar ninguna, cada navegador tiene su propia tipografia por defecto. También se pueden incluir las fuentes con la url y etiqueta &lt;link...&gt; en el meta o la regla &#64;font-face importando el archivo.</dd>
 
         <dt><b>font-size: </b><i>12px</i></dt>
         <dd>Tamaño del texto, puede ser definido en medidas (small, medium, large), en pixeles, cm, %, in, rem (en función del estandar), em, etc.  </dd>
@@ -205,7 +205,7 @@
         <dt><b>word-wrap: </b><i>break-word;</i></dt>
         <dd>Permite a las palabras largas que no caben por el margen derecho separarse para continuar en la siguiente linea. Acepta valores: normal (por defecto) o break-word (separación habilitada).</dd>
 
-        <dt><b>@font-face {{ '{' }}</b> <i>font-family: NOMBRE; src: url(NOMBRE_ARCHIVO.ttf);</i><b>{{ '}' }}</b></dt>
+        <dt><b>&#64;font-face {{ '{' }}</b> <i>font-family: NOMBRE; src: url(NOMBRE_ARCHIVO.ttf);</i><b>{{ '}' }}</b></dt>
         <dd>Permite importar fuentes tipográficas externas. Debemos tener el archivo .ttf/.otf/.woff/.woff2 en la carpeta, le asignamos un nombre de <i>font-family: ... ;</i> que despues podemos utilizar al asignar una tipográfica con esta misma propiedad. Por último indicamos la ruta y/o nombre del archivo con <i>src: url(...);</i></dd>
     </dl>
 </section>
@@ -592,17 +592,17 @@
     <h3 class="title-3">Animations</h3>
     <p>
         Las animaciones permiten crear movimiento y cambiar las propiedades de un elemento cuando queramos. <br>
-        Para crear animaciones hay que declarar primero los <b>@keyframes</b> que despues podremos incorporar a todos los elementos que queramos.
+        Para crear animaciones hay que declarar primero los <b>&#64;keyframes</b> que despues podremos incorporar a todos los elementos que queramos.
     </p>
     <dl>
-        <dt><b>@keyframes </b> <i>NOMBRE</i></dt>
-        <dd>Declaración de los pasos que va a tener la animación junto a las propiedades y valor a animar. Se pueden crear tantos pasos como se deseen. Los pasos se pueden declarar con <i>from</i> y <i>to</i> o de 0% a 100% y cada paso va seguido de propiedades y valor a modificar en ese instante enter corchetes {{ '{' }}...}. Ej.
+        <dt><b>&#64;keyframes </b> <i>NOMBRE</i></dt>
+        <dd>Declaración de los pasos que va a tener la animación junto a las propiedades y valor a animar. Se pueden crear tantos pasos como se deseen. Los pasos se pueden declarar con <i>from</i> y <i>to</i> o de 0% a 100% y cada paso va seguido de propiedades y valor a modificar en ese instante enter corchetes {{ '{' }}...&#125;. Ej.
         <p><code>
-            @keyframes mymove {{ '{' }} <br>
-            &nbsp;   0%   {{ '{' }}top: 0px; background: red; width: 100px;} <br>
-            &nbsp;    50%  {{ '{' }}top: 50px; background: orange; width: 100px;} <br>
-            &nbsp;    100% {{ '{' }}top: 200px; background: yellow; width: 300px;} <br>
-              }
+            &#64;keyframes mymove {{ '{' }} <br>
+            &nbsp;   0%   {{ '{' }}top: 0px; background: red; width: 100px;&#125; <br>
+            &nbsp;    50%  {{ '{' }}top: 50px; background: orange; width: 100px;&#125; <br>
+            &nbsp;    100% {{ '{' }}top: 200px; background: yellow; width: 300px;&#125; <br>
+              &#125;
         </code></p></dd>
 
         <p>
@@ -610,7 +610,7 @@
         </p>
 
         <dt><b>animation-name: </b><i>NOMBRE</i></dt>
-        <dd>Se indica el nombre que hace referencia al @keyframes que queremos utilizar.</dd>
+        <dd>Se indica el nombre que hace referencia al &#64;keyframes que queremos utilizar.</dd>
 
         <dt><b>animation-duration: </b> 2s;</dt>
         <dd>Define la duración entre el primer y el último keyframe. Acepta valores en segundos (s) o milisegundos (ms).</dd>
@@ -656,7 +656,7 @@
 <div id="otros">
     <h2 class="title-2" id="otras-propiedades">Otras propiedades</h2>
     <dl>
-        <dt><b>@media </b><i>MEDIATYPE and (MEDIAFEATURE) {{ '{...}' }}</i></dt>
+        <dt><b>&#64;media </b><i>MEDIATYPE and (MEDIAFEATURE) {{ '{...}' }}</i></dt>
         <dd>Define reglas para modificar los esticlos CSS segun los condicionales entre parentesis, siempre que sean true se aplicar los estilos contenidos donde solo sustituiran a los originales en caso de repetirlos. También se puede definir el Mediatype que indica a que dispositivos se aplica la regla, por defecto se aplica a todos, podemos limitar a <i>print</i> (impresoras), <i>screen</i> (pc, portatil, tablet, movil, etc) o <i>speech</i> (screenreaders). Entre parentesis debemos indicar el condicional o mediafeature, valores mas comunes:
         <ul>
             <li>min-width: Xpx - cuando la anchura minima sea X, también valido para min-height.</li>
@@ -734,9 +734,9 @@
         <dt><b>Tener en cuenta width del Scrollbar</b></dt>
         <dd>Importante saber que la medida "vw" incluye el espacio del scrollbar, por lo que si utilizamos <code>100vw</code> el contenido quedara debajo del scrolbar. Para que el html no quede por debajo del scrollbar y parece que los elementos no queden centrados del todo incluso cuando cambiamos de una página con scrollbar a otra sin se nota el cambio de width. Hay varias maneras de solucionarlo:
             <ul>
-                <li><code> html {{ '{' }} overflow-y: overlay; }</code></li>
-                <li><code> html {{ '{' }} overflow-y: scroll; }</code></li>
-                <li><code> html {{ '{' }} width: 100vw; }</code></li>
+                <li><code> html {{ '{' }} overflow-y: overlay; &#125;</code></li>
+                <li><code> html {{ '{' }} overflow-y: scroll; &#125;</code></li>
+                <li><code> html {{ '{' }} width: 100vw; &#125;</code></li>
             </ul>
         </dd>
     </dl>

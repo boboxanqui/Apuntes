@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { SassComponent } from './sass/sass.component';
 import { AngularCLIComponent } from './angular-cli/angular-cli.component';
 import { GitComponent } from './git/git.component';
-import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 
 
 
@@ -25,7 +24,6 @@ import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
   imports: [
     CommonModule,
     RouterModule,
-    HighlightModule
   ],
   
 

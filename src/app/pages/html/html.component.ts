@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Section } from 'src/app/interfaces/interfaces';
 import { CommonService } from 'src/app/services/common.service';
-import {
-  HIGHLIGHT_OPTIONS,
-} from 'ngx-highlightjs';
+
 
 @Component({
   selector: 'app-html',

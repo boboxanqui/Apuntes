@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { RouterModule } from '@angular/router';
-import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highlightjs';
 
 
 @NgModule({
@@ -18,15 +16,8 @@ import { HIGHLIGHT_OPTIONS, HighlightModule, HighlightOptions } from 'ngx-highli
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    HighlightModule
   ],
-  providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        fullLibraryLoader: () => import('highlight.js'),
-      }
-    }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
