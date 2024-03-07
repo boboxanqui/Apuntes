@@ -20,7 +20,6 @@ export class WelcomeComponent implements OnInit {
 
   navigateTo ( route: string ) {
     this.router.navigate([ route ]);
-    this.commonService.setPageLink$( route );
   }
 
 }
