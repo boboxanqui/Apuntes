@@ -9,10 +9,6 @@ import { SassComponent } from './sass/sass.component';
 import { AngularCLIComponent } from './angular-cli/angular-cli.component';
 import { GitComponent } from './git/git.component';
 
-import { HighlightModule } from 'ngx-highlightjs';
-
-
-
 
 @NgModule({
   declarations: [
@@ -26,8 +22,7 @@ import { HighlightModule } from 'ngx-highlightjs';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    HighlightModule
+    RouterModule
   ],
   
 

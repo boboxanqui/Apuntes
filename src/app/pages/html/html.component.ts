@@ -2,14 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Section } from 'src/app/interfaces/interfaces';
 import { CommonService } from 'src/app/services/common.service';
 
-import { bootstrapApplication } from '@angular/platform-browser';
-import {
-  HighlightAutoResult,
-  HighlightLoader,
-  HighlightOptions,
-  HIGHLIGHT_OPTIONS,
-} from 'ngx-highlightjs';
-
 
 @Component({
   selector: 'app-html',
@@ -118,22 +110,3 @@ export class HtmlComponent implements OnInit {
   ]
 
 }
-
-bootstrapApplication(HtmlComponent, {
-  providers: [
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: <HighlightOptions>{
-        lineNumbers: true,
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
-        themePath: 'node_modules/highlight.js/styles/github.css',
-        // languages: {
-        //   typescript: () => import('highlight.js/lib/languages/typescript'),
-        //   css: () => import('highlight.js/lib/languages/css'),
-        //   xml: () => import('highlight.js/lib/languages/xml'),
-        // },
-      },
-    },
-  ],
-});
