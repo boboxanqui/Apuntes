@@ -22,9 +22,8 @@ import { GitComponent } from './git/git.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
-  ],
-  
+    RouterModule,
+  ]
 
 })
 export class PagesModule { }
