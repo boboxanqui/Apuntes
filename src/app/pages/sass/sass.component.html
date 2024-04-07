@@ -42,45 +42,45 @@ Llamada: <code>map-get($NOMBRE_MAP, KEY);</code>
 SELECTOR_1 {{ '{' }}
     SELECTOR_2 {{ '{' }}
      ... 
-    }
-}
+     &#125;
+     &#125;
 </pre> </code>
 <dd>A diferencia de CSS, podemos anidar varios selectores, de esta manera el SELECTOR_2 solo se aplicara a todos los
     elementos de este tipo que esten dentro de un elemeto del tipo SELECTOR_1. Podemos escribir tantos selectores
     interiores como queramos con un máximo de 3 niveles de anidado. También podemos referirnos al selector padre como
     "&" para simplificar el código, muy útil para pseudo-selectores como &:hover.</dd>
 
-<h2 class="title-2" id="import">@import</h2>
-<code>@import 'NOMBRE_ARCHIVO' ;</code>
+<h2 class="title-2" id="import">&#64;import</h2>
+<code>&#64;import 'NOMBRE_ARCHIVO' ;</code>
 <dd>Es muy frecuente tener varios archivos .scss que permiten separar y organizar el código mejor que en un solo archivo,
     pero solo se puede compilar un .scss a .css, por este motivo se crean otros archivos .scss con una barra baja
     delante del nombre "_NOMBRE.scss" y despues los importamos al archivo compilador con esta función, cuando llamamos
     al archivo no hace falta poner la barra baja ni la terminación .scss. La modularización es muy util para separar
     archivos con variables, funciones, maps o incluso el codigo por partes de la estructura.</dd>
 
-<h2 class="title-2" id="sass-function">@function</h2>
+<h2 class="title-2" id="sass-function">&#64;function</h2>
 <code><pre>
-@function NOMBRE (ARGUMENTOS) {{ '{' }}
+&#64;function NOMBRE (ARGUMENTOS) {{ '{' }}
     CODE_BLOCK 
-}
+    &#125;
 </pre> </code>
 <dd>Muy similar al funcionamiento en Javascript, podemos crear una función para que calcule o ejecute ciertas
-    instrucciones o incluso para que nos devuelva un valor con el <code>@return</code>.</dd>
+    instrucciones o incluso para que nos devuelva un valor con el <code>&#64;return</code>.</dd>
 
-<h2 class="title-2" id="mixin">@mixin</h2>
+<h2 class="title-2" id="mixin">&#64;mixin</h2>
 <code><pre>
-@mixin NOMBRE (ARGUMENTOS) {{ '{' }}
+&#64;mixin NOMBRE (ARGUMENTOS) {{ '{' }}
     STYLE BLOCK
-}
+    &#125;
 </pre></code>
-<dd>Muy parecido a @function pero mientras la anterior se usa mas para el calculo y retorno de valores, este se utiliza
+<dd>Muy parecido a &#64;function pero mientras la anterior se usa mas para el calculo y retorno de valores, este se utiliza
     mas para agrupar estilos o compilar varias propiedades que despues queremos aplicar a distintos selectores, entonces
-    solo con llamar al @mixin creado con <code>@include NOMBRE (ARGUMENTOS);</code> ya estaremos aplicando todas las
+    solo con llamar al &#64;mixin creado con <code>&#64;include NOMBRE (ARGUMENTOS);</code> ya estaremos aplicando todas las
     propiedades del mixin.</dd>
 
-<h2 class="title-2" id="sass-extend">@extend</h2>
-<code>@extend SELECTOR;</code>
-<dd>Sirve para copiar el mismo estilo de un selector a otro, escribimos @extend y el nombre del selector origen dentro
+<h2 class="title-2" id="sass-extend">&#64;extend</h2>
+<code>&#64;extend SELECTOR;</code>
+<dd>Sirve para copiar el mismo estilo de un selector a otro, escribimos &#64;extend y el nombre del selector origen dentro
     del selector destino para copiar estilos, podemos aplicar mas estilos en el destino despues de esto. </dd>
 
 <h2 class="title-2" id="sass-operadores">Operadores</h2>
