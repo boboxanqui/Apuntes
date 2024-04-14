@@ -1,4 +1,4 @@
-
+<!-- MARK: INTRO  -->
 <section id="definicion">
     <h2 class="page-title">CSS</h2>
     <p>
@@ -87,45 +87,50 @@
     
         <dt>Unidades absolutas, números independientes que expresan un valor exacto:</dt>
         <ul class="contentlist">
-            <li class="mt-1"><i>cm </i>- Centimetros</li>
-            <li class="mt-1"><i>mm </i>- Milímetros</li>
-            <li class="mt-1"><i>in </i>- Pulgadas (1in = 96px = 2.54cm)</li>
-            <li class="mt-1"><i>px </i>- Pixeles (puede variar la perspectiva segun la resolución o dispositivo donde se visualice)</li>
-            <li class="mt-1"><i>pt </i>- Puntos (medida habitual de texto.)</li>
-            <li class="mt-1"><i>ch </i>- Characteres, medida en caracteres, muy útil para medir largos de linea (width) por ejemplo.</li>
+            <li class="mt-1"><strong>cm </strong>- Centimetros</li>
+            <li class="mt-1"><strong>mm </strong>- Milímetros</li>
+            <li class="mt-1"><strong>in </strong>- Pulgadas (1in = 96px = 2.54cm)</li>
+            <li class="mt-1"><strong>px </strong>- Pixeles (puede variar la perspectiva segun la resolución o dispositivo donde se visualice)</li>
+            <li class="mt-1"><strong>pt </strong>- Puntos (medida habitual de texto.)</li>
+            <li class="mt-1"><strong>ch </strong>- Characteres, medida en caracteres, muy útil para medir largos de linea (width) por ejemplo.</li>
         </ul>
         <dt>Unidades relativas, van en función de otras unidades, por lo que pueden variar el valor segun la referencia:</dt>
         <ul class="contentlist">
-            <li class="mt-1" ><i>em </i>- Depende de la medida del font-size del elemento padre, 1 em = font-size x1</li>
-            <li class="mt-1" ><i>rem </i>- Depende de la medida del font-size básica de la pagina (relativo al tamaño de fuente raíz del html.), 1 rem = font-size x1 </li>
-            <li class="mt-1" ><i>% </i>- Depende de la medida donde se encuentre la caja, si no tiene parentesco ira en función de la medida máxima de la página/navegador </li>
-            <li class="mt-1" ><i>vh </i>- ViewPort Height, hace referencia a la altura de la parte visible del navegador, acepta del 0 al 100 como si se tratará de %.</li>
-            <li class="mt-1" ><i>vw </i>- ViewPort Widht, ancho visible del navegador donde 1vw equivale a 1%.</li>
-            <li class="mt-1" ><i>calc() </i>- Permite hacer calculos con los valores dentro de los parentesis para determinar el valor resultante.</li>
-            <li class="mt-1" ><i>min(...) </i>- Permite establecer un minimo para medidas cambiantes como anchos, largos, etc. Se aceptan varios valores y se elegira siempre el menor. Ej. <code>min( 20%, 100px, 4rem )</code></li>
-            <li class="mt-1" ><i>max(...) </i>- Permite establecer un máximo para medidas cambiantes. Acepta mas de un valor eligiendo el que sea siempre mas grande. Ej. <code>max( 80%, 500px, 50vw ). </code></li>
-            <li class="mt-1" ><i>clamp(MIN, IDEAL, MAX) </i>- Muy útil para comportamientos responsive. Se establece un valor ideal que tendrá preferencia sobreo los otros dos los cuales marcan que no puede ser mas pequeño que MIN ni mas grande que MAX. Ej. <code>clamp( 200px, 50%, 800px); </code></li>
-            <li class="mt-1" ><i>auto </i>- Igual que % depende de su parentesco, en este caso reparte el mismo valor si hay mas de una propiedad o equivale al valor más céntrico (útil cuando asignamos un mismo valor a multiples propiedades/lados). </li>
+            <li class="mt-1" ><strong>em </strong>- Depende de la medida del font-size del elemento padre, 1 em = font-size x1</li>
+            <li class="mt-1" ><strong>rem </strong>- Depende de la medida del font-size básica de la pagina (relativo al tamaño de fuente raíz del html.), 1 rem = font-size x1 </li>
+            <li class="mt-1" ><strong>% </strong>- Depende de la medida donde se encuentre la caja, si no tiene parentesco ira en función de la medida máxima de la página/navegador </li>
+            <li class="mt-1" ><strong>vh </strong>- ViewPort Height, hace referencia a la altura de la parte visible del navegador, acepta del 0 al 100 como si se tratará de %.</li>
+            <li class="mt-1" ><strong>vw </strong>- ViewPort Widht, ancho visible del navegador donde 1vw equivale a 1%.</li>
+            <li class="mt-1" ><strong>dvw/dvh </strong>- Dinamyc ViewPort Widht/Height, ancho o alto visible dinamico (útil para navegadores móbiiles con la barra de busqueda colapsada al hacer scroll). </li>
+            <li class="mt-1" ><strong>svw/svh </strong>- Small ViewPort Widht/Height, porción más pequeña del ancho o alto visible, útil con cambios de viewport sobretodo en navegadores móbiles.</li>
+            <li class="mt-1" ><strong>lvw/lvh </strong>- Larg ViewPort Widht/Height, porción más grande del ancho o alto visible, útil con cambios de viewport sobretodo en navegadores móbiles.</li>
+            <li class="mt-1" ><strong>vmin </strong>- % Relativo a la parte más pequeña del viewport (ancho o alto).</li>
+            <li class="mt-1" ><strong>vmax </strong>-  % Relativo a la parte más grande del viewport (ancho o alto).</li>
+            <li class="mt-1" ><strong>calc() </strong>- Permite hacer calculos con los valores dentro de los parentesis para determinar el valor resultante.</li>
+            <li class="mt-1" ><strong>min(...) </strong>- Permite establecer un minimo para medidas cambiantes como anchos, largos, etc. Se aceptan varios valores y se elegira siempre el menor. Ej. <code>min( 20%, 100px, 4rem )</code></li>
+            <li class="mt-1" ><strong>max(...) </strong>- Permite establecer un máximo para medidas cambiantes. Acepta mas de un valor eligiendo el que sea siempre mas grande. Ej. <code>max( 80%, 500px, 50vw ). </code></li>
+            <li class="mt-1" ><strong>clamp(MIN, IDEAL, MAX) </strong>- Muy útil para comportamientos responsive. Se establece un valor ideal que tendrá preferencia sobreo los otros dos los cuales marcan que no puede ser mas pequeño que MIN ni mas grande que MAX. Ej. <code>clamp( 200px, 50%, 800px); </code></li>
+            <li class="mt-1" ><strong>auto </strong>- Igual que % depende de su parentesco, en este caso reparte el mismo valor si hay mas de una propiedad o equivale al valor más céntrico (útil cuando asignamos un mismo valor a multiples propiedades/lados). </li>
 
             *min() y max() permiten mas de un valor entre parentesis. Ejemplo <i>width: min(500px 70%);</i>  escogerá siempre la mínima medida en función del ancho navegador, si 500px es menor que 70% entonces escogerá 500px como medida mínima. Lo mismo para max() pero escogiendo la medida mas grande.
         </ul>
         <dt><b>Colores</b></dt>
         <dd>Siguiendo varios estandares, hay distintas maneras de expresar el valor del color que queremos asignar:</dd>
         <ul class="contentlist">
-            <li class="mt-1"><i>Hexadecimal </i>- #RRGGBB asigna dos unidades de valor del 0 a la F para cada color básico.</li>
-            <li class="mt-1"><i>Hexadecimal con transparencia </i>- #RRGGBBAA asigna dos unidades de valor del 0 a la F para cada color básico y los dos últimos para el canal alpha.</li>
-            <li class="mt-1"><i>RGB </i>- rgb (R,G,B) asigna un valor del 0 al 255 para cada color básico, también se puede escribir con %.</li>
-            <li class="mt-1"><i>RGBA </i>- rgba (R,G,B,A) asigna un valor del 0 al 255 para cada color básico, y por último la transparencia con un valor del 0.0 (100% transparente) al 1.0 (100% opaco).</li>
-            <li class="mt-1"><i>HSL </i>- hsl(HUE, SATURATION, LIGHTNESS) teniendo en cuenta la rueda de color, asigna un grado de 0 al 359 para la tonalidad, y un porcentage para la saturación y brillo(0% es negro y 100% es blanco).</li>
-            <li class="mt-1"><i>HSLA </i>- hsla(HUE, SATURATION, LIGHTNESS, ALPHA) igual que HSL pero añadiendo transparencia con valores del 0.0 al 1.0.</li>
-            <li class="mt-1"><i>Predefinidos </i>- colores ya predefinido por CSS que se definen con su nombre, hay 140 disponibles (red, green, lightgrey, darkblue, etc.).</li>
-            <li class="mt-1"><i>linear-gradient(DIRECCIÓN, COLOR1 STOP, COLOR2 STOP, COLOR3 STOP...) </i> - permite crear degradados lineares, por defecto la dirección va de top a bottom a no ser que le indiquemos lo contrario con bottom/right/left o Xdeg. El valor de STOP se indica en números px o % y definde donde acaba dicho color, dos colores con el mismo valor crearan un cambio abrupto sin degradado. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
-            <li class="mt-1"><i>radial-gradient(X Y, SHAPE, COLOR1 STOP, COLOR2 STIOP, COLOR3 STOP,...) </i> - permite crear degradados radiales, debe indicarse la posicion X Y del centro con px o %, la forma puede ser circle o ellipse y los colores con la métrica de finalización. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
+            <li class="mt-1"><strong>Hexadecimal </strong>- #RRGGBB asigna dos unidades de valor del 0 a la F para cada color básico.</li>
+            <li class="mt-1"><strong>Hexadecimal con transparencia </strong>- #RRGGBBAA asigna dos unidades de valor del 0 a la F para cada color básico y los dos últimos para el canal alpha.</li>
+            <li class="mt-1"><strong>RGB </strong>- rgb (R,G,B) asigna un valor del 0 al 255 para cada color básico, también se puede escribir con %.</li>
+            <li class="mt-1"><strong>RGBA </strong>- rgba (R,G,B,A) asigna un valor del 0 al 255 para cada color básico, y por último la transparencia con un valor del 0.0 (100% transparente) al 1.0 (100% opaco).</li>
+            <li class="mt-1"><strong>HSL </strong>- hsl(HUE, SATURATION, LIGHTNESS) teniendo en cuenta la rueda de color, asigna un grado de 0 al 359 para la tonalidad, y un porcentage para la saturación y brillo(0% es negro y 100% es blanco).</li>
+            <li class="mt-1"><strong>HSLA </strong>- hsla(HUE, SATURATION, LIGHTNESS, ALPHA) igual que HSL pero añadiendo transparencia con valores del 0.0 al 1.0.</li>
+            <li class="mt-1"><strong>Predefinidos </strong>- colores ya predefinido por CSS que se definen con su nombre, hay 140 disponibles (red, green, lightgrey, darkblue, etc.).</li>
+            <li class="mt-1"><strong>linear-gradient(DIRECCIÓN, COLOR1 STOP, COLOR2 STOP, COLOR3 STOP...) </strong> - permite crear degradados lineares, por defecto la dirección va de top a bottom a no ser que le indiquemos lo contrario con bottom/right/left o Xdeg. El valor de STOP se indica en números px o % y definde donde acaba dicho color, dos colores con el mismo valor crearan un cambio abrupto sin degradado. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
+            <li class="mt-1"><strong>radial-gradient(X Y, SHAPE, COLOR1 STOP, COLOR2 STIOP, COLOR3 STOP,...) </strong> - permite crear degradados radiales, debe indicarse la posicion X Y del centro con px o %, la forma puede ser circle o ellipse y los colores con la métrica de finalización. Hay una variante que añade la palabra <i>repeating-</i> al inicio y hace que se repita el degradado hasta completar el elemento a colorear.</li>
         </ul>
     </dl>
 </section>
 
-<!--PROPIEDADES Y VALORES-->
+<!-- MARK: PROPIEDADES Y VALORES-->
 
 <section id="formato-texto">
     <h2 class="title-2" id="estilos-texto">Estilos para texto</h2>
@@ -210,7 +215,7 @@
     </dl>
 </section>
 
-<!--PROPIEDADES DE LAS CAJAS-->
+<!-- MARK: PROPIEDADES DE LAS CAJAS-->
 <section id="cajas-css">
     <h2 class="title-2" id="propiedades-cajas">Propiedades de cajas</h2>
 
@@ -318,7 +323,7 @@
     </dl>
 </section>
 
-<!-- DISPLAY & POSITION -->
+<!--  MARK: DISPLAY & POSITION -->
 <section id="distribucion">
     <h2 class="title-2" id="posicionamiento-disposicion">Posicionamiento y disposición</h2>
     <p>
@@ -561,7 +566,7 @@
     </div>
 </section>
 
-<!-- ANIMACIONES -->
+<!-- MARK:  ANIMACIONES -->
 <section id="animaciones-transiciones">
     <h2 class="title-2" id="animaciones">Animaciones</h2>
     <p>Las animaciones permiten cambiar las propiedades de los elementos en un intervalo de tiempo e incluyendo suavidad de movimiento.</p>
