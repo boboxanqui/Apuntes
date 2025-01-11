@@ -253,6 +253,10 @@ footer{
     color: #e84d31;
 }
 
+.fa-database{
+    color: dodgerblue;
+}
+
 .text-color1{
     color: var(--color1)
 }

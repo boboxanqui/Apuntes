@@ -41,6 +41,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         
         case 'git': this.selectedRoute(this.gitNavLink,this.navSelection);
           break;
+
+        case 'sql' : this.selectedRoute(this.sqlNavLink, this.navSelection);
+          break;
         
         default: this.hideSelectedRoute();
 
@@ -58,6 +61,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   @ViewChild('navLink4') typescriptNavLink!: ElementRef<HTMLElement>;
   @ViewChild('navLink5') angularNavLink!: ElementRef<HTMLElement>;
   @ViewChild('navLink6') gitNavLink!: ElementRef<HTMLElement>;
+  @ViewChild('navLink7') sqlNavLink!: ElementRef<HTMLElement>;
   @ViewChild('navSelection') navSelection!: ElementRef<HTMLElement>;
 
   private _navSelectionLeft: number = 100;

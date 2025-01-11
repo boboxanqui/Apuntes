@@ -1,0 +1,55 @@
+<h2 class="page-title">SQL</h2>
+
+<p><b>Structured Query Language</b> no se considera un lenguaje de programación pero se ha consolidado como un lenguaje de consultas muy utilizado para bases de datos relacionadas.</p>
+
+<p>SQL es un estandar que después se utiliza en otros lenguajes como MySQL, PostgreSQL, SQLite con algunas variaciones en cada uno.</p>
+
+<p>Una base de datos relacional consiste en varias tablas conectadas entre ellas por algun valor en común (normalmente un ID). De esta manera se evita la duplicidad de los valores, es decir que cada dato es único y no es necesario guardarlo en más de una tabla.</p>
+
+<p>Las bases de datos contienen <b>tablas/entidades</b> que son cada una de las tablas o conjunto de datos y los <b>atributos</b> que son cada una de las columnas de las tablas.</p>
+
+<p>Por otro lado, existen las bases de datos <b>NoSQL</b> donde no hay relación entre tablas y puede haber datos duplicados en distintas tablas. Ambos tipos de bases de datos se utilizan en casos distintos: SQL permite almacenar menos datos y tener que hacer menos modificaciones al cambiar un valor, en cambio NoSQL permite hacer consultas más rápidas pero es más problematico a la hora de cambiar algun valor.</p>
+
+<p>Es habitual que las tablas tengan un <b>ID autoincrementativos</b>, de manera que el número del ID va creciendo a medida que se añaden filas. Es un método útil para datos pocos sensibles. Cuando se guardan datos más sensibles se recomienda crear IDs aleatorios para evitar la predicción.</p>
+
+<p>No es <b>key sensitive</b> por lo que ignora si se escribe en mayúscula o minuscula pero es habitual que las <b>acciones</b> se escriban en <b>mayucula</b> y los <b>nombres de columnas/tablas en minuscula</b> para una mejor lectura. Por otro lado, PostgreSQL si que es key sensitive. </p>
+
+<p>Todas las consultas que se realizan se devuelve el resulta en forma de tabla (inclyendo cuando se eliminan datos, obtendremos una tabla vacia o con el resto de valores).</p>
+
+<h4 class="title-3">Sintaxis</h4>
+
+<div class="text-center">
+   <pre>ACCIÓN columna FROM tabla WHERE condición?</pre>
+</div>
+
+<p>En el valor de columna, podemos poner varios atributos separados por comas o indicar * para obtener todas las columnas (no es recomendable ya que puede generar consultas de mucho peso).</p>
+
+<p>El <b>WHERE</b> es opciónal y sirve para indicar condiciones, podemos </p>
+
+
+<h4 class="title-3">Enlaces de interés</h4>
+
+<ul>
+   <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="link">MySQL</a> es un programario para configurar y crear nuevas bases de datos.</li>
+   <li><a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" class="link">SQLite</a> es otro programario para poder crear y configurar bases de datos.</li>
+   <li><a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer" class="link">SQLBolt</a> es una plataforma para aprender y practicar SQL.</li>
+   <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial" target="_blank" rel="noopener noreferrer" class="link">SQLZoo</a> web con un extenso tutorial</li>
+   <li><a href="https://www.db-fiddle.com/" target="_blank" rel="noopener noreferrer" class="link">DB fiddle</a> es una plataforma para practicar consultas en linea.</li>
+</ul>
+
+
+<br><br><br><br><br><br>
+<hr>
+
+<pre>Custom formats</pre>
+<h3 class="title-2">Título 2</h3>
+<h4 class="title-3">Título 3</h4>
+<span class="status">Status</span><br>
+<a href="#"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="link">Link</a><br>
+<span class="muted">Muted</span><br>
+<p class="tip">Tip</p><br>
+<code>code</code><br>
+<span class="git-option">optional code</span><br>
