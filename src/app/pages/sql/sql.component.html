@@ -1,42 +1,572 @@
 <h2 class="page-title">SQL</h2>
 
-<p><b>Structured Query Language</b> no se considera un lenguaje de programación pero se ha consolidado como un lenguaje de consultas muy utilizado para bases de datos relacionadas.</p>
+<p><b>Structured Query Language</b> no se considera un lenguaje de programación pero se ha consolidado como un lenguaje
+   de consultas muy utilizado para bases de datos relacionadas.</p>
 
-<p>SQL es un estandar que después se utiliza en otros lenguajes como MySQL, PostgreSQL, SQLite con algunas variaciones en cada uno.</p>
+<p>SQL es un estandar que después se utiliza en otros lenguajes como MySQL, PostgreSQL, SQLite con algunas variaciones
+   en cada uno.</p>
 
-<p>Una base de datos relacional consiste en varias tablas conectadas entre ellas por algun valor en común (normalmente un ID). De esta manera se evita la duplicidad de los valores, es decir que cada dato es único y no es necesario guardarlo en más de una tabla.</p>
+<p>Una base de datos relacional consiste en varias tablas conectadas entre ellas por algun valor en común (normalmente
+   un ID). De esta manera se evita la duplicidad de los valores, es decir que cada dato es único y no es necesario
+   guardarlo en más de una tabla.</p>
 
-<p>Las bases de datos contienen <b>tablas/entidades</b> que son cada una de las tablas o conjunto de datos y los <b>atributos</b> que son cada una de las columnas de las tablas.</p>
+<p>Las bases de datos contienen <b>tablas/entidades</b> que son cada una de las tablas o conjunto de datos y los
+   <b>atributos</b> que son cada una de las columnas de las tablas.
+</p>
 
-<p>Por otro lado, existen las bases de datos <b>NoSQL</b> donde no hay relación entre tablas y puede haber datos duplicados en distintas tablas. Ambos tipos de bases de datos se utilizan en casos distintos: SQL permite almacenar menos datos y tener que hacer menos modificaciones al cambiar un valor, en cambio NoSQL permite hacer consultas más rápidas pero es más problematico a la hora de cambiar algun valor.</p>
+<p>Por otro lado, existen las bases de datos <b>NoSQL</b> donde no hay relación entre tablas y puede haber datos
+   duplicados en distintas tablas. Ambos tipos de bases de datos se utilizan en casos distintos: SQL permite almacenar
+   menos datos y tener que hacer menos modificaciones al cambiar un valor, en cambio NoSQL permite hacer consultas más
+   rápidas pero es más problematico a la hora de cambiar algun valor.</p>
 
-<p>Es habitual que las tablas tengan un <b>ID autoincrementativos</b>, de manera que el número del ID va creciendo a medida que se añaden filas. Es un método útil para datos pocos sensibles. Cuando se guardan datos más sensibles se recomienda crear IDs aleatorios para evitar la predicción.</p>
+<p>Es habitual que las tablas tengan un <b>ID autoincrementativos</b>, de manera que el número del ID va creciendo a
+   medida que se añaden filas. Es un método útil para datos pocos sensibles. Cuando se guardan datos más sensibles se
+   recomienda crear IDs aleatorios para evitar la predicción.</p>
 
-<p>No es <b>key sensitive</b> por lo que ignora si se escribe en mayúscula o minuscula pero es habitual que las <b>acciones</b> se escriban en <b>mayucula</b> y los <b>nombres de columnas/tablas en minuscula</b> para una mejor lectura. Por otro lado, PostgreSQL si que es key sensitive. </p>
+<p>No es <b>case sensitive</b> por lo que ignora si se escribe en mayúscula o minuscula pero es habitual que las
+   <b>acciones</b> se escriban en <b>mayucula</b> y los <b>nombres de columnas/tablas en minuscula</b> para una mejor
+   lectura. Por otro lado, PostgreSQL si que es case sensitive.
+</p>
 
-<p>Todas las consultas que se realizan se devuelve el resulta en forma de tabla (inclyendo cuando se eliminan datos, obtendremos una tabla vacia o con el resto de valores).</p>
+<p>Todas las consultas que se realizan se devuelve el resulta en forma de tabla (inclyendo cuando se eliminan datos,
+   obtendremos una tabla vacia o con el resto de valores).</p>
 
 <h4 class="title-3">Sintaxis</h4>
 
 <div class="text-center">
-   <pre>ACCIÓN columna FROM tabla WHERE condición?</pre>
+   <p class="sintaxis align-center">ACCIÓN columna FROM tabla</p>
 </div>
 
-<p>En el valor de columna, podemos poner varios atributos separados por comas o indicar * para obtener todas las columnas (no es recomendable ya que puede generar consultas de mucho peso).</p>
-
-<p>El <b>WHERE</b> es opciónal y sirve para indicar condiciones, podemos </p>
-
+<p>En el valor de columna, podemos poner varios atributos separados por comas o indicar * para obtener todas las
+   columnas (no es recomendable ya que puede generar consultas de mucho peso).</p>
 
 <h4 class="title-3">Enlaces de interés</h4>
 
 <ul>
-   <li><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="link">MySQL</a> es un programario para configurar y crear nuevas bases de datos.</li>
-   <li><a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer" class="link">SQLite</a> es otro programario para poder crear y configurar bases de datos.</li>
-   <li><a href="https://sqlbolt.com/" target="_blank" rel="noopener noreferrer" class="link">SQLBolt</a> es una plataforma para aprender y practicar SQL.</li>
-   <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial" target="_blank" rel="noopener noreferrer" class="link">SQLZoo</a> web con un extenso tutorial</li>
-   <li><a href="https://www.db-fiddle.com/" target="_blank" rel="noopener noreferrer" class="link">DB fiddle</a> es una plataforma para practicar consultas en linea.</li>
+   <li><a href="https://www.mysql.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link">MySQL</a> es un programario para configurar y crear nuevas bases de datos.</li>
+   <li><a href="https://www.sqlite.org/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link">SQLite</a> es otro programario para poder crear y configurar bases de datos.</li>
+   <li><a href="https://sqlbolt.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link">SQLBolt</a> es una plataforma para aprender y practicar SQL.</li>
+   <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link">SQLZoo</a> web con un extenso tutorial</li>
+   <li><a href="https://www.db-fiddle.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="link">DB fiddle</a> es una plataforma para practicar consultas en linea.</li>
 </ul>
 
+<h3 class="title-2">Condiciones</h3>
+
+<div class="text-center">
+   <p class="sintaxis align-center">ACCIÓN columna FROM tabla <b>WHERE condición</b> </p>
+</div>
+
+
+<p>El <b>WHERE</b> es opciónal y sirve para indicar condiciones, podemos acumular tantas condiciones como queramos
+   separadas por comas. Cada condición debe incluir <b>atributo</b>, <b>operador</b> y los <b>valores</b> que van a
+   regir la condición.</p>
+
+<h4 class="title-3">Opreadores númericos</h4>
+
+
+<dl>
+   <dt><code> =, !=, <, <=, >, >= </code></dt>
+   <dd>Típicos operadores numericos.</dd>
+
+   <dt><code>BETWEEN … AND …</code></dt>
+   <dd>Número entre un rango</dd>
+
+   <dt><code>NOT BETWEEN … AND …</code></dt>
+   <dd>Número fuera de un rango</dd>
+
+   <dt><code>IN (…)</code></dt>
+   <dd>Número concreto entre varios valores. Ej <i class="muted">IN (3,7,11,13,17)</i></dd>
+
+   <dt><code>NOT IN (…)</code></dt>
+   <dd>Número fuera de la lista.</dd>
+</dl>
+
+<h4 class="title-3">Opreadores de texto</h4>
+
+<dl>
+   <dt><code> =, !=, <> </code></dt>
+   <dd>Texto exacto o distinto, es case sensitive por lo que tiene en cuenta mayúscula/minuscula.</dd>
+
+   <dt><code>LIKE</code></dt>
+   <dd>Texto exacto sin case sensitive. Ej <i class="muted">name LIKE "marcos"</i></dd>
+
+   <dt><code>NOT LIKE</code></dt>
+   <dd>Texto distinto sin case sensitive. Ej <i class="muted">name NOT LIKE "mandi"</i></dd>
+
+   <dt><code>%</code> <span class="muted"> (solo para LIKE o NOT LIKE)</span></dt>
+   <dd>Operador que se incluye en una parte del string para indicar que puede haber ninguno u otros carácteres. Ej <i
+         class="muted">name LIKE "marc%"</i></dd>
+
+   <dt><code>_</code> <span class="muted"> (solo para LIKE o NOT LIKE)</span></dt>
+   <dd>Operador que se incluye en el string para indicar que hay 1 caracter más. Ej. <i class="muted">name LIKE
+         "_arcos"</i></dd>
+
+   <dt><code> IN (…)</code></dt>
+   <dd>Texto existente en la lista. Ej <i class="muted">name IN ("marcos","marc")</i></dd>
+
+   <dt><code> NOT IN (…)</code></dt>
+   <dd>Texto que no aparece en la lista. Ej <i class="muted">name IN ("antonio","manolo")</i></dd>
+</dl>
+
+<h3 class="title-2">Filtros y orden</h3>
+
+<p>
+   La palabra <b>DISTINCT</b> evita que haya resultados duplicados. Seguramente todas las filas de una tabla tengan
+   algun valor distinto entre ellas, pero si filtramos por unos atributos en concretos es probable que obtengamos los
+   mismos valores en distintas filas. Con esta palabra se descartarán aquellos resultados idénticos.
+</p>
+
+<div class="text-center">
+   <p class="sintaxis">SELECT <b>DISTINCT</b> column, another_column, … <br>
+      FROM mytable</p>
+</div>
+<p>
+   Por otro lado, podemos ordenar los resultados obtenidos con <b>ORDER BY</b>. Se incluye al final de la sintaxis y
+   puede ser ascendente <b>ASC</b> o descendente <b>DESC</b> según los valores de la columna que le indiquemos. Sirve
+   tanto para números como cadenas de texto.
+</p>
+
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT column, another_column, … <br>
+      FROM mytable <br>
+      WHERE condition(s) <br>
+      <b>ORDER BY column ASC/DESC;</b>
+   </p>
+</div>
+
+<p>Otro concepto que se puede utilizar cuando se ordenan y filtran los resultados es el <b>LIMIT</b> donde indicamos el
+   número máximo de resultados que queremos obtener.También podemos incluir el <b>OFFSET</b> que sirve para indicar a
+   partir de que resultado empezamos a contar el LIMIT.</p>
+
+<p>Esta limitación se usa para paginar los resultados de la mayoria de páginas web o aplicaciones. Cada vez que
+   cambiamos de página se altera el OFFSET.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT column, another_column, … <br>
+      FROM mytable <br>
+      WHERE condition(s) <br>
+      ORDER BY column ASC/DESC <br>
+      <b>LIMIT num_limit OFFSET num_offset;</b>
+   </p>
+</div>
+
+<h3 class="title-2">Consultas multitablas</h3>
+
+<p>Las consultas en más de una tabla a la vez son muy comunes y parte fundamental de la normalización. La
+   <b>normalización</b> es el diseño de la estructura de las bases de datos relacionales y debe cumplir ciertas reglas
+   como evitar duplicados, nombres únicos en cada tabla, evitar dos filas iguales, todos los valores de una misma
+   columna deben ser del mismo tipo. Todo esto permite disminuir problemas de actualizaciones de datos y proteger la
+   integridad de los datos.
+</p>
+
+<p>Para poder hacer consultas a traves de varias tablas es indispensable tener una <b>clave primaria</b> o <b>primary
+      key</b> que relaciona una fila de una tabla con otra fila de otra tabla. Este valor suele ser el ID pero también
+   puede algun otro dato.</p>
+
+<p>El <b>JOIN ... ON ...</b> permite hacer la relación entre tablas indicando la otra tabla y el atributo que debe
+   coincidir. Existen 4 tipos de JOIN dependiendo de los datos que queramos obtener:</p>
+
+<ul>
+   <li><b>LEFT JOIN</b> solo incluye los datos que existen en la primera tabla.</li>
+   <li><b>RIGHT JOIN</b> solo incluye los datos que existen en la segunda tabla.</li>
+   <li><b>FULL JOIN</b> incluye todos los datos independientemente de si coinciden en ambas tablas.</li>
+   <li><b>INNER JOIN</b> incluye los datos de ambas tablas solo si coinciden.</li>
+</ul>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT column, another_table_column, … <br>
+      FROM mytable <br>
+      <b>INNER/FULL/LEFT/RIGHT JOIN another_table</b> <br>
+      <span class="ms-5"> </span><b>ON mytable.id = another_table.id</b> <br>
+      WHERE condition(s) <br>
+      ORDER BY column, … ASC/DESC <br>
+      LIMIT num_limit OFFSET num_offset;
+   </p>
+</div>
+
+<div class="text-center mb-4">
+   <img src="../../../assets/img/585px-Joins_del_SQL.png"
+        alt="listado de los tipos de join en SQL">
+</div>
+
+<p>Cuando se utiliza uno de estos JOINS es necasirio incluir el <b>NULL</b>. El null ayuda a filtrar los resultados para
+   evitar obtener datos vacios.</p>
+
+<p>Algunas tablas incluyen 0 y strings vacios cuando no hay valores pero en otras ocasiones podemos encontrar celdas sin
+   valores, es deicr NULL.</p>
+
+<p>El NULL se incluye como una condición del WHERE y puede ser <b>IS NULL</b> o <b>IS NOT NULL</b>.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT column, another_column, … <br>
+      FROM mytable <br>
+      JOIN another_table <br>
+      ON mytable.id = another_table.id <br>
+      <b>WHERE column IS/IS NOT NULL</b> <br>
+      AND/OR another_condition <br>
+      AND/OR …;
+   </p>
+</div>
+
+<h3 class="title-2">Expresiones y funciones</h3>
+
+<p>Al igual que en lenguajes de programación, podemos incluir <b>expresiones y/o funciones matematicas</b> en las
+   consultas para personalizar los resultados obtenidos a nuestras necesidades. Esta funcionalidad puede cambiar
+   dependiendo de la base de datos utilizada.</p>
+
+<p>Se puede utilizar la palabra <b>AS</b> para persolanizar el nombre del atributo a mostrar en el resultado. Es buena
+   practica hacerlo cuando utilizamos expresiones o simplemente para facilitar la lectura de los resultados.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT particle_speed / 2.0 AS half_particle_speed <br>
+      FROM physics_data <br>
+      WHERE ABS(particle_position) * 10.0 > 500;
+   </p>
+</div>
+
+<p>SQL también soporta las <b>funciones de agregación</b> que permiten obtener resultados globales de distintos valores.
+</p>
+
+<p>Algunas de las funciones más comunes son:</p>
+
+<ul>
+   <li><b>COUNT(...)</b> cuenta el número de filas que tienen el valor indicado como non-NULL.</li>
+   <li><b>MIN(...)</b> devuelve el valor más pequeño de todas las filas.</li>
+   <li><b>MAX(...)</b> devuelve el valor más elevado de todas las filas.</li>
+   <li><b>AVG(...)</b> devuelve la media de todos los valores.</li>
+   <li><b>SUM(...)</b> devuelve la suma de todos los valores.</li>
+</ul>
+
+<p>Documentación de las principales bases de datos: <a
+      href="https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">MySQL</a>, <a href="https://www.postgresql.org/docs/9.4/functions-aggregate.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">Postgresql</a> y <a href="https://www.sqlite.org/lang_aggfunc.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">SQLite</a>.</p>
+
+<p>Adicionalmente se pueden agrupar las filas en función de un valor para obtener la función que queramos por cada valor
+   con <b>GROUP BY</b>. Por ejemplo si queremos ver la media de nota por cada clase.</p>
+
+<p>Siempre se debe indicar una columna que aparezca en el SELECT, de modo que agrupamos los resultados por esta columna con los valores obtenidos en las funciones del resto de columnas.</p>
+
+<p>El GROUP BY se utiliza después del WHERE, de manera que agrupa las filas después de ser filtradas. Si queremos hacer
+   un filtrado o condición adicional teniendo en cuenta los grupos, podemos utilizar el <b>HAVING</b>. Funciona igual
+   que el WHERE pero afecta solo a los grupos creados por GROUP BY.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT <b>AGG_FUNC(column_or_expression) AS <br>
+         <span class="me-5"></span> aggregate_description</b> <br>
+      FROM mytable <br>
+      WHERE constraint_expression <br>
+      <b>GROUP BY column</b> <br>
+      <b>HAVING group_condition</b>;
+   </p>
+</div>
+
+<h3 class="title-2">Orden de ejecución</h3>
+
+<p>Como resumen, esta es la sintaxis completa con todas las partes que puede incluir un consulta de SQL:</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT DISTINCT column, AGG_FUNC(column_or_expression), … <br>
+      FROM mytable <br>
+      <span class="me-4"></span>JOIN another_table <br>
+      <span class="me-5"></span>ON mytable.column = another_table.column <br>
+      <span class="me-4"></span>WHERE constraint_expression <br>
+      <span class="me-4"></span>GROUP BY column <br>
+      <span class="me-4"></span>HAVING constraint_expression <br>
+      <span class="me-4"></span>ORDER BY column ASC/DESC <br>
+      <span class="me-4"></span>LIMIT count OFFSET COUNT;
+   </p>
+</div>
+
+<p>Es importante tener en cuenta que las acciones se ejecutan secuencialmente, es decir en cada consulta se sigue un
+   orden de ejecución que puede afectar al rendimiento de la consulta. Cada acción recibirá los datos modificados en la
+   anterior acción.</p>
+
+<p><b>Orden de ejecución: </b> FROM > JOIN > WHERE > GROUP BY > HAVING > SELECT > DISTINCT > ORDER BY > LIMIT + OFFSET
+</p>
+
+<h3 class="title-2">Sub consultas</h3>
+
+<p>Una sub consulta puede resultar muy útil para comparar o filtrar datos de varias tablas. Se pueden realizar en
+   cualquier parte de una consulta normal (excepto en LIMIT y OFFSET) y deben estar dentro de parentésis.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT * <br>
+      FROM employees <br>
+      WHERE salary > <br>
+      <span class="me-4"></span><b>(SELECT AVG(revenue_generated)</b> <br>
+      <span class="me-4"></span><b>FROM employees AS dept_employees</b> <br>
+      <span class="me-4"></span><b>WHERE dept_employees.department = employees.department)</b>;
+   </p>
+</div>
+
+<p>Podemos utilizar el <b>IN</b> o <b>NOT IN</b> del WHERE para añadir una sub consulta y poder filtrar los resultados
+   dependiendo de una consulta a otra tabla.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      SELECT *, … <br>
+      FROM mytable <br>
+      WHERE column <br>
+      <span class="me-4"></span><b>IN/NOT IN (SELECT another_column</b> <br>
+      <span class="me-4"></span><b>FROM another_table)</b>;
+   </p>
+</div>
+
+<h3 class="title-2">Uniones, intersecciones y excepciones</h3>
+
+<h2 style="color: red;">Por construir...</h2>
+
+<h3 class="title-2">Añadir datos</h3>
+
+<p>Mediante la acción <b>INSERT INTO</b> podemos añadir filas a nuestras tablas. Debemos indicar la tabla seguido de
+   <b>VALUES</b> y la información a añadir. Si hay valores por defecto y/o desconocemos los datos de todas las columnas
+   podemos indicar las columnas exactas donde deseamos añadir la información (en este caso el número de columnas
+   indicadas debe coincidir con el número de datos a añadir).
+</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      INSERT INTO mytable <br>
+      <span class="me-4"></span>(column, another_column, …) <br>
+      VALUES (value_or_expr, another_value_or_expr, …), <br>
+      <span class="me-4"></span>(value_or_expr_2, another_value_or_expr_2, …), <br>
+      …;
+   </p>
+</div>
+
+<p>También se pueden utilizar expresiones mátematicas y de cadenas de texto para modificar los valores a añadir.</p>
+
+<h3 class="title-2">Actualizar datos</h3>
+
+<p>Para poder actualizar datos en una tabla se debe indicar primero la tabla con <b>UPDATE</b> y a continuación la
+   columna y el valor con <b>SET</b>. El tipo de los datos debe ser el mismo al actualizarlos.</p>
+
+<p>Se añaden condiciones con <b>WHERE</b>, todas las filas que cumplan las condiciones seran actualizadas con los datos
+   indicados. Si no se indica ningún WHERE se actualizan todas las filas de la tabla.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      UPDATE mytable <br>
+      SET column = value_or_expr, <br>
+      c other_column = another_value_or_expr, <br>
+      <span class="me-4"></span> … <br>
+      WHERE condition;
+   </p>
+</div>
+
+<div class="tip">
+   Antes de ejecutar el UPDATE, se recomienda hacer un SELECT para probar las condiciones del WHERE y ver si realmente
+   estamos filtrando las filas que deseamos actualizar.
+</div>
+
+<h3 class="title-2">Eliminar datos</h3>
+
+<p>Para eliminar filas tan solo necesitamos ejecutar un <b>DELETE</b> seguido de un <b>WHERE</b>. Todo lo que cumpla la
+   condición del WHERE será eliminado.</p>
+
+<p>Para eliminar una tabla entera podemos obviar el WHERE. Es recomendable hacer un SELECT antes para corroborar que
+   estamos seleccionando las filas a eliminar.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      DELETE FROM mytable <br>
+      WHERE condition;
+   </p>
+</div>
+
+<h3 class="title-2">Crear tablas</h3>
+
+<p>Para crear una nueva tabla utilizamos <b>CREATE TABLE</b> y podemos añadir <b>IF NOT EXISTS</b> para evitar errores
+   si la tabla ya existe seguido del nombre.</p>
+
+<p>Depués del nombre de la tabla se indica entre parentesis todas las columans. <b>Cada columna se define con su nombre,
+      tipo de dato permitido y opcionalmente se puede indicar restricciones de la tabla y valor por defecto</b>.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      CREATE TABLE IF NOT EXISTS mytable ( <br>
+      <span class="me-4"></span>column DataType TableConstraint DEFAULT default_value, <br>
+      <span class="me-4"></span>another_column DataType TableConstraint DEFAULT default_value, <br>
+      <span class="me-4"></span> … <br>
+      );
+   </p>
+</div>
+
+<p>Como SQL tiene tipado de datos, se debe indicar el tipo de dato que va a albergar cada columna. Los más comunes son:
+</p>
+
+<ul>
+   <li><b>INTEGER</b> / <b>INT</b> números enteros de tamaño estandar, pueden ser positivos y negativos (a veces se
+      utiliza para
+      datos boolean con 0 y 1).</li>
+   <li><b>DECIMAL(X,Y)</b> números con decimales de alta precisión donde X es el número total de digitos (incluyendo decimales) y Y es el número de decimales. Ideal para dinero y datos financieros.</li>
+   <li><b>FLOAT</b> números con decimales.</li>
+   <li><b>DOUBLE</b> números con decimales con gran precisión.</li>
+   <li><b>REAL</b> similar a FLOAT, pero con menor precisión.</li>
+   <li><b>BOOLEAN</b> puede ser <code>TRUE</code> , <code>FALSE</code> o <code>NULL</code>.</li>
+   <li><b>CHARACTER(num_chars)</b> / <b>CHAR(num)</b> strings de longitud fija, el length se indica entre paréntesis.
+   </li>
+   <li><b>VARCHAR(num_chars)</b> strings de hasta cierta longitud, el máximo length se indica entre paréntesis.</li>
+   <li><b>TEXT</b> strings largos sin límite de longitud.</li>
+   <li><b>DATE</b> Almacena fechas (año, mes y día) en formato <code>YYYY-MM-DD</code>.</li>
+   <li><b>DATETIME</b> Fecha y hora en formato <code>AAAA-MM-DD HH:MM:SS</code>.</li>
+   <li><b>TIMESTAMP</b> Fecha y hora en formato <code>YYYY-MM-DD HH:MM:SS</code> que se ajusta a la zona horaria del
+      servidor. Útil para definir fechas de creación/modificación, se puede seguir con
+      <code>DEFAULT CURRENT_TIMESTAMP</code> para añadir la fecha y hora actual al crear el registro.
+   </li>
+   <li><b>BLOB</b> (Binary Large Object): Para almacenar datos binarios como imágenes, videos o archivos.</li>
+</ul>
+
+<p>Es importante asignar bién el tipado a cada columna, ya que <b>cada tipo de dato ocupa una cantidad de memoria
+      distinta</b>, para tablas con muchas filas distintas puede marcar la diferencia tener un tipo u otro.</p>
+
+<p>Documentos de interés: <a href="https://dev.mysql.com/doc/refman/8.4/en/data-types.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">MySQL</a>, <a href="https://www.postgresql.org/docs/9.4/datatype.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">Postgres</a>, <a href="https://www.sqlite.org/datatype3.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">SQLite</a> y <a
+      href="https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">Microsof SQL Server</a>.</p>
+
+<p>Opcionalmente se puede indicar las <b>restricciones de tabla</b>, que són unas caracteristicas que pueden impedir
+   añadir datos indeseados. Su objetivo principal es proteger la calidad y consistencia de los datos. Las más comunes
+   son:</p>
+
+<ul>
+   <li><b>PRIMARY KEY</b> el valor debe ser único y no NULL y permite identificar cada columna por separado. Debe ser un
+      valor inmutable en el tiempo.</li>
+   <li><b>AUTOINCREMENT</b> para números INTEGER, se rellena automaticamente siguiendo un ordén de números consecutivos
+      e incrementativo.</li>
+   <li><b>UNIQUE</b> cada valor debe ser único, puede haber una fila con NULL. No es necesariamente un valor
+      identificativo de cada fila.</li>
+   <li><b>NOT NULL</b> el valor a albergar no puede ser NULL</li>
+   <li><b>CHECK (expression)</b> permite añadir una condición que deben cumplir todos los valors. Ej
+      <code>CHECK(year > 1900)</code>.
+   </li>
+   <li><b>FOREIGN KEY</b> asegura que cada valor de esta columna corresponde con el valor de otra tabla. De este modo se
+      establece la relación entre tablas</li>
+</ul>
+
+<p>Por último podemos añadir un valor por defecto con <b>DEFAULT</b> seguido del valor. En caso de no recibir ningun
+   valor al crear una fila se utiliza el valor por defecto.</p>
+
+<h3 class="title-2">Modificar tablas</h3>
+
+<p>Como las necesidades y caracteristicas de los datos a guardar pueden ir cambiando con el tiempo, tenemos la opción de
+   <b>ALTER TABLE</b> para poder modificar las tablas ya existentes. Hay varias opciones:
+</p>
+
+<ul>
+   <li><b>ADD column dataType constraint? default? </b> permite añadir una nueva columna con la misma sintaxis que
+      cuando se crea.</li>
+   <li><b>DROP columnName</b> permite eliminar columnas <span class="muted">(no disponible en algunas bases de datos
+         como SQLite)</span> </li>
+   <li><b>RENAME TO newName</b> permite modificar el nombre de la tabla.</li>
+</ul>
+
+<p>La sintaxis es igual para las 3 opciones:</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      ALTER TABLE mytable <br>
+      DROP column_to_be_deleted;
+   </p>
+</div>
+
+<p>Cada base de datos tiene sus propias opciones para alterar tablas ya existentes, consultar documentación <a
+      href="https://dev.mysql.com/doc/refman/8.4/en/alter-table.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">MySQL</a>, <a href="https://www.postgresql.org/docs/9.4/sql-altertable.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">Postgres</a>, <a href="https://www.sqlite.org/lang_altertable.html"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">SQLite</a> y <a
+      href="https://learn.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link">Microsof SQL Server</a>.</p>
+
+<h3 class="title-2">Eliminar tabla</h3>
+
+<p>Con el comando <b>DROP TABLE</b> podemos eliminar una tabla entera, este proceso elimina todos los datos y el esquema
+   de la tabla. Por otro lado, el comando <b>DELETE</b> elimina todos los datos de la tabla pero mantiene el esquema de
+   esta (solo elimina el contenido).</p>
+
+<p>Podemos añadir <b>IF EXISTS</b> para evitar errores en caso de que no haya ninguna tabla con dicho nombre.</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      DROP TABLE IF EXISTS mytable;
+   </p>
+</div>
+
+<p>Si hay alguna otra tabla que tenga dependencias de la tabla a eliminar (por ejemplo una columna FOREIGN KEY), debemos
+   modificar primero las dependencies y posteriormente eliminar la tabla.</p>
+
+
+<h3 class="title-2">Triggers</h3>
+
+<p>Los triggers son procesos automaticos que se establecen después de realizar una acción en concreto, es decir, ejecuciones de código que se ejecutan después de cierto evento en la base de datos. Suelen activarse después de un INSERT, UPDATE o DELETE.</p>
+
+<p>Tiene 3 tipos de activación: <b>BEFORE</b>, <b>AFTER</b> y <b>INSTEAD OF</b>.</p>
+
+<p>Ej. añadir un usuario en la tabla <i>users</i> cuando se añade en la tabla <i>followers</i>:</p>
+
+<div class="text-center">
+   <p class="sintaxis">
+      CREATE TRIGGER increase_follower_count <br>
+      <span class="me-4"></span>AFTER INSERT ON followers <br>
+      <span class="me-4"></span>FOR EACH ROW <br>
+      <span class="me-4"></span>BEGIN <br>
+      <span class="me-5"></span>UPDATE users SET follower_count = follower_count +1 <br>
+      <span class="me-5"></span>WHERE user_id = NEW.following.id <br>
+      END;
+   </p>
+</div>
+
+<p>Los triggers pueden ocasionar problemas de rendimiento sobretodo si pueden ejecutarse con mucha frecuencia, ya que cada evento puede encadenar una serie de triggers distintos. Se puede indicar que se haga cada X </p>
 
 <br><br><br><br><br><br>
 <hr>

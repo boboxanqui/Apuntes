@@ -1,0 +1,29 @@
+code{
+    background-color: #DDD;
+    padding: 1px 7px;
+    border-radius: 5px;
+    color: darkred;
+}
+
+pre{
+    background-color: rgba(30, 143, 255, 0.15);
+    padding: 1.5rem;
+    font-size: x-large;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 2rem auto;
+}
+.sintaxis{
+    background-color: rgba(30, 143, 255, 0.15);
+    padding: 1.5rem 3rem;
+    font-size: x-large;
+    border-radius: 10px;
+    max-width: 65%;
+    margin: 3rem auto;
+    font-family: monospace;
+    text-align: left;
+}
+
+.sintaxis.align-center{
+    text-align: center;
+}

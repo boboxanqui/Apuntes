@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sql',
-  standalone: true,
-  imports: [],
   templateUrl: './sql.component.html',
-  styles: ``
+  styleUrls: ['./sql.component.css']
 })
 export class SqlComponent {
 
