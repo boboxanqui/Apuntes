@@ -8,6 +8,7 @@ import { SassComponent } from './pages/sass/sass.component';
 import { TypescriptComponent } from './pages/typescript/typescript.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { GitComponent } from './pages/git/git.component';
+import { SqlComponent } from './pages/sql/sql.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent, pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'typescript', component:TypescriptComponent},
   {path: 'angular', component:AngularCLIComponent},
   {path: 'git', component:GitComponent},
+  {path: 'sql', component:SqlComponent},
   {path: '**', redirectTo: ''}
 ]
 

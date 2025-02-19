@@ -42,8 +42,8 @@ Llamada: <code>map-get($NOMBRE_MAP, KEY);</code>
 SELECTOR_1 {{ '{' }}
     SELECTOR_2 {{ '{' }}
      ... 
-    &#125;
-&#125;
+     &#125;
+     &#125;
 </pre> </code>
 <dd>A diferencia de CSS, podemos anidar varios selectores, de esta manera el SELECTOR_2 solo se aplicara a todos los
     elementos de este tipo que esten dentro de un elemeto del tipo SELECTOR_1. Podemos escribir tantos selectores
@@ -62,7 +62,7 @@ SELECTOR_1 {{ '{' }}
 <code><pre>
 &#64;function NOMBRE (ARGUMENTOS) {{ '{' }}
     CODE_BLOCK 
-&#125;
+    &#125;
 </pre> </code>
 <dd>Muy similar al funcionamiento en Javascript, podemos crear una función para que calcule o ejecute ciertas
     instrucciones o incluso para que nos devuelva un valor con el <code>&#64;return</code>.</dd>
@@ -71,7 +71,7 @@ SELECTOR_1 {{ '{' }}
 <code><pre>
 &#64;mixin NOMBRE (ARGUMENTOS) {{ '{' }}
     STYLE BLOCK
-&#125;
+    &#125;
 </pre></code>
 <dd>Muy parecido a &#64;function pero mientras la anterior se usa mas para el calculo y retorno de valores, este se utiliza
     mas para agrupar estilos o compilar varias propiedades que despues queremos aplicar a distintos selectores, entonces

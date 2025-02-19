@@ -37,9 +37,9 @@
                         "target": "es2017",<br>
                         "module": "commonjs",<br>
                         "strictNullChecks": true<br>
-                    &#125;,<br>
+                        &#125;,<br>
                     "include": ["**/*.ts"]<br>
-                &#125;
+                    &#125;
             </code>
         </div>
     </div>
@@ -147,7 +147,7 @@
                     ITEM-1 = VALOR-1,<br>
                     ITEM-2 = VALOR-2,<br>
                     ITEM-3 = VALOR-3,<br>
-                &#125;
+                    &#125;
             </code>
             </div>
             Una vez declarada (nombre siempre con primera mayuscula), podemos indicar una variable que solo puede
@@ -198,7 +198,7 @@
                 <code>
                    function getFilledArray&lt;T&gt;(value: T, n: number): T[] {{ '{' }} <br>
                     return Array(n).fill(value); <br>
-                  &#125; 
+                    &#125; 
                 </code>
             </div>
             <p>Cuando llamemos a la función por cualquier tipo como argumento, automaticamente ya sabe de que tipo
@@ -247,7 +247,7 @@
             PROP-2: TYPE-2 <br>
             METHOD-1: (PARAM-1: TYPE) => TYPE-RETURN;<br>
             METHOD-2: (PARAM-1: TYPE-1, PARAM-2: TYPE-2) => TYPE-RETURN;<br>
-        &#125;
+            &#125;
         </pre></code>
     </div>
     <p>Se permiten infinitos niveles de anidamiento, por lo que podemos definir multiples tipos de objetos dentro de
@@ -268,7 +268,7 @@
             <code><pre>
             const mandi: Person {{ '{' }}
                 name: 'Tamara'
-            &#125;
+                &#125;
             console.log(mandi.daughters? || 0) 
         </pre></code>
         <p> <i>*Se printará 0 porque mandi.daughters es undefined</i></p> 
@@ -303,11 +303,11 @@
                     this.PROP-1 = PROP-1;
                     this.PROP-2 = PROP-2;
                     this.PROP-3 = PROP-3;
-                &#125;
+                    &#125;
 
                 METHOD-1 (PROPs): TYPE {{ '{' }}...&#125;
                 METHOD-2 (PROPs): TYPE {{ '{' }}...&#125;
-            &#125;
+                &#125;
         </pre></code>
     </div>
     <p>Para completar la encapsulación, podemos aplicar <b class="text-info">modificadores de acceso</b> los cuales
@@ -342,7 +342,7 @@
 
                     METHOD-1 (PROPs): TYPE {{ '{' }}...&#125;
                     METHOD-2 (PROPs): TYPE {{ '{' }}...&#125;
-                &#125;
+                    &#125;
             </pre></code>
     </div>
     <p>Con este metodo abreviado nos ahorramos declarar las propiedades antes del constructor y dentro con el

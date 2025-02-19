@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SassComponent } from './sass/sass.component';
 import { AngularCLIComponent } from './angular-cli/angular-cli.component';
 import { GitComponent } from './git/git.component';
+import { SqlComponent } from './sql/sql.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GitComponent } from './git/git.component';
     WelcomeComponent,
     SassComponent,
     AngularCLIComponent,
-    GitComponent
+    GitComponent,
+    SqlComponent
   ],
   imports: [
     CommonModule,
