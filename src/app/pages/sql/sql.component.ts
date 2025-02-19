@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class SqlComponent {
 
+  code = `
+    SELECT DISTINCT column, another_column, ...
+    FROM my_table
+  `
 }
