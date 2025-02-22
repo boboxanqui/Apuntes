@@ -24,7 +24,7 @@
     "highlightjs-line-numbers.js": "^2.8.0",
     "marked": "^9.0.0",
     "ngx-highlightjs": "^8.0.0",
-    "ngx-markdown": "^17.1.1",
+    "ngx-markdown": "^19.1.0",
     "prismjs": "^1.28.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.6.2"
