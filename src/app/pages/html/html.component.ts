@@ -4,10 +4,10 @@ import { CommonService } from 'src/app/services/common.service';
 
 
 @Component({
-  selector: 'app-html',
-  templateUrl: './html.component.html',
-  styleUrls: ['./html.component.css'],
-
+    selector: 'app-html',
+    templateUrl: './html.component.html',
+    styleUrls: ['./html.component.css'],
+    standalone: false
 })
 export class HtmlComponent implements OnInit {
 

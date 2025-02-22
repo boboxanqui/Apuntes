@@ -4,9 +4,10 @@ import { filter } from 'rxjs';
 
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: []
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: [],
+    standalone: false
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
 

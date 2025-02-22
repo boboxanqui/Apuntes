@@ -5,9 +5,10 @@ import { Section } from 'src/app/interfaces/interfaces';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
-  selector: 'app-content-menu',
-  templateUrl: './content-menu.component.html',
-  styleUrls: ['./content-menu.component.css']
+    selector: 'app-content-menu',
+    templateUrl: './content-menu.component.html',
+    styleUrls: ['./content-menu.component.css'],
+    standalone: false
 })
 export class ContentMenuComponent implements OnInit {
   
