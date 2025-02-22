@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "03.22_Apuntes:build:production"
+              "buildTarget": "03.22_Apuntes:build:production"
             },
             "development": {
-              "browserTarget": "03.22_Apuntes:build:development"
+              "buildTarget": "03.22_Apuntes:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "03.22_Apuntes:build"
+            "buildTarget": "03.22_Apuntes:build"
           }
         },
         "test": {
