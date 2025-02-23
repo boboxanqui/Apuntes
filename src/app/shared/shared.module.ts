@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { MaterialModule } from '../material/material.module';
 import { ScrollUpComponent } from './scroll-up/scroll-up.component';
 import { ContentMenuComponent } from './content-menu/content-menu.component';
 
@@ -20,8 +19,7 @@ import { ContentMenuComponent } from './content-menu/content-menu.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    MaterialModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent,

@@ -3,9 +3,10 @@ import { Section } from 'src/app/interfaces/interfaces';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
-  selector: 'app-typescript',
-  templateUrl: './typescript.component.html',
-  styleUrls: ['./typescript.component.css']
+    selector: 'app-typescript',
+    templateUrl: './typescript.component.html',
+    styleUrls: ['./typescript.component.css'],
+    standalone: false
 })
 export class TypescriptComponent implements OnInit {
 

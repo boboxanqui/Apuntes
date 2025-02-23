@@ -3,9 +3,10 @@ import { Section } from 'src/app/interfaces/interfaces';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
-  selector: 'app-sass',
-  templateUrl: './sass.component.html',
-  styleUrls: ['./sass.component.css']
+    selector: 'app-sass',
+    templateUrl: './sass.component.html',
+    styleUrls: ['./sass.component.css'],
+    standalone: false
 })
 export class SassComponent implements OnInit {
 

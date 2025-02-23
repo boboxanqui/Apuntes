@@ -3,9 +3,10 @@ import { Router } from '@angular/router';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
-  selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+    selector: 'app-welcome',
+    templateUrl: './welcome.component.html',
+    styleUrls: ['./welcome.component.css'],
+    standalone: false
 })
 export class WelcomeComponent implements OnInit {
 
@@ -20,7 +21,6 @@ export class WelcomeComponent implements OnInit {
 
   navigateTo ( route: string ) {
     this.router.navigate([ route ]);
-    this.commonService.setPageLink$( route );
   }
 
 }

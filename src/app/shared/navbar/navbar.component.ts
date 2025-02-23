@@ -1,23 +1,19 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { CommonService } from 'src/app/services/common.service';
+
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: []
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: [],
+    standalone: false
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
 
-  constructor( private commonService: CommonService, private router: Router ) { }
+  constructor( private router: Router ) { }
   
   ngAfterViewInit(): void {
-    // this.commonService.pageLink$.subscribe( link => {
-    //   if( link === 'html'){
-    //     this.selectedRoute(this.htmlNavLink, this.navSelection)
-    //   }
-    // })
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)

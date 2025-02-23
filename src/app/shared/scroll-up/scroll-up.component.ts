@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { fromEvent, map, Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-scroll-up',
-  templateUrl: './scroll-up.component.html',
-  styleUrls: ['./scroll-up.component.css']
+    selector: 'app-scroll-up',
+    templateUrl: './scroll-up.component.html',
+    styleUrls: ['./scroll-up.component.css'],
+    standalone: false
 })
 export class ScrollUpComponent implements OnInit  {
 

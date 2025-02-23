@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-git',
-  templateUrl: './git.component.html',
-  styleUrls: ['./git.component.css']
+    selector: 'app-git',
+    templateUrl: './git.component.html',
+    styleUrls: ['./git.component.css'],
+    standalone: false
 })
 export class GitComponent implements OnInit {
 

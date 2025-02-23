@@ -11,7 +11,6 @@ import { GitComponent } from './git/git.component';
 import { SqlComponent } from './sql/sql.component';
 
 
-
 @NgModule({
   declarations: [
     HtmlComponent,
@@ -25,7 +24,8 @@ import { SqlComponent } from './sql/sql.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ]
+
 })
 export class PagesModule { }
